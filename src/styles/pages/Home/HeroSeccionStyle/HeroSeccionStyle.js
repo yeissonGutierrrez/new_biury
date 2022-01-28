@@ -1,93 +1,63 @@
 import { style } from "typestyle";
 
+import bgImage from '../../../../assets/images/Home/HeroSeccion/cheerful-young-female-model-has-pleasant-smile-covers-eye-with-cosmetic-sponge-enjoys-all-benefits-of-patches-reduces-wrinkles-wears-wrapped-towel-on-head-has-skincare-routine-after-awakening.jpg'
+
+
 const HeroSeccionStyle = style({
     position: "relative",
-    display: 'flex',
+    backgroundImage: `url(${bgImage})`,
+    // marginTop: '100px',
+    backgroundPosition: 'start',
+    backgroundRepeat: 'no-repeat',
+    backgroundSize: 'cover',
     height: '120vh',
     $nest: {
-        '& .hero_title__container': {
-            display: 'flex',
-            flexDirection: "column",
-            justifyContent: 'start',
-            alignItems: 'start',
-            width: '65%',
-            paddingTop: '270px',
-            paddingLeft: '20%',
-            backgroundColor: '#00CFBE',
+        '& .hero_container': {
             $nest: {
-                '& .hero_title_wrapper': {
-                    visibility: 'hidden',
-                },
-                '& .hero_title': {
-                    fontSize: '58px',
-                    fontFamily: 'CocoGothLight',
-                    lineHeight: '1',
-                    color: '#202230',
-                    marginBottom: '0px',
-                },
-                '& .hero_subtitle': {
-                    color: 'white',
-                    fontSize: '60px',
-                    textTransform: 'uppercase',
-                    fontFamily: 'CocoGothSemiBold',
-                    lineHeight: '1',
-                    margin: '30px 0',
-                },
-                '& .hero_suscribe__button': {
-                    textAlign: "center",
-                    fontFamily: 'cocoGoth',
-                    color: '#fff',
-                    fontSize: '20px',
-                    textDecoration: 'none',
-                    backgroundColor: '#202230',
-                    width: '290px',
-                    padding: '15px 50px',
-                    margin: '30px 0',
-                },
-                '& img': {
-                    margin: 0,
-                }
-            }
-        },
-        '& .hero_image_container': {
-            position: "relative",
-            width: '35%',
-            $nest: {
-                '& .hero_image_wrapper': {
-                    overflow: 'hidden',
-                    width: '550px',
+                '& .whatsapp_button': {
                     position: 'absolute',
-                    padding: '20px',
-                    paddingRight: 0,
-                    top: '20%',
-                    left: '120px',
-                    position: 'relative',
-                    zIndex: 2,
+                    bottom: 60,
+                    right: 80,
+                    zIndex: 1,
+                },
+                '& .info_container': {
+                    position: 'absolute',
+                    right: 80,
+                    bottom: 300,
+                    maxWidth: '800px',
+                    textAlign: 'end',
                     $nest: {
-                        '& img': {
-                            // visibility: 'hidden'
+                        '& h1': {
+                            fontFamily: 'GothamBold',
+                            fontSize: '39px'
+                        },
+                        '& p': {
+                            fontFamily: 'GothamLight',
+                            lineHeight: 1,
+                            fontSize: '25px',
+                            fontWeight: 300
+                        },
+                        '& button': {
+                            backgroundColor: '#FF6B63',
                             border: 'none',
-                            boxShadow: '-10px 10px 0px 0px #B3F12D',
-                        },
-                        '& .mask': {
-                            position:'absolute',
-                            bottom: 22,
-                            width: '97%',
-                            right: 0,
-                            height: '588px',
-                            backgroundColor: '#6962FD',
-                        },
-                        '& .mask2': {
-                            position:'absolute',
-                            bottom: 0,
-                            width: '100%',
-                            height: '100%',
-                            backgroundColor: '#fff',
-                        },
+                            padding: '20px',
+                            fontFamily: 'GothamLight',
+                            fontSize: '22px',
+                            fontWeight: 'normal',
+                            $nest: {
+                                '& span': {
+                                    fontFamily: 'GothamBold',
+                                }
+                            }
+                        }
                     }
                 }
             }
         },
+        '& .wave': {
+            position: 'absolute',
+            bottom: 0,
+        }
     }
     
 })

@@ -10,32 +10,22 @@ const FooterStyle = style({
     justifyContent: 'center',
     $nest: {
         '& .footer_logo': {
-            position: 'absolute',
-            top: 20,
-            left: 70,
+            height: '100%',
         },
         '& .footer_title_one': {
-            fontFamily: 'cocoGothLight',
+            fontFamily: 'GothamBold',
             fontSize: '32px',
+            margin: 0,
+            marginTop: '60px',
             $nest: {
                 '& strong': {
                     fontFamily: 'cocoGothSemiBold',
                 }
             }
         },
-        '& .footer_title_two': {
-            fontFamily: 'cocoGoth',
-            fontSize: '32px',
-            lineHeight: 1,
-            margin: 0
-        },
-        '& .footer_subtitle': {
-            fontFamily: 'cocoGoth',
-            fontSize: '20px',
-            marginTop: '20px',
-        },
         '& p': {
-            fontFamily: 'cocoGothLight',
+            color: 'white',
+            fontFamily: 'GothamBold',
             fontSize: '20px',
             maxWidth: '820px',
             textAlign: "center"
@@ -56,11 +46,14 @@ const FooterStyle = style({
             }
         },
         '& .input_container': {
+            display: 'flex',
             $nest: {
                 '& .footer_input': {
+                    border: 'solid black 3px',
                     height: '52px',
                     width: '415px',
                     paddingLeft: '20px',
+                    marginLeft: '20px',
                     outline: 'none',
                     fontSize: '20px',
                     fontFamily: 'cocoGoth',
@@ -74,25 +67,21 @@ const FooterStyle = style({
                         }
                     }
                 },
-                '& .make_account__button': {
-                    padding: '15px 50px',
-                    fontSize: '20px',
-                    fontFamily: 'cocoGoth',
-                    backgroundColor: 'black',
-                    color: '#D2D3D6',
-                    textDecoration: 'none',
-                    margin: '0 20px'
-
-                },
             }
         },
-        '& .links_container': {
-            fontSize: '15px',
+        '& .make_account__button': {
+            padding: '15px 50px',
+            fontSize: '20px',
             fontFamily: 'cocoGoth',
+            backgroundColor: 'black',
+            color: '#D2D3D6',
+            textDecoration: 'none',
+            margin: '50px 20px'
+
+        },
+        '& .links_container': {
             display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            margin: '30px 0',
+            margin: '40px 0',
             $nest: {
                 '& .links_text': {
                     color: 'black',

@@ -9,16 +9,25 @@ import ProductSeccion from './ProductSeccion/ProductSeccion'
 import HomeTestSeccion from './TestSeccion/TestSeccion'
 import ReviewsSection from './ReviewsSection/ReviewsSection'
 import BeautyMembersSeccion from './BeautyMembersSeccion/BeautyMembersSeccion'
+import HowItWork from './HomeHowItWork/HowItWork'
+import HeroBanner from '../../components/HeroBanner/HeroBanner'
+import BiuryBox from './BiuryBox/BiuryBox'
+import Cursor from '../../cursor'
 
 function Home() {
     return(
         <>
+
             <Navbar></Navbar>
             <HeroSeccion></HeroSeccion>
-            <HomeTestSeccion></HomeTestSeccion>
-            <BenefitSeccion></BenefitSeccion>
-            <HomeMembershipSeccion></HomeMembershipSeccion>
-            <BannerSeccion></BannerSeccion>
+            {/* <Cursor></Cursor> */}
+            {/* <HomeTestSeccion></HomeTestSeccion> */}
+            <HowItWork></HowItWork>
+            <HeroBanner/>
+            <BiuryBox></BiuryBox>
+            {/* <BenefitSeccion></BenefitSeccion> */}
+            {/* <HomeMembershipSeccion></HomeMembershipSeccion>
+            <BannerSeccion></BannerSeccion> */}
             <ProductSeccion></ProductSeccion>
             <ReviewsSection></ReviewsSection>
             <BeautyMembersSeccion></BeautyMembersSeccion>

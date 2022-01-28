@@ -76,7 +76,7 @@ function BenefitSeccion() {
                 <BenefitParallaxGallery></BenefitParallaxGallery> 
                 {/* <img src={bannerLogo1}/> */}
 
-            <Hero_banner></Hero_banner>
+            {/* <Hero_banner></Hero_banner> */}
         </div>
     )
 }

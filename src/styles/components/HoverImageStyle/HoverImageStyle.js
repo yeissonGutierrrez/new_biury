@@ -5,6 +5,15 @@ const HoverImageStyle = style({
     width: '250px',
     height: '250px',
     $nest: {
+        '& .border': {
+            width: '100%',
+            height: '100%',
+            position: 'absolute',
+            top: 0,
+            border: 'solid black 2px',
+            $nest: {
+            }
+        },
         '& img': {
             height: '100%',
             width: '100%'
@@ -26,7 +35,37 @@ const HoverImageStyle = style({
                     marginRight: '10px'
                 }
             }
-        }
+        },
+        "&:first-child": {
+            $nest: {
+                '& .border': {
+                    top: 20,
+                    right: 10,
+                }
+            }
+        },
+        "&:nth-child(2)": {
+            $nest: {
+                '& .border': {
+                    top: -10,
+                }
+            }
+        },
+        "&:nth-child(3)": {
+            $nest: {
+                '& .border': {
+                    border: 'none'
+                }
+            }
+        },
+        "&:last-child": {
+            $nest: {
+                '& .border': {
+                    top: 20,
+                    left: 10,
+                }
+            }
+        },
     }
 })
 

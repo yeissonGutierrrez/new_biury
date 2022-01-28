@@ -18,6 +18,7 @@ function HoverImage({image, likes}) {
                 </div>
                 : null
             }
+            <div className='border'></div>
         </div>
     )
 }

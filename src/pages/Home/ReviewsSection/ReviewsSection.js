@@ -7,10 +7,9 @@ import ReviewsSectionStyle from '../../../styles/pages/Home/ReviewsSectionStyle/
 function ReviewsSection() {
     return (
         <div className={ReviewsSectionStyle}>
-            <h1 className='title'>Vivimos por los <span>aplausos</span></h1>
-            <h3 className='subtitle'><span>¡Es broma!</span> En cambio, vivimos por las miles de rutinas que hemos creado, <br/> la satisfacción de las Beauty members y las historias que han compartido.</h3>
+            <h1 className='title'>TU OPINIÓN ES LO MÁS IMPORTANTE</h1>
             <ReviewsSlider></ReviewsSlider>
-            <Cursor></Cursor>
+            <button>UNETE A <span>BIURY</span>CLUB</button>
         </div>
     )
 }

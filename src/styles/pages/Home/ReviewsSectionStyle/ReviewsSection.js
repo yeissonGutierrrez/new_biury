@@ -3,7 +3,7 @@ import { style } from "typestyle";
 
 
 const ReviewsSectionStyle = style({
-    backgroundColor: '#202230',
+    backgroundColor: '#242535',
     padding: '40px 0',
     height: '100vh',
     display: 'flex',
@@ -12,9 +12,7 @@ const ReviewsSectionStyle = style({
     alignItems: 'center',
     $nest: {
         '& .title': {
-            color: 'white',
-            fontSize: '48px',
-            fontFamily: 'CocoGothSemiBold',
+            color: '#67FF6C',
             $nest: {
                 '& span': {
                     color: '#B3F12D'
@@ -34,6 +32,20 @@ const ReviewsSectionStyle = style({
                 }
             }
         },
+        '& button': {
+            fontSize: '20px',
+            fontFamily: 'GothamLight',
+            backgroundColor: '#FF7065',
+            border: 'none',
+            padding: '20px',
+            margin: 'auto',
+            marginBottom: '280px',
+            $nest: {
+                '& span': {
+                    fontFamily: 'GothamBold',
+                }
+            }
+        }
     }
 })
 

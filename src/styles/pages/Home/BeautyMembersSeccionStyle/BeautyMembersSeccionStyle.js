@@ -15,18 +15,31 @@ const BeautyMembersSeccionStyle = style({
                     top: 90,
                     left: 80,
                     $nest: {
+                        '& .links': {
+                            display: 'flex',
+                            justifyContent: 'space-between',
+                            alignItems: 'center',
+                            width: '200px',
+                            margin: '10px 0'
+                        },
                         '& .subtitle': {
-                            fontSize: '28px',
-                            fontFamily: 'CocoGothLight',
-                            lineHeight: 1,
-                            margin: 0
+                            fontSize: '26px',
+                            fontFamily: 'GothamBold',
+                            margin: 0,
+                            textTransform: 'uppercase',
+                            color: '#9926F7',
                         },
                         '& .hashtag': {
-                            
+                            textTransform: 'uppercase',
                             fontSize: '40px',
-                            fontFamily: 'CocoGothSemiBold',
+                            fontFamily: 'GothamBold',
                             lineHeight: 1.3,
-                            margin: 0
+                            margin: 0,
+                            $nest: {
+                                '& span': {
+                                    fontFamily: 'GothamLight',
+                                }
+                            }
                         },
                         '& .heart_icon': {
                             float: 'right',
@@ -75,7 +88,7 @@ const BeautyMembersSeccionStyle = style({
         },
         '& .seccion2': {
             width: '40%',
-            backgroundColor: '#B3F12D'
+            backgroundColor: '#67FF6C'
         },
     }
 })

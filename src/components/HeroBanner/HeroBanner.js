@@ -23,12 +23,13 @@ function HeroBanner() {
 
 
   return (
-    <div className={HeroBannerStyle} style={{position: 'absolute', bottom: 0}} >
+    <div className={HeroBannerStyle}>
 
       <div>
         <Marquee
           speed={100}
           style={{ height: 150 }}
+          gradient={false}
           
         >
           {

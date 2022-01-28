@@ -3,8 +3,11 @@ import { style } from "typestyle";
 import cursorImage from '../../../../assets/images/heroBannerimage2.png';
 
 const ProductSeccionStyle = style({
-    // position: 'relative',
+    position: 'relative',
+    display: 'flex',
+    flexDirection: 'column',
     cursor: 'none',
+    paddingBottom: '200px',
     $nest: {
         '& .products_container': {
             cursor: `url(${cursorImage})`,
@@ -14,13 +17,10 @@ const ProductSeccionStyle = style({
             alignItems: 'center',
             flexDirection: "column",
             width: '100%',
-            height: '100vh',
+            height: '90vh',
             $nest: {
                 '& .title': {
-                    margin: '20px 0',
-                    fontFamily: 'cocoGoth',
-                    fontSize: '36px',
-                    lineHeight: 1,
+                    color: '#FF7A6C',
                     $nest: {
                         '& span': {
                             color: '#BC49EA'
@@ -28,18 +28,40 @@ const ProductSeccionStyle = style({
                     }
                 },
                 '& .subtitle': {
+                    fontFamily: 'GothamLight',
+                    textAlign: 'center',
+                    lineHeight: 1.3,
                     margin: 0,
-                    marginBottom: '60px',
-                    fontFamily: 'cocoGothLight',
-                    fontSize: '18px',
-                    lineHeight: 1
+                    marginBottom: '80px',
+                    fontSize: '36px',
+                    $nest: {
+                        '& span': {
+                            fontFamily: 'GothamBold',
+                        }
+                    }
                 },
                 '& .productsContain': {
                     display: 'flex',
                 },
             }
         },
-        
+        '& button': {
+            fontSize: '20px',
+            fontFamily: 'GothamLight',
+            backgroundColor: '#00FF58',
+            border: 'none',
+            padding: '20px',
+            margin: '90px auto',
+            $nest: {
+                '& span': {
+                    fontFamily: 'GothamBold',
+                }
+            }
+        },
+        '& .wave': {
+            position: 'absolute',
+            bottom: 0,
+        },
     }
 
 })

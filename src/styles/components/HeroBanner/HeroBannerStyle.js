@@ -2,7 +2,7 @@ import { style } from "typestyle";
 import bgBanner from '../../../assets/images/Home/HeroSeccion/banner/bgBanner.png'
 
 const HeroBannerStyle = style({
-    position: 'absolute',
+    margin: '0',
     height: '40px',
     width: '100%',
     padding: '30px 0',
@@ -10,8 +10,7 @@ const HeroBannerStyle = style({
     justifyContent: 'space-evenly',
     alignItems: 'center',
     bottom: '0',
-    backgroundImage: `url(${bgBanner})`,
-    backgroundColor: 'white',
+    backgroundColor: '#6B6B6B',
     zIndex: 1
 })
 
