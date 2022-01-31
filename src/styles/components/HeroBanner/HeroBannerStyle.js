@@ -10,7 +10,7 @@ const HeroBannerStyle = style({
     justifyContent: 'space-evenly',
     alignItems: 'center',
     bottom: '0',
-    backgroundColor: '#6B6B6B',
+    backgroundColor: 'rgb(196,196,196)',
     zIndex: 1
 })
 

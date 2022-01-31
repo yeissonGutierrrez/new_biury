@@ -17,7 +17,6 @@ import Cursor from '../../cursor'
 function Home() {
     return(
         <>
-
             <Navbar></Navbar>
             <HeroSeccion></HeroSeccion>
             {/* <Cursor></Cursor> */}

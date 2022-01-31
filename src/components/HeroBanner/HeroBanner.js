@@ -5,8 +5,13 @@ import HeroBannerStyle from '../../styles/components/HeroBanner/HeroBannerStyle'
 import Marquee from "react-fast-marquee";
 
 
-import imagen from '../../assets/images/bannerImage1.png'
-import imagen2 from '../../assets/images/heroBannerimage2.png'
+import imagen from '../../assets/images/brands/isdinLogo.svg'
+import imagen2 from '../../assets/images/brands/uriageLogo.svg'
+import imagen3 from '../../assets/images/brands/heliocareLogo.svg'
+import imagen4 from '../../assets/images/brands/sesdesmaLogo.svg'
+import imagen5 from '../../assets/images/brands/larocheposayLogo.svg'
+import imagen6 from '../../assets/images/brands/eucelinLogo.svg'
+import imagen7 from '../../assets/images/brands/almayLogo.svg'
 
 
 
@@ -15,10 +20,11 @@ function HeroBanner() {
   const marks = [
     imagen,
     imagen2,
-    imagen,
-    imagen2,
-    imagen,
-    imagen2,
+    imagen3,
+    imagen4,
+    imagen5,
+    imagen6,
+    imagen7,
   ]
 
 

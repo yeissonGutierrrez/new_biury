@@ -6,7 +6,7 @@ import wspIcon from '../../../../assets/images/components/layout/Navbar/wspIcon.
 
 const NavbarStyle = style({
     position: 'fixed',
-    backgroundColor: '#202230',
+    backgroundColor: '#9926F7',
     display: 'flex',
     justifyContent: 'space-evenly',
     padding: '30px 0',

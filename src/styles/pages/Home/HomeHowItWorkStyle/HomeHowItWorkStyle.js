@@ -77,6 +77,7 @@ const HomeHowItWorkStyle = style({
         '& .subtitle': {
             fontFamily: 'GothamBold',
             fontSize: '32px',
+            marginBottom: '100px',
             $nest: {
                 '& span': {
                     fontFamily: 'GothamLight',
