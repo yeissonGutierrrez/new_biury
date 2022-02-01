@@ -38,9 +38,9 @@ function BiuryBox() {
                 <p>encunetra descuentos permanentes en</p>
                 <Link to={'/'}>www.lineaestetica.co</Link>
 
-                <h3 className='biuryBox_subtitle'>DESCUBRE: ACCESO EXCLUSIVO <br/> A REGALOS,DESCUENTOS <br/> E Información.</h3>
+                <h3 className='biuryBox_subtitle'>descubre: acceso exclusivo <br/> A regalos, descuentos <br/> E Información.</h3>
 
-                <button>UNETE A BIURYCLUB</button>
+                <button>UNETE A <span>BIURY</span>CLUB</button>
             </div>
         </div>
     )

@@ -12,7 +12,8 @@ import Register from './pages/Register/Register'
 import Perfil from './pages/Home/Perfil/Perfil';
 
 import ScrollRestoration from 'react-scroll-restoration'
-import TestPage from './pages/TestPage/TestPage';
+import QuizPage from './pages/QuizPage/QuizPage';
+
 
 
 ReactDOM.render(
@@ -25,7 +26,7 @@ ReactDOM.render(
         <Route exact path='/Login' component={Login}/>
         <Route exact path='/perfil' component={Perfil}/>
         <Route exact path='/Register' component={Register}/>
-        <Route exact path='/test' component={TestPage}/>
+        <Route exact path='/Quiz' component={QuizPage}/>
       </Switch>
     </BrowserRouter>
   </React.StrictMode>,

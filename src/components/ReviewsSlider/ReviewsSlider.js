@@ -52,7 +52,7 @@ function ReviewsSlider () {
                      <SwiperSlide>
                         <ReviewCard 
                             text='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua' 
-                            productName='Nombre producto' 
+                            productName='Box Enero' 
                             refName='Carla' 
                             footerColor='#FF6F5B'
                             refProfile={profile1}
@@ -63,7 +63,7 @@ function ReviewsSlider () {
                      <SwiperSlide>
                         <ReviewCard 
                             text='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua' 
-                            productName='Nombre producto' 
+                            productName='Box Febrero' 
                             refName='Julio' 
                             footerColor='#B3F12D'
                             refProfile={profile1}
@@ -74,7 +74,106 @@ function ReviewsSlider () {
                      <SwiperSlide>
                         <ReviewCard 
                             text='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua' 
-                            productName='Nombre producto' 
+                            productName='Box Marzo' 
+                            refName='Kevin' 
+                            footerColor='#FF4993'
+                            refProfile={profile1}
+                            >
+                        </ReviewCard>
+                    </SwiperSlide>
+
+                     <SwiperSlide>
+                        <ReviewCard 
+                            text='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua' 
+                            productName='Box Abril' 
+                            refName='Kevin' 
+                            footerColor='#FF4993'
+                            refProfile={profile1}
+                            >
+                        </ReviewCard>
+                    </SwiperSlide>
+
+                     <SwiperSlide>
+                        <ReviewCard 
+                            text='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua' 
+                            productName='Box Mayo' 
+                            refName='Kevin' 
+                            footerColor='#FF4993'
+                            refProfile={profile1}
+                            >
+                        </ReviewCard>
+                    </SwiperSlide>
+
+                     <SwiperSlide>
+                        <ReviewCard 
+                            text='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua' 
+                            productName='Box Junio' 
+                            refName='Kevin' 
+                            footerColor='#FF4993'
+                            refProfile={profile1}
+                            >
+                        </ReviewCard>
+                    </SwiperSlide>
+
+                     <SwiperSlide>
+                        <ReviewCard 
+                            text='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua' 
+                            productName='Box Julio' 
+                            refName='Kevin' 
+                            footerColor='#FF4993'
+                            refProfile={profile1}
+                            >
+                        </ReviewCard>
+                    </SwiperSlide>
+
+                     <SwiperSlide>
+                        <ReviewCard 
+                            text='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua' 
+                            productName='Box Agosto' 
+                            refName='Kevin' 
+                            footerColor='#FF4993'
+                            refProfile={profile1}
+                            >
+                        </ReviewCard>
+                    </SwiperSlide>
+
+                     <SwiperSlide>
+                        <ReviewCard 
+                            text='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua' 
+                            productName='Box Septiembre' 
+                            refName='Kevin' 
+                            footerColor='#FF4993'
+                            refProfile={profile1}
+                            >
+                        </ReviewCard>
+                    </SwiperSlide>
+
+                     <SwiperSlide>
+                        <ReviewCard 
+                            text='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua' 
+                            productName='Box Octubre' 
+                            refName='Kevin' 
+                            footerColor='#FF4993'
+                            refProfile={profile1}
+                            >
+                        </ReviewCard>
+                    </SwiperSlide>
+
+                     <SwiperSlide>
+                        <ReviewCard 
+                            text='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua' 
+                            productName='Box Noviembre' 
+                            refName='Kevin' 
+                            footerColor='#FF4993'
+                            refProfile={profile1}
+                            >
+                        </ReviewCard>
+                    </SwiperSlide>
+
+                     <SwiperSlide>
+                        <ReviewCard 
+                            text='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua' 
+                            productName='Box Diciembre' 
                             refName='Kevin' 
                             footerColor='#FF4993'
                             refProfile={profile1}

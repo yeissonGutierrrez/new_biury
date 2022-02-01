@@ -63,6 +63,7 @@ const BiuryBoxStyle = style({
                     fontFamily: 'GothamBold',
                     fontSize: '24px',
                     color: 'white',
+                    textTransform: 'capitalize',
                     margin: 0
                 },
                 '& a': {
@@ -77,15 +78,18 @@ const BiuryBoxStyle = style({
                     color: 'white',
                     textAlign: 'center',
                     fontSize: '24px',
+                    textTransform: 'capitalize'
                 },
                 '& button': {
+                    fontFamily: 'GothamLight',
                     border: 'none',
                     backgroundColor: '#00FF58',
                     padding: '20px 40px',
                     marginBottom: '60px',
+                    fontSize: '20px',
                     $nest: {
                         '& span': {
-
+                            fontFamily: 'GothamBold',
                         }
                     }
                 }

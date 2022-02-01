@@ -12,7 +12,9 @@ const ReviewsSectionStyle = style({
     alignItems: 'center',
     $nest: {
         '& .title': {
+            paddingTop: '120px',
             color: '#67FF6C',
+            zIndex: 2,
             $nest: {
                 '& span': {
                     color: '#B3F12D'

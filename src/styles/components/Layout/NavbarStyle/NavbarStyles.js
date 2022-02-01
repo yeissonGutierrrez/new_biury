@@ -1,5 +1,5 @@
 import { style } from "typestyle";
-import userIcon from '../../../../assets/images/components/layout/Navbar/userIcon.svg'
+import userIcon from '../../../../assets/images/components/layout/Navbar/userIconBorder.svg'
 import shopIcon from '../../../../assets/images/components/layout/Navbar/shopIcon.svg'
 import instagramIcon from '../../../../assets/images/components/layout/Navbar/InstagramIcon.svg'
 import wspIcon from '../../../../assets/images/components/layout/Navbar/wspIcon.svg'
@@ -8,17 +8,24 @@ const NavbarStyle = style({
     position: 'fixed',
     backgroundColor: '#9926F7',
     display: 'flex',
-    justifyContent: 'space-evenly',
-    padding: '30px 0',
+    justifyContent: 'space-between',
+    padding: '30px 60px',
     width: '100vw',
     top: 0,
     left: 0,
     right: 0,
-    zIndex: 10,
+    zIndex: 10000,
     $nest: {
+        '& .center': {
+            display: 'flex',
+            justifyContent: 'start',
+            paddingLeft: '150px',
+            width: '30%',
+        },
         '& .list_menu': {
             display: 'flex',
             alignItems: 'center',
+            width: '35%',
             $nest: {
                 '& a': {
                     display: 'flex',
@@ -26,17 +33,22 @@ const NavbarStyle = style({
                     color: 'white',
                     fontFamily: 'CocoGothSemiBold',
                     fontWeight: 500,
-                    fontSize: '17px',
+                    fontSize: '16px',
+                    textTransform: 'uppercase',
                     textDecoration: 'none',
                     margin: '15px 10px',
-                    textAlign: "center"
+                    textAlign: "center",
+                },
+                '& hr': {
+                    transform: 'rotate(90deg)',
+                    width: '60px',
                 },
                 '& .userIcon': {
                     display: 'inline-block',
                     backgroundImage: `url(${userIcon})`,
                     width: '20px',
                     height: '20px',
-                    marginRight: '10px',
+                    marginRight: '5px',
                     backgroundRepeat: 'no-repeat',
                 },
                 '& .shopIcon': {
@@ -44,7 +56,7 @@ const NavbarStyle = style({
                     backgroundImage: `url(${shopIcon})`,
                     width: '20px',
                     height: '20px',
-                    marginRight: '10px',
+                    marginLeft: '60px',
                     backgroundRepeat: 'no-repeat',
                 },
                 '& .instagramIcon': {
@@ -52,7 +64,6 @@ const NavbarStyle = style({
                     backgroundImage: `url(${instagramIcon})`,
                     width: '20px',
                     height: '20px',
-                    marginRight: '10px',
                     backgroundRepeat: 'no-repeat',
                 },
                 '& .wspIcon': {
@@ -60,7 +71,6 @@ const NavbarStyle = style({
                     backgroundImage: `url(${wspIcon})`,
                     width: '20px',
                     height: '20px',
-                    marginRight: '10px',
                     backgroundRepeat: 'no-repeat',
                 },
             }

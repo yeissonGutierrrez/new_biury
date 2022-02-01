@@ -12,8 +12,8 @@ function Navbar () {
         <div className={NavbarStyle}>
             <div className='list_menu'>
                 <Link to='/HowItWork'>Cómo funciona</Link>
-                <Link to='/'>Membresias</Link>
-                <Link to='/test'>Test</Link>
+                <hr/>
+                <Link to='/Quiz'>CREA TU PERFIL GRATIS</Link>
             </div>
 
             <div className='center'>
@@ -26,9 +26,9 @@ function Navbar () {
                     ?
                     <Link to='/perfil'><i className='userIcon'></i> {sessionStorage.getItem('userName')}</Link>
                     :
-                    <Link to='/login'><i className='userIcon'></i> Cuenta</Link>
+                    <Link to='/login'><i className='userIcon'></i> INGRESAR</Link>
                 }
-                <Link to='/'><i className='shopIcon'></i> Carrito </Link>
+                <Link to='/'><i className='shopIcon'></i></Link>
                 <Link to='/'><i className='instagramIcon'></i></Link>
                 <Link to='/'><i className='wspIcon'></i></Link>
             </div>
