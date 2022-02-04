@@ -7,7 +7,7 @@ import face3 from '../../assets/images/Quiz/face3.svg'
 import face4 from '../../assets/images/Quiz/face4.svg'
 import face5 from '../../assets/images/Quiz/face5.svg'
 
-function QuizStep2() {
+function  QuizStep2({setStep}) {
     return (
         <div className="step2">
             <h4 className='question-title'>¿CON CUÁL DE ESTOS TIPOS <br/> DE PIEL TE IDENTIFICAS?</h4>
@@ -74,7 +74,7 @@ function QuizStep2() {
 
             </div>
 
-            <button className='pagination-button'>CONTINUAR</button>
+            <button onClick={() => setStep('step3')} className='pagination-button'>CONTINUAR</button>
         </div>
     )
 }

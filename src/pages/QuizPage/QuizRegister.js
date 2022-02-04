@@ -1,7 +1,7 @@
 
 import wave from '../../assets/images/Quiz/waveQuizGreen.svg'
 
-function QuizRegister() {
+function QuizRegister({setStep}) {
     return (
         <>
         <div className="QuizRegister"> 
@@ -28,7 +28,7 @@ function QuizRegister() {
                     <input  placeholder='' type='email' className='footer_input'></input>
                 </div>
             </div>
-            <button>SIGUIENTE</button>
+            <button onClick={() => setStep('step1')}>SIGUIENTE</button>
         </div>
         </>
     )    

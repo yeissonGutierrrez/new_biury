@@ -4,7 +4,6 @@ import leftArrow from '../../assets/images/components/ReviewSlider/leftArrow.svg
 
 const ReviewsSliderStyle = style({
     width: '80%',
-    height: '100vh',
     padding: '50px 0',
     $nest: {
         '& .ReviewsSwiper': {

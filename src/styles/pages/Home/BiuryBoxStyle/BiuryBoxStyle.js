@@ -24,7 +24,7 @@ const BiuryBoxStyle = style({
             backgroundColor: '#9926F7',
             $nest: {
                 '& .biuryBox_title': {
-                    paddingTop: '40px',
+                    paddingTop: '60px',
                     color: '#67FF6C',
                     fontFamily: 'GothamBold',
                     fontSize: '40px',
@@ -37,6 +37,7 @@ const BiuryBoxStyle = style({
                 '& .info': {
                     borderBottom: 'solid #67FF6C 5px',
                     width: '70%',
+                    paddingBottom: '10px',
                     $nest: {
                         '& h3': {
                             fontFamily: 'GothamBold',
@@ -57,7 +58,6 @@ const BiuryBoxStyle = style({
                     fontSize: '40px',
                     textTransform: 'uppercase',
                     color: 'white',   
-                    marginBottom: 0,
                 },
                 '& p': {
                     fontFamily: 'GothamBold',

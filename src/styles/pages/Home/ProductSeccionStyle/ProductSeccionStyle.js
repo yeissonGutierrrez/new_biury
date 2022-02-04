@@ -10,16 +10,12 @@ const ProductSeccionStyle = style({
     paddingBottom: '200px',
     $nest: {
         '& .products_container': {
-            cursor: `url(${cursorImage})`,
-            display: 'flex',
-            // position: 'relative',
-            justifyContent: 'center',
-            alignItems: 'center',
-            flexDirection: "column",
             width: '100%',
             height: '90vh',
             $nest: {
                 '& .title': {
+                    textAlign: 'center',
+                    marginTop: '100px',
                     color: '#FF7A6C',
                     $nest: {
                         '& span': {
@@ -28,6 +24,7 @@ const ProductSeccionStyle = style({
                     }
                 },
                 '& .subtitle': {
+                    marginTop: '20px',
                     fontFamily: 'GothamLight',
                     textAlign: 'center',
                     lineHeight: 1.3,
@@ -42,6 +39,7 @@ const ProductSeccionStyle = style({
                 },
                 '& .productsContain': {
                     display: 'flex',
+                    justifyContent: 'space-evenly'
                 },
             }
         },

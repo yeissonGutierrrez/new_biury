@@ -10,19 +10,56 @@ import QuizStep3 from "./QuizStep3"
 import QuizStep4 from "./QuizStep4"
 import QuizStep5 from "./QuizStep5"
 import Suscribe from "./Suscribe"
+import Navbar from "../../components/layout/Navbar/Navbar"
 
-function QuizForm() {
+function QuizForm({setStep, step}) {
     return (
         <div className={QuizFormStyle}>
-            {/* <div className="navbar">
-                <img src={LogoBlack}/>
-                <h1>Quiz</h1>
-            </div> */}
-            <div className="wrapper">
 
-                
-                <Suscribe/>
-                <Footer/>
+            <div className="wrapper">
+                        <div className="navbar">
+                            <img src={LogoBlack}/>
+                            <h1>Quiz</h1>
+                        </div> 
+                {
+                    step === 'step1'
+                    ?
+                    <>
+                        <QuizStep1 setStep={setStep}/>
+                    </>
+                    : step === 'step2'
+                    ? 
+                    <>
+
+                    <QuizStep2 setStep={setStep}/>
+                    </>
+                    : step === 'step3'
+                    ?
+                    <>
+                        <QuizStep3 setStep={setStep}/>
+                    </>
+                    : step === 'step4'
+                    ?
+                    <>
+                        <QuizStep4 setStep={setStep}/>
+                    </>
+                    : step === 'step5'
+                    ?
+                    <>
+                        <QuizStep5 setStep={setStep}/>
+                    </>
+                    : null
+                }
+
+                {
+                    step === 'suscribe'
+                    ?
+                    <>
+                        <Suscribe/>
+                        <Footer/>
+                    </>
+                    : null
+                }
                 
             </div>
         </div>

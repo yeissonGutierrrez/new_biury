@@ -16,7 +16,8 @@ const FooterStyle = style({
             fontFamily: 'GothamBold',
             fontSize: '32px',
             margin: 0,
-            marginTop: '60px',
+            marginTop: '40px',
+            marginBottom: '20px',
             $nest: {
                 '& strong': {
                     fontFamily: 'cocoGothSemiBold',

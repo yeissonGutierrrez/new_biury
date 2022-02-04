@@ -2,7 +2,7 @@
 import QuizButton from './QuizButton'
 
 
-function QuizStep3() {
+function QuizStep3({setStep}) {
     return (
         <div className="step3">
             <h4 className='question-title'>¿EN QUÉ RANGO DE EDAD ESTÁS?</h4>
@@ -22,8 +22,8 @@ function QuizStep3() {
             </div>
 
             <div className='pagination-container'>
-                <button className='pagination-button'>ANTERIOR</button>
-                <button className='pagination-button'>CONTINUAR</button>
+                <button onClick={() => setStep('step2')} className='pagination-button'>ANTERIOR</button>
+                <button onClick={() => setStep('step4')} className='pagination-button'>CONTINUAR</button>
             </div>
         </div>
     )

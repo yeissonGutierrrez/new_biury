@@ -1,12 +1,43 @@
 import React, {useRef, useEffect, useState, useContext} from 'react'
-import mouse from '../../../assets/images/clicker-del-mouse 1.svg'
-import Pointer from '../../../animation'
+
 import ProductItem from '../../../components/ProductItem/ProductItem'
 // import { MouseContext } from '../../../context/MouseContext'
 import ProductSeccionStyle from '../../../styles/pages/Home/ProductSeccionStyle/ProductSeccionStyle'
-import Cursor from '../../../cursor'
 
-import wave from '../../../assets/images/Home/wave_dark_blue.svg'
+import wave from '../../../assets/images/wave_dark_blue.svg'
+
+import image1 from '../../../assets/images/Home/ProductSeccion/item1.png'
+import image2 from '../../../assets/images/Home/ProductSeccion/item2.png'
+import image3 from '../../../assets/images/Home/ProductSeccion/item3.png'
+import image4 from '../../../assets/images/Home/ProductSeccion/item4.png'
+
+
+const products = [
+  {
+    title: 'Acerca de one',
+    text: 'Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur ',
+    bgColor: '#FF4993',
+    image: image1
+  },
+  {
+    title: 'Acerca de two',
+    text: 'Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur ',
+    bgColor: '#B3F12D',
+    image: image2
+  },
+  {
+    title: 'Acerca de three',
+    text: 'Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur ',
+    bgColor: '#BC49EA',
+    image: image3
+  },
+  {
+    title: 'Acerca de four',
+    text: 'Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur ',
+    bgColor: '#00CFBE',
+    image: image4
+  },
+]
 
 function ProductSeccion() {
 
@@ -117,15 +148,18 @@ function ProductSeccion() {
         <>
         <div ref={dotOutline} className="cursor-dot-outline"></div>
         <div ref={dot} className="cursor-dot"></div>
-        <div ref={contain} className={`${ProductSeccionStyle}`}>
+        <div ref={contain} onMouseEnter={mouseEnterEvent} onMouseLeave={mouseLeaveEvent} className={`${ProductSeccionStyle}`}>
             <div data-cursor-type='wrap' className='products_container'>
                 <h1 onMouseEnter={mouseOverEvent} onMouseLeave={mouseOutEvent} className='title'>BEST SELLERS</h1>
                 <h5 onMouseEnter={mouseOverEvent} onMouseLeave={mouseOutEvent}  className='subtitle'>LOS PRODUCTOS MEJOR VALORADOS <br/> POR NUESTROS <span>BIURY</span>MEMBERS</h5>
                 <div className='productsContain'>
-                    <ProductItem title='Acerca de one' text='Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur ' bgColor='#FF4993'></ProductItem>
-                    <ProductItem title='Acerca de two' text='Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur ' bgColor='#B3F12D'></ProductItem>
-                    <ProductItem title='Acerca de three' text='Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur ' bgColor='#BC49EA'></ProductItem>
-                    <ProductItem title='Acerca de four' text='Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur ' bgColor='#00CFBE'></ProductItem>
+                    {
+                      products.map((data)=> {
+                        return (
+                          <ProductItem data={data}></ProductItem>
+                        )
+                      })
+                    }
                 </div>
             </div>
             <button>UNETE A <span>BIURY</span>CLUB</button>

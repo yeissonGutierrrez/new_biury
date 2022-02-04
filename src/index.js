@@ -9,10 +9,11 @@ import HowItWork from './pages/HowItWork/HowItWork';
 import Login from './pages/Login/Login';
 
 import Register from './pages/Register/Register'
-import Perfil from './pages/Home/Perfil/Perfil';
+import Perfil from './pages/Profile/Profile';
 
 import ScrollRestoration from 'react-scroll-restoration'
 import QuizPage from './pages/QuizPage/QuizPage';
+import Sellers from './pages/Sellers/Sellers';
 
 
 
@@ -24,9 +25,10 @@ ReactDOM.render(
         <Route exact path='/' component={Home}/>
         <Route exact path='/HowItWork' component={HowItWork}/>
         <Route exact path='/Login' component={Login}/>
-        <Route exact path='/perfil' component={Perfil}/>
+        <Route exact path='/Perfil' component={Perfil}/>
         <Route exact path='/Register' component={Register}/>
         <Route exact path='/Quiz' component={QuizPage}/>
+        <Route exact path='/Sellers' component={Sellers}/>
       </Switch>
     </BrowserRouter>
   </React.StrictMode>,

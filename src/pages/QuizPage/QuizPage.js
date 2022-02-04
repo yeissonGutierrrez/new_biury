@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import Footer from '../../components/layout/Footer/Footer'
 import Navbar from '../../components/layout/Navbar/Navbar'
 import QuizPageStyle from '../../styles/pages/QuizPage/QuizPageStyle'
@@ -9,14 +9,21 @@ import QuizRegister from './QuizRegister'
 
 
 function QuizPage () {
-
+    const [step, setStep] = useState('register');
     return (
         <>
-        {/* <Navbar></Navbar>
-        <div className={QuizPageStyle}>
-            <QuizRegister/>
-        </div> */}
-        <QuizForm/>
+        {
+            step === 'register'
+            ?
+            <>
+                <Navbar></Navbar>
+                <div className={QuizPageStyle}>
+                    <QuizRegister setStep={setStep}/>
+                </div>
+            </>
+            : 
+            <QuizForm setStep={setStep} step={step}/> 
+        }
         </>
     )
 }

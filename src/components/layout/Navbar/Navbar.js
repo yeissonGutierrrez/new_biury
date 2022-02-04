@@ -3,13 +3,13 @@ import { Link } from 'react-router-dom'
 import Logo from '../../../assets/images/LogoBiuryWhite.svg'
 import NavbarStyle from '../../../styles/components/Layout/NavbarStyle/NavbarStyles'
 
-function Navbar () {
+function Navbar ({bgColor}) {
     const [user, setuser] = useState(null)
     const login = sessionStorage.getItem('login')
 
 
     return (
-        <div className={NavbarStyle}>
+        <div style={{backgroundColor: bgColor}} className={NavbarStyle}>
             <div className='list_menu'>
                 <Link to='/HowItWork'>Cómo funciona</Link>
                 <hr/>
@@ -17,7 +17,9 @@ function Navbar () {
             </div>
 
             <div className='center'>
-                <img src={Logo}/>
+                <Link to={'/'}>
+                    <img src={Logo}/>
+                </Link>
             </div>
 
             <div className='list_menu'>

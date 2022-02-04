@@ -2,7 +2,7 @@
 import arrow from '../../assets/images/Quiz/BottomSemiArrow.svg'
 import QuizButton from './QuizButton'
 
-function QuizStep1() {
+function QuizStep1({setStep}) {
     return (
         <div className="step1">
             <h1 className="user_name">Susi</h1>
@@ -17,7 +17,7 @@ function QuizStep1() {
                 <QuizButton bgColor='rgb(102,245,187)' borderColor='#00EF8E' question='Mujer'/>
                 <QuizButton bgColor='rgb(102,235,219)' borderColor='#00DDC3' question='Prefiero no decirlo'/>
             </div>
-            <button className='pagination-button'>CONTINUAR</button>
+            <button onClick={() => setStep('step2')} className='pagination-button'>CONTINUAR</button>
         </div>
     )
 }

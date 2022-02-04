@@ -31,8 +31,9 @@ const QuizFormStyle = style({
             $nest: {
                 '& .user_name': {
                     fontFamily: 'Alpha',
-                    lineHeight: 0,
-                    marginTop: '150px',
+                    lineHeight: 1,
+                    marginTop: '100px',
+                    marginBottom: '20px',
                     fontSize: '130px',
                     textTransform: 'uppercase',
                 },
@@ -277,47 +278,22 @@ const QuizFormStyle = style({
                     $nest: {
                         '& h1': {
                             fontFamily: 'Alpha',
-                            lineHeight: 0,
-                            marginTop: '180px',
+                            lineHeight: 1,
+                            marginTop: '150px',
+                            marginBottom: '30px',
                             fontSize: '130px',
                             textTransform: 'uppercase',
                         },
                         '& h2': {
                             fontFamily: 'GothamBold',
                             fontSize: '35px',
+                            marginBottom: '50px',
                             $nest: {
                                 '& span': {
                                     fontFamily: 'GothamLight',
                                 }
                             }
                         },
-                        '& .button-container': {
-                            position: 'relative',
-                            width: '100%',
-                            height: '90px',
-                            $nest: {
-                                '& button': {
-                                    position: 'absolute',
-                                    top: -8,
-                                    left: -5,
-                                    width: '100%',
-                                    height: '105%',
-                                    zIndex: 1,
-                                    border: 'none',
-                                    backgroundColor: '#FF97C6',
-                                    fontFamily: 'GothamBold',
-                                    fontSize: '34px',
-                                },
-                                '& .border': {
-                                    position: 'absolute',
-                                    top: 0,
-                                    width: '100%',
-                                    height: '100%',
-                                    border: 'solid black 3px',
-                                    zIndex: 1
-                                }
-                            }
-                        }
                     }
                 }
             }
@@ -346,7 +322,7 @@ const QuizFormStyle = style({
             backgroundColor: '#242535',
             border: 'none',
             textTransform: 'uppercase',
-            marginBottom: '80px'
+            margin: '80px 0'
         },
         '& .pagination-container': {
             display: 'flex',

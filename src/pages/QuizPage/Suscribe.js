@@ -1,6 +1,8 @@
 
 import foto from '../../assets/images/Quiz/Biury_sus_Fotos-01 .png'
 import circleLetter from '../../assets/images/Quiz/VectorB.svg'
+import SuscribeButton from '../../components/SuscribeButton'
+
 
 function Suscribe() {
     return (
@@ -19,12 +21,7 @@ function Suscribe() {
                 <h1>LISTO</h1>
                 <h2>ESTÁS A UN PASO DE SER <br/> PARTE DE NUESTRO <br/> BIURY <span>CLUB</span></h2>
                 <h2>ACTIVA <br/> TU SUSCRIPCIÓN Y <br/> <span>RECIBE TUS PRODUCTOS.</span></h2>
-                <div className='button-container'>
-                    <button>
-                    ACTIVAR SUSCRIPCIÓN
-                    </button>
-                    <div className='border'></div>
-                </div>
+                <SuscribeButton/>
             </div>
 
         </div>

@@ -22,18 +22,20 @@ const HeroSeccionStyle = style({
                 },
                 '& .info_container': {
                     position: 'absolute',
+                    top: 350,
                     right: 80,
                     bottom: 300,
-                    maxWidth: '800px',
+                    maxWidth: '780px',
                     textAlign: 'end',
                     $nest: {
                         '& h1': {
                             fontFamily: 'GothamBold',
-                            fontSize: '39px'
+                            marginBottom: '10px',
+                            fontSize: '36px',
                         },
                         '& p': {
                             fontFamily: 'GothamLight',
-                            lineHeight: 1,
+                            marginBottom: '40px',
                             fontSize: '25px',
                             fontWeight: 300
                         },

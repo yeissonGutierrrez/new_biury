@@ -62,7 +62,7 @@ import { style } from "typestyle";
                     textAlign: 'center',
                     fontFamily: 'GothamBold',
                     fontSize: '39px',
-                    top: 30,
+                    top: 50,
                     left: 60
                 },
                 '& .info': {
@@ -113,7 +113,8 @@ import { style } from "typestyle";
                                 '& h1': {
                                     fontFamily: 'GothamBold',
                                     fontSize: '47px',
-                                    lineHeight: 0.5
+                                    lineHeight: 0.5,
+                                    margin: '30px 0'
                                 },
                                 '& p': {
                                     fontFamily: 'GothamLight',

@@ -3,12 +3,17 @@ import { style } from "typestyle";
 const ProductItemStyle = style({
     position: "relative",
     width: '260px',
-    margin: '0 50px',
+    margin: '0',
     cursor: 'pointer',
     $nest: {
         '& .item_image': {
             position: "relative",
+            display: 'flex',
+            justifyContent: 'center',
+            padding: '50px 0',
+            boxSizing: 'border-box',
             borderRadius: '50%',
+            height: '260px',
             boxShadow: '0px 0px 14px 1px rgba(0,0,0,0.42)',
         },
         '& .item_title': {

@@ -6,7 +6,7 @@ import wspIcon from '../../../../assets/images/components/layout/Navbar/wspIcon.
 
 const NavbarStyle = style({
     position: 'fixed',
-    backgroundColor: '#9926F7',
+    backgroundColor: '#242535',
     display: 'flex',
     justifyContent: 'space-between',
     padding: '30px 60px',
@@ -18,10 +18,10 @@ const NavbarStyle = style({
     $nest: {
         '& .center': {
             display: 'flex',
-            justifyContent: 'start',
             paddingLeft: '150px',
             width: '30%',
         },
+
         '& .list_menu': {
             display: 'flex',
             alignItems: 'center',
@@ -74,8 +74,8 @@ const NavbarStyle = style({
                     backgroundRepeat: 'no-repeat',
                 },
             }
-        }
-    }
+        },
+    },
 })
 
 export default NavbarStyle

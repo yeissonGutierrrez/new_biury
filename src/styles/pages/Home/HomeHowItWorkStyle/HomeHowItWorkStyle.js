@@ -21,42 +21,55 @@ const HomeHowItWorkStyle = style({
             justifyContent: 'space-evenly',
             $nest: {
                 '& .steps': {
+                    position: 'relative',
                     display: 'flex',
-                    flexDirection: 'column',
+                    justifyContent: 'center',
+                    alignContent: 'center',
+                    paddingTop: '350px',
                     alignItems: 'center',
                     textAlign: 'center',
-                    justifyContent: 'space-between',
-                    maxWidth: '300px',
+                    width: '290px',
                     $nest: {
-                        '& .circle': {
-                            position: 'relative',
-                            height: '150px',
-                            display: 'flex',
-                            alignItems: 'center',
-                            justifyContent: 'center',
-                            width: '150px',
-                            borderRadius: '50%',
-                            // backgroundColor: 'red',
-                            border: 'solid black 3px',
-                            $nest: { 
-                                '& .circle_color': {
-                                    height: '105%',
-                                    width: '105%',
+                        '& .circle-wrapper': {
+                            position: 'absolute',
+                            top: 0,
+                            left: 0,
+                            right: 0,
+                            $nest: {
+                                '& .circle': {
+                                    margin: 'auto',
+                                    position: 'relative',
+                                    height: '150px',
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    justifyContent: 'center',
+                                    width: '150px',
                                     borderRadius: '50%',
-                                    position: 'absolute',
-                                    left: -10,
-                                    top: -10,
-                                    backgroundColor: '#33DFCA',
-                                    zIndex: -1
+                                    // backgroundColor: 'red',
+                                    border: 'solid black 3px',
+                                    $nest: { 
+                                        '& .circle_color': {
+                                            height: '105%',
+                                            width: '105%',
+                                            borderRadius: '50%',
+                                            position: 'absolute',
+                                            left: -10,
+                                            top: -10,
+                                            backgroundColor: '#33DFCA',
+                                            zIndex: -1
+                                        },
+                                        '& .num': {
+                                            zIndex: 1,
+                                            fontFamily: 'GothamBold',
+                                            fontSize: '36px'
+                                        }
+                                    }
                                 },
-                                '& .num': {
-                                    zIndex: 1,
-                                    fontFamily: 'GothamBold',
-                                    fontSize: '36px'
-                                }
                             }
                         },
                         '& .step_title': {
+                            position: 'absolute',
+                            top: 200,
                             fontFamily: 'GothamLight',
                             color: 'rgba(153, 38, 247, 1)',
                             $nest: {
@@ -66,6 +79,7 @@ const HomeHowItWorkStyle = style({
                             }
                         },
                         '& p': {
+                            margin: 'auto',
                             fontFamily: 'GothamMedium',
                             lineHeight: 1.2,
                             fontSize: '15px',
@@ -91,7 +105,7 @@ const HomeHowItWorkStyle = style({
             fontSize: '20px',
             padding: '20px',
             color: 'white',
-            marginBottom: '50px'
+            marginBottom: '150px'
         }
     }
 })

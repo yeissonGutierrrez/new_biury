@@ -1,6 +1,6 @@
 import React, {useEffect, useRef, useState} from 'react'
 import ProductItemStyle from '../../styles/components/ProductItemStyle/ProductItemStyle'
-import image1 from '../../assets/images/Home/ProductSeccion/item1.png'
+
 import Rating from '../../assets/images/components/Rating/Rating'
 import gsap from 'gsap'
 
@@ -8,7 +8,7 @@ import stars from '../../assets/images/Home/ProductSeccion/starts.svg'
 
 
 
-function ProductItem({bgColor, title, text}) {
+function ProductItem({data}) {
     const [show, setShow] = useState(false)
     const ref = useRef()
 
@@ -26,13 +26,13 @@ function ProductItem({bgColor, title, text}) {
     return (
         <div className={ProductItemStyle}>
             <div ref={ref} onMouseEnter={() => setShow(true)} onMouseLeave={() => setShow(false)} className='item_image'>
-                <img src={image1}/>
+                <img src={data.image}/>
                 {
                     show 
                     ?
-                        <div style={{backgroundColor: bgColor}} className='hover_contain'>
-                            <h4> {title}</h4>
-                            <p>{text}</p>
+                        <div style={{backgroundColor: data.bgColor}} className='hover_contain'>
+                            <h4> {data.title}</h4>
+                            <p>{data.text}</p>
                         </div>
                     : null
                 }

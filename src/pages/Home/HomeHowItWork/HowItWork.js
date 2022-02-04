@@ -10,27 +10,33 @@ function HowItWork() {
 
             <div className='steps_container'>
                 <div className='steps'>
-                    <div className='circle'>
-                        <span className='num'>1</span>
-                        <div className='circle_color'></div>
+                    <div className='circle-wrapper'>
+                        <div className='circle'>
+                            <span className='num'>1</span>
+                            <div className='circle_color'></div>
+                        </div>
                     </div>
                     <h1 className='step_title'>VIVE LA EXPERIENCIA <span>BIURY</span></h1>
-                    <p>Nuestros expertos te acompañan en el proceso y personalizarán tu caja</p>
+                    <p>Nuestros expertos <br/> te acompañan en el proceso <br/> y personalizarán tu caja</p>
                 </div>
 
                 <div className='steps'>
-                    <div className='circle'>
-                        <span className='num'>2</span>
-                        <div className='circle_color'></div>
+                    <div className='circle-wrapper'>
+                        <div className='circle'>
+                            <span className='num'>2</span>
+                            <div className='circle_color'></div>
+                        </div>
                     </div>
                     <h1 className='step_title'>ACTIVA TU MEMBRESÍA</h1>
-                    <p>Realiza el pago sin cláusulas de permanecia</p>
+                    <p>Realiza el pago sin <br/> cláusulas de permanecia</p>
                 </div>
 
                 <div className='steps'>
-                    <div className='circle'>
-                        <span className='num'>3</span>
-                        <div className='circle_color'></div>
+                    <div className='circle-wrapper'>
+                        <div className='circle'>
+                            <span className='num'>3</span>
+                            <div className='circle_color'></div>
+                        </div>
                     </div>
                     <h1 className='step_title'>RECIBE <br/> DONDE QUIERAS</h1>
                     <p>Envío gratis</p>

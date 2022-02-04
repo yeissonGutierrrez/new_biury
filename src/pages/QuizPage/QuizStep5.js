@@ -2,7 +2,7 @@
 import QuizButton from './QuizButton'
 
 
-function QuizStep5() {
+function QuizStep5({setStep}) {
     return (
         <div className="step5">
             <h4 className='question-title'>¿CUÁL ES TU COLOR <br/> DE PELO?</h4>
@@ -21,8 +21,8 @@ function QuizStep5() {
             </div>
 
             <div className='pagination-container'>
-                <button className='pagination-button'>ANTERIOR</button>
-                <button className='pagination-button'>CONTINUAR</button>
+                <button onClick={() => setStep('step4')} className='pagination-button'>ANTERIOR</button>
+                <button onClick={() => setStep('suscribe')} className='pagination-button'>CONTINUAR</button>
             </div>
         </div>
     )
