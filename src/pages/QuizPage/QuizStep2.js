@@ -14,7 +14,9 @@ function  QuizStep2({setStep}) {
             <div className='answers-wrapper'>
                 <div className='answer'>
                     <img src={face1}/>
-                    <QuizButton width={'150px'} bgColor='rgb(215,247,229)' borderColor='#BCF1D3' question='Normal'/>
+                    <div className='button'>
+                        <QuizButton width={'150px'} bgColor='rgb(215,247,229)' borderColor='#BCF1D3' question='Normal'/>
+                    </div>
                     <p>
                         · Suave y uniforme. <br/>
                         · Luminosa <br/>
@@ -25,7 +27,9 @@ function  QuizStep2({setStep}) {
 
                 <div className='answer'>
                     <img src={face2}/>
-                    <QuizButton width={'150px'} bgColor='rgb(253,219,212)' borderColor='#FBC3B8' question='Grasa'/>
+                    <div className='button'>
+                        <QuizButton width={'150px'} bgColor='rgb(253,219,212)' borderColor='#FBC3B8' question='Grasa'/>
+                    </div>
                     <p>
                         · Producción <br/>
                         excesiva de grasa. <br/>
@@ -39,7 +43,9 @@ function  QuizStep2({setStep}) {
                 
                 <div className='answer'>
                     <img src={face3}/>
-                    <QuizButton width={'150px'} bgColor='rgb(251,227,169)' borderColor='#F7D06F' question='Mixta'/>
+                    <div className='button'>
+                        <QuizButton width={'150px'} bgColor='rgb(251,227,169)' borderColor='#F7D06F' question='Mixta'/>
+                    </div>
                     <p>
                         · Combinación <br/>
                         de zona T grasa <br/>
@@ -51,7 +57,9 @@ function  QuizStep2({setStep}) {
 
                 <div className='answer'>
                     <img src={face4}/>
-                    <QuizButton width={'150px'} bgColor='rgb(247,197,182)' borderColor='#F19E85' question='Seca'/>
+                    <div className='button'>
+                        <QuizButton width={'150px'} bgColor='rgb(247,197,182)' borderColor='#F19E85' question='Seca'/>
+                    </div>
                     <p>
                     Tirante y seca. <br/>
                     · Alta duración del maquillaje. <br/>
@@ -63,7 +71,9 @@ function  QuizStep2({setStep}) {
 
                 <div className='answer'>
                     <img src={face5}/>
-                    <QuizButton width={'150px'} bgColor='rgb(202,102,249)' borderColor='#A600F5' question='Sensible'/>
+                    <div className='button'>
+                        <QuizButton width={'150px'} bgColor='rgb(202,102,249)' borderColor='#A600F5' question='Sensible'/>
+                    </div>
                     <p>
                     Tendencia a <br/>
                     ponerse roja. <br/>

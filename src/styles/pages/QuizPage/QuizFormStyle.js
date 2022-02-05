@@ -9,6 +9,7 @@ const QuizFormStyle = style({
         '& .navbar': {
             display:'flex',
             justifyContent: 'space-between',
+            alignItems: 'center',
             padding: '10px 50px',
             height: '100px',
             borderBottom: 'solid #00FF52 5px',
@@ -94,12 +95,9 @@ const QuizFormStyle = style({
                             fontSize: '20px',
                             fontFamily: 'GothamLight'
                         },
-                        'button': {
+                        '& .button': {
                             position: 'absolute',
-                            top: 220,
-                            left: 0,
-                            right: 0,
-                            margin: 'auto',
+                            top: 240,
                         }
                     }
                 },
@@ -133,15 +131,14 @@ const QuizFormStyle = style({
                     $nest: {
                         '& .answers-container': {
                             display: 'flex',
-                            width: '90%',
+                            width: '100%',
                             marginBottom: '30px',
                             justifyContent: 'space-evenly',
                         },
                         '& .answers-container2': {
                             display: 'flex',
-                            width: '60%',
+                            width: '70%',
                             justifyContent: 'space-evenly',
-                            marginBottom: '80px'
                         },
                     }
                 }
@@ -164,7 +161,6 @@ const QuizFormStyle = style({
                     alignItems: 'center',
                     width: '50%',
                     margin: '40px 0',
-                    marginBottom: '90px'
                 }
             },
         },
@@ -197,7 +193,44 @@ const QuizFormStyle = style({
                             display: 'flex',
                             width: '60%',
                             justifyContent: 'space-evenly',
-                            marginBottom: '80px'
+                        },
+                    }
+                }
+            },
+        },
+
+        '& .step6': {
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'center',
+            paddingTop: '100px',
+            $nest: {
+                '& .question-title': {
+                    margin: 0,
+                    marginBottom: '50px'
+                },
+                '& .paragraph1': {
+                    color: '#FF7065',
+                    margin: '40px 0'
+                },
+                '& .answers-wrapper': {
+                    display: 'flex',
+                    flexDirection: 'column',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    width: '50%',
+                    $nest: {
+                        '& .answers-container': {
+                            display: 'flex',
+                            width: '100%',
+                            marginBottom: '30px',
+                            justifyContent: 'space-evenly',
+                        },
+                        '& .answers-container2': {
+                            display: 'flex',
+                            width: '70%',
+                            justifyContent: 'space-evenly',
                         },
                     }
                 }
@@ -310,10 +343,11 @@ const QuizFormStyle = style({
             textAlign: 'center',
             fontFamily: 'GothamBold',
             fontSize: '21px',
-            marginBottom: '40px'
+            margin: '40px 0'
         },
 
         '& .pagination-button': {
+            cursor: 'pointer',
             fontFamily: 'GothamBold',
             fontSize: '22px',
             width: '290px',

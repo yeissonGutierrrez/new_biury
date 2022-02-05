@@ -12,9 +12,9 @@ function QuizStep4({ setStep }) {
             y cuidados distintos.
             </p>
             <div className='answers-wrapper'>
-                <QuizButton width={'200px'} bgColor='rgb(250,225,212)' borderColor='#F6CDB7' question='Seca'/>
-                <QuizButton width={'200px'} bgColor='rgb(223,187,160)' borderColor='#CA8D61' question='Seca'/>
-                <QuizButton width={'200px'} bgColor='rgb(162,126,105)' borderColor='#642805' question='Seca'/>
+                <QuizButton width={'200px'} bgColor='rgb(250,225,212)' borderColor='#F6CDB7' question='Clara'/>
+                <QuizButton width={'200px'} bgColor='rgb(223,187,160)' borderColor='#CA8D61' question='Media'/>
+                <QuizButton width={'200px'} bgColor='rgb(162,126,105)' borderColor='#642805' question='Oscura'/>
             </div>
 
             <div className='pagination-container'>

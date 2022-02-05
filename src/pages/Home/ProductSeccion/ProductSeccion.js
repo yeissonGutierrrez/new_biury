@@ -68,15 +68,15 @@ function ProductSeccion() {
       wrapper.addEventListener('mouseleave', mouseLeaveEvent);
   
       animateDotOutline();
-  
+      
       return () => {
         wrapper.removeEventListener('mousedown', mouseOverEvent);
         wrapper.removeEventListener('mouseup', mouseOutEvent);
         wrapper.removeEventListener('mousemove', mouseMoveEvent);
         wrapper.removeEventListener('mouseenter', mouseEnterEvent);
         wrapper.removeEventListener('mouseleave', mouseLeaveEvent);
-  
-        cancelAnimationFrame(requestRef.current);
+        
+        cancelAnimationFrame(requestRef.current)
       };
     }, []);
   

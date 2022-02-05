@@ -10,7 +10,7 @@ function Question({Question, answer, image, margin}) {
     return (
         <div style={{margin: margin}} className={QuestionStyle}>
             <img className='photo' src={image}/>
-            <Accordion>
+            <Accordion className='myAccordion'>
                 <AccordionSummary
                 aria-controls="panel1a-content"
                 className='myAccordionHeader'

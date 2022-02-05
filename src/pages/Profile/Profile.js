@@ -11,14 +11,19 @@ import UserProfile from './UserProfile'
 
 
 function Perfil () {
-    const [Seccion, setSeccion] = useState('1')
+    const [state, setState] = useState('')
     const user = sessionStorage.getItem('userName')
     return (
         <>
         <Navbar></Navbar>
         <div className={PerfilStyle}>
-          {/* <UserProfile/> */}
-          <Register/>
+          {
+            state === 'logined'
+            ?
+            <UserProfile/> 
+            : 
+            <Register setState={setState}/>
+          }
         </div>
         <Footer></Footer>
         </>

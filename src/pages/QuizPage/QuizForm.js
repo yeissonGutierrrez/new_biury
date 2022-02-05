@@ -9,8 +9,10 @@ import QuizStep2 from "./QuizStep2"
 import QuizStep3 from "./QuizStep3"
 import QuizStep4 from "./QuizStep4"
 import QuizStep5 from "./QuizStep5"
+import QuizStep6 from './QuizStep6'
 import Suscribe from "./Suscribe"
 import Navbar from "../../components/layout/Navbar/Navbar"
+import { Link } from "react-router-dom"
 
 function QuizForm({setStep, step}) {
     return (
@@ -18,7 +20,9 @@ function QuizForm({setStep, step}) {
 
             <div className="wrapper">
                         <div className="navbar">
-                            <img src={LogoBlack}/>
+                            <Link to={'/'}>
+                                <img src={LogoBlack}/>
+                            </Link>
                             <h1>Quiz</h1>
                         </div> 
                 {
@@ -48,6 +52,9 @@ function QuizForm({setStep, step}) {
                     <>
                         <QuizStep5 setStep={setStep}/>
                     </>
+                    : step === 'step6'
+                    ? 
+                        <QuizStep6 setStep={setStep}/>
                     : null
                 }
 

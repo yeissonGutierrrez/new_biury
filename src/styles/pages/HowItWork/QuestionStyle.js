@@ -8,6 +8,10 @@ const QuestionStyle = style({
         '& .photo': {
             margin: 'auto',
         },
+        '& .myAccordion': {
+            width: '80%',
+            margin: 'auto'
+        },
         '& .myAccordionHeader': {
             backgroundColor: '#A125F4',
             border: 'solid 2px white',
@@ -18,7 +22,7 @@ const QuestionStyle = style({
                     margin: 'auto',
                     color: 'white',
                     fontFamily: 'GothamBold',
-                    fontSize: '30px',
+                    fontSize: '24px',
                 }
             }
         },

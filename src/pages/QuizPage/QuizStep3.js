@@ -10,14 +10,14 @@ function QuizStep3({setStep}) {
             que le pones a cada instante.</p>
             <div className='answers-wrapper'>
                 <div className='answers-container'>
-                    <QuizButton width={'170px'} bgColor='rgb(102,245,187)' borderColor='#00EF8E' question='Seca'/>
-                    <QuizButton width={'170px'} bgColor='rgb(102,245,187)' borderColor='#00EF8E' question='Seca'/>
-                    <QuizButton width={'170px'} bgColor='rgb(102,245,187)' borderColor='#00EF8E' question='Seca'/>
+                    <QuizButton width={'200px'} bgColor='rgb(102,245,187)' borderColor='#00EF8E' question='Menos de 25'/>
+                    <QuizButton width={'200px'} bgColor='rgb(102,245,187)' borderColor='#00EF8E' question='25 a 30 años'/>
+                    <QuizButton width={'200px'} bgColor='rgb(102,245,187)' borderColor='#00EF8E' question='30 a 38 años'/>
                 </div>
 
                 <div className='answers-container2'>
-                    <QuizButton width={'170px'} bgColor='rgb(102,245,187)' borderColor='#00EF8E' question='Seca'/>
-                    <QuizButton width={'170px'} bgColor='rgb(102,245,187)' borderColor='#00EF8E' question='Seca'/>
+                    <QuizButton width={'200px'} bgColor='rgb(102,245,187)' borderColor='#00EF8E' question='38 a 60 años'/>
+                    <QuizButton width={'200px'} bgColor='rgb(102,245,187)' borderColor='#00EF8E' question='Más de 60 años'/>
                 </div>
             </div>
 

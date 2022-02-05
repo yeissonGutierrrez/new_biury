@@ -267,6 +267,7 @@ const PerfilStyle = style({
                 '& .buttons-wrapper': {
                     $nest: {
                         '& button': {
+                            cursor: 'pointer',
                             margin: '10px 0',
                             backgroundColor: 'black',
                             border: 'none',

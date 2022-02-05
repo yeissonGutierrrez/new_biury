@@ -131,12 +131,13 @@ import { style } from "typestyle";
                 },
 
                 '& button': {
+                    cursor: 'pointer',
                     fontSize: '22px',
                     fontFamily: 'GothamBold',
                     backgroundColor: '#00FF58',
                     width: '290px',
                     marginTop: '90px',
-                    padding: '10px',
+                    padding: '20px',
                     border: 'none',
                     $nest: {
                         '& span': {

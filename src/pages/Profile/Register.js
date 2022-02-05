@@ -3,7 +3,7 @@
 import facebookIcon from '../../assets/images/Profile/buttonFacebookIcon.svg'
 
 
-function Register() {
+function Register({setState}) {
     return (
         <>
             <h1 className="title">PERFIL BIURY<span>CLUB</span></h1>
@@ -43,7 +43,7 @@ function Register() {
                       </label>
                 </div>
                 <div className="buttons-wrapper">
-                    <button>
+                    <button onClick={()=> setState('logined')}>
                         CONTINUAR
                     </button>
 
