@@ -12,6 +12,9 @@ const HeroSeccionStyle = style({
     backgroundSize: 'cover',
     height: '120vh',
     $nest: {
+        '& .wrapperColorMobile': {
+            display: 'none'
+        },
         '& .hero_container': {
             $nest: {
                 '& .whatsapp_button': {
@@ -23,7 +26,7 @@ const HeroSeccionStyle = style({
                 '& .info_container': {
                     position: 'absolute',
                     top: 350,
-                    right: 80,
+                    right: 20,
                     bottom: 300,
                     maxWidth: '780px',
                     textAlign: 'end',
@@ -59,7 +62,82 @@ const HeroSeccionStyle = style({
         '& .wave': {
             position: 'absolute',
             bottom: 0,
-        }
+        },
+        '@media screen and (max-width: 1200px) and (min-width: 961px)': {
+            // background: 'red'
+            backgroundPositionX: '-220px',
+            backgroundSize: '130vw',
+            $nest: {
+                '& .hero_container': {
+                    $nest: {
+                        '& .whatsapp_button': {
+                            bottom: 30,
+                            right: 80,
+                            zIndex: 1,
+                        }
+                    }
+                }
+            }
+        },
+        '@media screen and (max-width: 960px) and (min-width: 801px)': {
+            // background: 'red'
+            backgroundPositionX: '-270px',
+            backgroundSize: '140vw',
+            height: '110vh',
+            $nest: {
+                '& .hero_container': {
+                    $nest: {
+                        '& .whatsapp_button': {
+                            bottom: 10,
+                            right: 80,
+                            zIndex: 1,
+                        },
+                        '& .info_container': {
+                            top: 250,
+                            $nest: {
+                                '& h1': {
+                                    fontSize: '32px',
+                                },
+                                '& p': {
+                                    fontSize: '25px',
+                                },
+                            }
+                        }
+                    }
+                },
+            }
+        },
+        '@media screen and (max-width: 800px)': {
+            height: '120vh',
+            $nest: {
+                '& .hero_container': {
+                    $nest: {
+                        '& .info_container': {
+                            top: 240,
+                            left: 0,
+                            right: 0,
+                            textAlign: 'center',
+                            $nest: {
+                                '& h1': {
+                                    margin: '20px',
+                                    fontSize: '32px',
+                                },
+                                '& p': {
+                                    margin: '40px',
+                                    fontSize: '25px',
+                                },
+                            }
+                        }
+                    }
+                },
+                '& .wrapperColorMobile': {
+                    display: 'block',
+                    width: '100%',
+                    height: '100%',
+                    backgroundColor: 'rgb(255,185,190, 0.5)',
+                },
+            }
+        },
     }
     
 })

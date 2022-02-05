@@ -1,11 +1,14 @@
 
 import wave from '../../assets/images/Quiz/waveQuizGreen.svg'
+import waveMobile from '../../assets/images/Quiz/waveGreenMobile.svg'
 
 function QuizRegister({setStep}) {
     return (
         <>
         <div className="QuizRegister"> 
-            <img className='wave' src={wave}/>
+            <div className='wave'>
+                <img src={wave}/>
+            </div>
             <h3>¡ESTÁS A POCOS PASOS <br/> DE SER USUARIO DE BUIRYCLUB!</h3>
             <div className='info'>
                 <div className='circle'>

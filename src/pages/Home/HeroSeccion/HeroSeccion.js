@@ -20,6 +20,7 @@ import wave from '../../../assets/images/Home/HeroSeccion/wave.svg'
                 </div>
                 <img className='whatsapp_button' src={whatsappButton}/>
             </div>
+            <div className='wrapperColorMobile'></div>
             <img className='wave' src={wave}/>
         </div>
     )

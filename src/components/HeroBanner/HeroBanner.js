@@ -34,7 +34,7 @@ function HeroBanner() {
       <div>
         <Marquee
           speed={100}
-          style={{ height: 150 }}
+          style={{ height: 150, width: '100vw' }}
           gradient={false}
           
         >

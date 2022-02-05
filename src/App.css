@@ -54,3 +54,23 @@ canvas {
   grid-template-columns: repeat(2, 1fr);
   row-gap: 40px;
 }
+
+.backdrop {
+  display: block !important;
+  background-color: #bb2c2c;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: scroll;
+  z-index: 10000;
+  animation-name: anim;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+}
+
+@keyframes anim {
+  0% { clip-path: circle(0% at 100% 0%)}
+  100% { clip-path: circle(150%);}
+ }

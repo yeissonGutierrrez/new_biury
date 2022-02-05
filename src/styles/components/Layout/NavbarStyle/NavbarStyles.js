@@ -5,6 +5,7 @@ import instagramIcon from '../../../../assets/images/components/layout/Navbar/In
 import wspIcon from '../../../../assets/images/components/layout/Navbar/wspIcon.svg'
 
 const NavbarStyle = style({
+    transition: 'top 0.5s',
     position: 'fixed',
     backgroundColor: '#242535',
     display: 'flex',
@@ -16,17 +17,21 @@ const NavbarStyle = style({
     right: 0,
     zIndex: 10000,
     $nest: {
-        '& .center': {
-            display: 'flex',
-            paddingLeft: '150px',
-            width: '30%',
+        '& .logo': {
+            position: 'absolute',
+            top: 15,
+            left: '42%',
         },
 
         '& .list_menu': {
             display: 'flex',
+            justifyContent: 'space-between',
             alignItems: 'center',
-            width: '35%',
+            width: '90%',
             $nest: {
+                '& .list': {
+                    display: 'flex',
+                },
                 '& a': {
                     display: 'flex',
                     alignItems: 'center',
@@ -40,8 +45,7 @@ const NavbarStyle = style({
                     textAlign: "center",
                 },
                 '& hr': {
-                    transform: 'rotate(90deg)',
-                    width: '60px',
+                    transform: 'rotate(180deg)',
                 },
                 '& .userIcon': {
                     display: 'inline-block',
@@ -75,6 +79,71 @@ const NavbarStyle = style({
                 },
             }
         },
+
+        '& .list_menu_mobile': {
+            display: 'none',
+        },
+        
+        '@media screen and (max-width: 1000px) and (min-width: 781px)': {
+            padding: '30px 0',
+            $nest: {
+                '& .logo': {
+                    position: 'absolute',
+                    top: 15,
+                    left: '45%',
+                },
+                '& .list_menu': {
+                    width: '95%',
+                    margin: 'auto',
+                    $nest: {
+                        '& a': {
+                            fontSize: '14px',
+                        },
+                        '& .shopIcon': {
+                            marginLeft: 0,
+                        },
+                    }
+                }
+            }
+        },
+        '@media screen and (max-width: 780px)': {
+            padding: '30px 0',
+            $nest: {
+                '& .list_menu_mobile': {
+                    display: 'flex',
+                    justifyContent: 'space-between',
+                    alignItems: 'center',
+                    width: '90%',
+                    margin: 'auto',
+                    $nest: {
+                        '& .logo_mobile': {
+                            position: 'relative',
+                            $nest: {
+                                '& img': {
+                                    width: '120px'
+                                }
+                            }
+                        },
+
+                        '& img': {
+                            width: '60px'
+                        },
+
+                        '& .suscription': {
+                            textDecoration: 'none',
+                            color: 'white',
+                            fontFamily: 'GothamBold',
+                            fontSize: '26px'
+                        }
+                            
+                        
+                    }
+                },
+                '& .list_menu': {
+                    display: 'none'
+                },
+            }
+        }
     },
 })
 
