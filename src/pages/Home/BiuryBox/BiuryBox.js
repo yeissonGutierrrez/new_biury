@@ -41,6 +41,7 @@ function BiuryBox() {
                 <h3 className='biuryBox_subtitle'>descubre: acceso exclusivo <br/> A regalos, descuentos <br/> E Información.</h3>
 
                 <button>UNETE A <span>BIURY</span>CLUB</button>
+                
             </div>
         </div>
     )

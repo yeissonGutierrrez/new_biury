@@ -2,7 +2,7 @@ import { style } from "typestyle";
 
 const FooterStyle = style({
     position: 'relative',
-    height: '80vh',
+    minHeight: '80vh',
     backgroundColor: '#FF6F5B',
     display: 'flex',
     flexDirection: "column",
@@ -71,7 +71,9 @@ const FooterStyle = style({
             }
         },
         '& .make_account__button': {
-            padding: '15px 50px',
+            width: '500px',
+            padding: '20px 0',
+            textAlign: 'center',
             fontSize: '20px',
             fontFamily: 'cocoGoth',
             backgroundColor: 'black',
@@ -93,7 +95,52 @@ const FooterStyle = style({
                     margin: '0 10px',
                 },
             }
-        }
+        },
+        '@media screen and (max-width: 670px) and (min-width: 320px)': {
+            padding: '20px 0',
+            $nest: {
+                '& .footer_title_one': {
+                    fontSize: '22px',
+                    color: 'white',
+                },
+                '& p': {
+                    fontSize: '16px',
+                    padding: '0 20px',
+                    fontFamily: 'GothamLight',
+                },
+                '& .input_container': {
+                    width: '100%',
+                    flexDirection: 'column',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    $nest: {
+                        '& img': {
+                            width: '200px',
+                            marginBottom: '20px'
+                        },
+                        '& .footer_input': {
+                            width: '80%',
+                            margin: 0
+                        },
+                    }
+                },
+                '& .make_account__button': {
+                    width: '80%',
+                    fontSize: '14px',
+                    marginBottom: 0
+                },
+
+                '& .links_container': {
+                    display: 'flex',
+                    margin: '30px 0',
+                    $nest: {
+                        '& .links_icons': {
+                            width: '25px'
+                        },
+                    }
+                },
+            }
+        },
     }
 })
 

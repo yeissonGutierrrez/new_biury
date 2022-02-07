@@ -1,11 +1,10 @@
 import { style } from "typestyle";
 
 const HomeHowItWorkStyle = style({
-    // backgroundColor: 'red',
-    // height: '10vh',
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
+    paddingBottom: '100px',
     $nest: {
         '& .title': {
             $nest: {
@@ -106,8 +105,101 @@ const HomeHowItWorkStyle = style({
             padding: '20px',
             color: 'white',
             marginBottom: '150px'
-        }
-    }
+        },
+        '@media screen and (max-width: 1100px) and (min-width: 820px)': {
+            overflow: 'hidden',
+            $nest: {
+                '& .title': {
+                    fontSize: '42px',
+                },
+                '& .subtitle': {
+                    textAlign: 'center',
+                    fontSize: '28px',
+                    margin: '0 30px'
+                },
+                '& .steps_container': {
+                    width: '90%'
+                },
+            }
+        },
+
+        '@media screen and (max-width: 820px)': {
+            // backgroundColor: 'red',
+            overflow: 'hidden',
+            $nest: {
+                '& .title': {
+                    textAlign: 'center',
+                    margin: '30px 20px',
+                    fontSize: '34px',
+                },
+                '& .subtitle': {
+                    textAlign: 'center',
+                    fontSize: '28px',
+                    margin: '0 30px'
+                },
+                '& .steps_container': {
+                    width: '90%',
+                    flexDirection: 'column',
+                    alignItems: 'center',
+                    $nest: {
+                        '& .steps': {
+                            paddingTop: '300px',
+                            margin: '30px 0',
+                            $nest: {
+                                '& .step_title': {
+                                    top: 180,
+                                    fontSize: '28px',
+                                    $nest: {
+                                        '& span': {
+                                            fontFamily: 'GothamBold',
+                                        }
+                                    }
+                                },
+                                '& p': {
+                                    margin: 'auto',
+                                    fontFamily: 'GothamMedium',
+                                    lineHeight: 1.2,
+                                    fontSize: '15px',
+                                },
+                            }
+                        }
+                    },
+                },
+            }
+        },
+
+        '@media screen and (max-width: 420px) and (min-width: 320px)': {
+            // backgroundColor: 'red',
+            overflow: 'hidden',
+            $nest: {
+                '& .title': {
+                    textAlign: 'center',
+                    margin: '30px 20px',
+                    fontSize: '24px',
+                },
+                '& .subtitle': {
+                    textAlign: 'center',
+                    fontSize: '24px',
+                    margin: '0 20px'
+                },
+                '& .steps_container': {
+                    margin: 0,
+                },
+                '& button': {
+                    fontSize: '16px',
+                    marginBottom: '50px'
+                },
+                '& .subtitle': {
+                    fontSize: '22px',
+                    $nest: {
+                        '& span': {
+                            fontFamily: 'GothamLight',
+                        }
+                    }
+                },
+            }
+        },
+    },
 })
 
 export default HomeHowItWorkStyle

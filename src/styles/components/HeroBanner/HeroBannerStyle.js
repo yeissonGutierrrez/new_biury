@@ -11,7 +11,23 @@ const HeroBannerStyle = style({
     alignItems: 'center',
     bottom: '0',
     backgroundColor: 'rgb(196,196,196)',
-    zIndex: 1
+    zIndex: 1,
+    $nest: {
+        '& .mobile-banner': {
+            display: 'none',
+        },
+        '@media screen and (max-width: 700px)': {
+            $nest: {
+              '& .mobile-banner': {
+                  display: 'block',
+              },
+              '& .desktop-banner': {
+                  display: 'none',
+              },
+          }  
+        }
+    }
+    
 })
 
 export default HeroBannerStyle

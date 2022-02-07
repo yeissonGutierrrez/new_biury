@@ -31,9 +31,34 @@ function HeroBanner() {
   return (
     <div className={HeroBannerStyle}>
 
-      <div>
+      <div className='desktop-banner'>
         <Marquee
           speed={100}
+          style={{ height: 150, width: '100vw' }}
+          gradient={false}
+          
+        >
+          {
+            marks.map((mark, index) => {
+              return (
+                <img  key={index} src={mark} alt="mark" style={{ width: `${100 / marks.length}%`, margin: '20px' }} />
+              )
+            })
+          }
+          {
+            marks.map((mark, index) => {
+              return (
+                <img key={index} src={mark} alt="mark" style={{ width: `${100 / marks.length}%`, margin: '20px' }} />
+              )
+            })
+          }
+        </Marquee>
+
+      </div>
+
+      <div className='mobile-banner'>
+        <Marquee
+          speed={50}
           style={{ height: 150, width: '100vw' }}
           gradient={false}
           
