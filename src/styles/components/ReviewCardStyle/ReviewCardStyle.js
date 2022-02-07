@@ -9,7 +9,7 @@ const ReviewCardStyle = style({
     flexDirection: "column",
     width: '90%',
     backgroundColor: 'White',
-    height: '380px',
+    minHeight: '380px',
     $nest: {
         '& .review_photo': {
             borderRadius: '50%',
@@ -45,6 +45,10 @@ const ReviewCardStyle = style({
                     fontSize: '16px'
                 }
             }
+        },
+
+        '@media screen and (max-width: 430px)': {
+            width: '70%'
         }
     }
 })

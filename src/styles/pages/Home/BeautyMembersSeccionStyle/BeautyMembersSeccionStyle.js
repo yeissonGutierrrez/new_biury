@@ -1,8 +1,9 @@
 const { style } = require("typestyle");
 
 const BeautyMembersSeccionStyle = style({
+    position: 'relative',
     backgroundColor: 'red',
-    height: '70vh',
+    minHeight: '70vh',
     display: 'flex',
     $nest: {
         '& .seccion1': {
@@ -44,6 +45,9 @@ const BeautyMembersSeccionStyle = style({
                         '& .heart_icon': {
                             float: 'right',
                             marginTop: '-70px'
+                        },
+                        '& .gallery-mobile': {
+                            display: 'none'
                         },
                         '& .gallery': {
                             display: 'flex',
@@ -89,6 +93,164 @@ const BeautyMembersSeccionStyle = style({
         '& .seccion2': {
             width: '40%',
             backgroundColor: '#67FF6C'
+        },
+        '& .swiper-container-horizontal>.swiper-pagination-bullets, .swiper-pagination-custom, .swiper-pagination-fraction': {
+            display: 'none',
+        },
+        '& .swiper-button-next, .swiper-button-prev':{
+            display: 'none'
+        },
+        '@media screen and (max-width: 1400px) and (min-width: 1160px)': {
+            $nest: {
+                '& .seccion1': {
+                    $nest: {
+                        '& .content': {
+                            $nest: {
+                                '& .gallery': {
+                                    width: '90vw',
+                                }
+                            }
+                        }
+                    }
+                },
+            }
+        },
+
+        '@media screen and (max-width: 1159px)': {
+            $nest: {
+                '& .seccion1': {
+                    display: 'flex',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    paddingTop: '80px',
+                    width: '100%',
+                    $nest: {
+                        '& .content': {
+                            position: 'static',
+                            $nest: { 
+                                '& .links': {
+                                    margin: '10px 50px'
+                                },
+                                '& .hashtag': {
+                                    fontSize: '30px',
+                                    margin: '10px 50px',
+                                    $nest: {
+                                        '& span': {
+                                            fontFamily: 'GothamLight',
+                                        }
+                                    }
+                                },
+                                '& .subtitle': {
+                                    fontSize: '22px',
+                                    margin: '10px 50px',
+                                    $nest: {
+                                        '& span': {
+                                            fontFamily: 'GothamLight',
+                                        }
+                                    }
+                                },
+                                '& .heart_icon': {
+                                    display: 'none',
+                                },
+                                '& .gallery': {
+                                    display: 'grid',
+                                    margin: '80px auto',
+                                    width: '80%',
+                                    gap: '50px 15px',
+                                    gridTemplateColumns: 'repeat(auto-fill, minmax(250px, 1fr))',
+                                }
+                            }
+                        }
+                    }
+                },
+                '& .seccion2': {
+                    display: 'none',
+                },
+                
+            }
+        },
+
+        '@media screen and (max-width: 650px) and (min-width: 320px)': {
+            $nest: {
+                '& .seccion1': {
+                    $nest: {
+                        '& .content': {
+                            $nest: {
+                                '& .gallery-mobile': {
+                                    position: 'relative',
+                                    display: 'block',
+                                    margin: 'auto',
+                                    width: '90vw',
+                                    padding: '50px 0px',
+                                    boxSizing: "border-box",
+                                    $nest :{
+                                        '& .swiper-slide': {
+                                            display: 'flex',
+                                            justifyContent: 'center',
+                                            alignItems: 'center',
+                                            width: '320px !important',
+                                            paddingBottom: '50px'
+                                        },
+                                        '& .navigations_buttons':{
+                                            position: "absolute",
+                                            top: '45%',
+                                            display: 'flex',
+                                            width: '100%',
+                                            justifyContent: 'space-between',
+                                            zIndex: 3,
+                                            $nest: {
+                                                '& .prev, .next': {
+                                                    fontFamily: 'Montserrat',
+                                                    color: 'black',
+                                                    fontSize: '18px',
+                                                    cursor: 'pointer',
+                                                    backgroundColor: 'blue',
+                                                    borderRadius: '50%'
+                                                },
+                                                '& .prev': {
+                                                    backgroundColor: '#202230'
+                                                },
+                                                '& .next': {
+                                                    backgroundColor: '#202230'
+                                                },
+                                            }
+                                        },
+                                    }
+                                },
+                                '& .subtitle': {
+                                    textAlign: 'center',
+                                    margin: '10px',
+                                    color: 'black',
+                                    paddingBottom: '50px',
+                                    $nest: {
+                                        '& span': {
+                                        }
+                                    }
+                                },
+                                '& .gallery': {
+                                    display: 'none',
+                                },
+                                '& .links': {
+                                    position: 'absolute',
+                                    top: 180,
+                                    right: 0,
+                                    left: 0,
+                                    margin: 'auto',
+                                    width: '40%',
+                                    $nest: {
+                                        '& img': {
+                                            width: '25px',
+                                        }
+                                    }
+                                },
+                                '& .hashtag': {
+                                    display: 'none'
+                                },
+                            }
+                        }
+                    }
+                },
+            }
         },
     }
 })

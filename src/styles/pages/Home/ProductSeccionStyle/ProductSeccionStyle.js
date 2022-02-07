@@ -11,7 +11,7 @@ const ProductSeccionStyle = style({
     $nest: {
         '& .products_container': {
             width: '100%',
-            height: '90vh',
+            minHeight: '90vh',
             $nest: {
                 '& .title': {
                     textAlign: 'center',
@@ -38,8 +38,12 @@ const ProductSeccionStyle = style({
                     }
                 },
                 '& .productsContain': {
-                    display: 'flex',
-                    justifyContent: 'space-evenly'
+                    display: 'grid',
+                    width: '80%',
+                    margin: 'auto',
+                    gap: '50px 15px',
+                    gridTemplateColumns: 'repeat(auto-fill, minmax(250px, 1fr))',
+                    
                 },
             }
         },
@@ -59,6 +63,57 @@ const ProductSeccionStyle = style({
         '& .wave': {
             position: 'absolute',
             bottom: 0,
+        },
+
+        '@media screen and (max-width: 1100px) and (min-width: 820px)': {
+            $nest: {
+                '& .products_container': {
+                    $nest: {
+                        '& .title': {
+                            fontSize: '42px',
+                        },
+                        '& .subtitle': {
+                            fontSize: '22px',
+                            $nest: {
+                                '& span': {
+                                    fontFamily: 'GothamLight',
+                                }
+                            }
+                        },
+                    }
+                }
+
+            }
+        },
+
+        '@media screen and (max-width: 820px)': {
+            $nest: {
+                '& .products_container': {
+                    '& .title': {
+                        textAlign: 'center',
+                        margin: '30px 20px',
+                        fontSize: '34px',
+                    },
+                    '& .subtitle': {
+                        fontSize: '20px',
+                        $nest: {
+                            '& span': {
+                                fontFamily: 'GothamLight',
+                            }
+                        }
+                    },
+                }
+            }
+        },
+
+        '@media screen and (max-width: 420px) and (min-width: 320px)': {
+            $nest: {
+                '& .title': {
+                    textAlign: 'center',
+                    margin: '30px 20px',
+                    fontSize: '24px',
+                },
+            }
         },
     }
 

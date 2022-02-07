@@ -5,14 +5,13 @@ import { style } from "typestyle";
 const ReviewsSectionStyle = style({
     backgroundColor: '#242535',
     padding: '40px 0',
-    height: '100vh',
+    minHeight: '100vh',
     display: 'flex',
     flexDirection: "column",
     justifyContent: 'center',
     alignItems: 'center',
     $nest: {
         '& .title': {
-            paddingTop: '120px',
             color: '#67FF6C',
             zIndex: 2,
             $nest: {
@@ -41,13 +40,58 @@ const ReviewsSectionStyle = style({
             border: 'none',
             padding: '20px',
             margin: 'auto',
-            marginBottom: '280px',
             $nest: {
                 '& span': {
                     fontFamily: 'GothamBold',
                 }
             }
-        }
+        },
+        '@media screen and (max-width: 1100px) and (min-width: 820px)': {
+            $nest: {
+                '& .title': {
+                    fontSize: '42px',
+                },
+                '& .subtitle': {
+                    fontSize: '22px',
+                    $nest: {
+                        '& span': {
+                            fontFamily: 'GothamLight',
+                        }
+                    }
+                },
+                    
+
+            }
+        },
+
+        '@media screen and (max-width: 820px)': {
+            $nest: {
+                '& .title': {
+                    textAlign: 'center',
+                    margin: '30px 20px',
+                    fontSize: '34px',
+                },
+                '& .subtitle': {
+                    fontSize: '20px',
+                    $nest: {
+                        '& span': {
+                            fontFamily: 'GothamLight',
+                        }
+                    }
+                },
+                
+            }
+        },
+
+        '@media screen and (max-width: 420px) and (min-width: 320px)': {
+            $nest: {
+                '& .title': {
+                    textAlign: 'center',
+                    margin: '30px 20px',
+                    fontSize: '24px',
+                },
+            }
+        },
     }
 })
 

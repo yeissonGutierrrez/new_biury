@@ -6,7 +6,6 @@ import bgImage from '../../../../assets/images/Home/HeroSeccion/cheerful-young-f
 const HeroSeccionStyle = style({
     position: "relative",
     backgroundImage: `url(${bgImage})`,
-    // marginTop: '100px',
     backgroundPosition: 'start',
     backgroundRepeat: 'no-repeat',
     backgroundSize: 'cover',
@@ -107,11 +106,17 @@ const HeroSeccionStyle = style({
                 },
             }
         },
-        '@media screen and (max-width: 800px)': {
-            height: '120vh',
+        '@media screen and (max-width: 800px) and (min-width: 421px)': {
+            backgroundPositionX: '-170px',
+            height: '130vh',
             $nest: {
                 '& .hero_container': {
                     $nest: {
+                        '& .whatsapp_button': {
+                            bottom: 0,
+                            right: 80,
+                            zIndex: 1,
+                        },
                         '& .info_container': {
                             top: 240,
                             left: 0,
@@ -119,8 +124,7 @@ const HeroSeccionStyle = style({
                             textAlign: 'center',
                             $nest: {
                                 '& h1': {
-                                    margin: '20px',
-                                    fontSize: '32px',
+                                    fontSize: '28px',
                                 },
                                 '& p': {
                                     margin: '40px',
@@ -128,6 +132,50 @@ const HeroSeccionStyle = style({
                                 },
                             }
                         }
+                    }
+                },
+                '& .wrapperColorMobile': {
+                    display: 'block',
+                    width: '100%',
+                    height: '100%',
+                    backgroundColor: 'rgb(255,185,190, 0.5)',
+                },
+            }
+        },
+        '@media screen and (max-width: 420px) and (min-width:320px)': {
+            backgroundPositionX: '-120px',
+            height: '100vh',
+
+            $nest: {
+                '& .hero_container': {
+                    $nest: {
+                        '& .whatsapp_button': {
+                            width: '80px',
+                            right: 20,
+                            bottom: 0,
+                        },
+                        '& .info_container': {
+                            top: 150,
+                            textAlign: 'center',
+                            $nest: {
+                                '& h1': {
+                                    margin: '0 20px',
+                                    fontSize: '22px',
+                                },
+                                '& p': {
+                                    margin: '40px',
+                                    fontSize: '22px',
+                                },
+                                '& button': {
+                                    fontSize: '16px',
+                                    $nest: {
+                                        '& span': {
+                                            fontFamily: 'GothamBold',
+                                        }
+                                    }
+                                }
+                            }
+                        },
                     }
                 },
                 '& .wrapperColorMobile': {

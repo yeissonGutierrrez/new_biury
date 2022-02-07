@@ -3,7 +3,7 @@ import { style } from "typestyle";
 const ProductItemStyle = style({
     position: "relative",
     width: '260px',
-    margin: '0',
+    margin: 'auto',
     cursor: 'pointer',
     $nest: {
         '& .item_image': {
