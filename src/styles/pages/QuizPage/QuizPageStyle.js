@@ -41,12 +41,12 @@ import { style } from "typestyle";
                                         paddingLeft: '20px',
                                         outline: 'none',
                                         fontSize: '20px',
-                                        fontFamily: 'cocoGoth',
+                                        fontFamily: 'GothamLight',
                                         color: '#202230',
                                         $nest: {
                                             '&::placeholder': {
                                                 fontSize: '20px',
-                                                fontFamily: 'cocoGoth',
+                                                fontFamily: 'GothamLight',
                                                 color: 'rgba(32, 34, 48, .5)',
                                                 
                                             }
@@ -222,7 +222,7 @@ import { style } from "typestyle";
                                 $nest: {
                                     '& img': {
                                         width: '120%'
-                                    }
+                                    },
                                 }
                             },
                             '& h3': {
@@ -274,20 +274,45 @@ import { style } from "typestyle";
                                 }
                             },
                             '& h3': {
-                                fontSize: '22px',
+                                fontSize: '17px',
                                 left: 5,
                                 right: 5,
+                                $nest: {
+                                    '& span': {
+                                        fontFamily: 'GothamLight'
+                                    }
+                                }
                             },
                             '& .info': {
                                 $nest: {
                                     '& .text': {
                                         $nest: {
                                             '& h1': {
-                                                fontSize: '22px',
+                                                width: '50%',
+                                                lineHeight: 1.2,
+                                                margin: 'auto',
+                                                fontSize: '17px',
                                             },
                                             '& p': {
-                                                fontSize: '18px',
+                                                
+                                                fontSize: '17px',
+                                                fontFamily: 'GothamBold',
+                                                $nest: {
+                                                    '& span': {
+                                                        display: 'block',
+                                                        margin: '20px 0'
+                                                    }
+                                                }
                                             },
+                                        }
+                                    },
+                                    '& .circle': {
+                                        height: '100px',
+                                        width: '100px',
+                                        $nest: {
+                                            '& .circle_color': {
+                                                top: 0,
+                                            }
                                         }
                                     }
                                 }
@@ -298,13 +323,13 @@ import { style } from "typestyle";
                                     '& .input': {
                                         $nest: {
                                             '& label': {
-                                                fontSize: '18px'
+                                                fontSize: '17px'
                                             },
                                             '& input': {
-                                                fontSize: '18px',
+                                                fontSize: '17px',
                                                 $nest: {
                                                     '&::placeholder': {
-                                                        fontSize: '18px'
+                                                        fontSize: '17px'
                                                     }
                                                 }
                                             },
@@ -314,7 +339,8 @@ import { style } from "typestyle";
                             },
 
                             '& button': {
-                                marginTop: '70px',
+                                width: '220px',
+                                marginTop: '60px',
                             },
                         }
                     },

@@ -8,6 +8,14 @@ import Logo from '../../../assets/images/LogoBiuryWhite.svg'
 import menuIcon from '../../../assets/images/components/layout/Navbar/mobileAmburguerIcon.svg'
 
 
+import userIcon from '../../../assets/images/components/layout/Navbar/userIconBorder.svg'
+import shopIcon from '../../../assets/images/components/layout/Navbar/shopIcon.svg'
+import instagramIcon from '../../../assets/images/components/layout/Navbar/InstagramIcon.svg'
+import wspIcon from '../../../assets/images/components/layout/Navbar/wspIcon.svg'
+import youtubeIcon from '../../../assets/images/components/layout/Navbar/youtubeIcon.svg'
+import closeIcon from '../../../assets/images/components/layout/Navbar/closeIcon.svg'
+
+
 function Navbar ({bgColor}) {
     const [isOpen, setIsOpen] = useState('');
     
@@ -37,9 +45,22 @@ function Navbar ({bgColor}) {
                         :
                         <Link to='/perfil'><i className='userIcon'></i> INGRESAR</Link>
                     }
-                    <Link to='/'><i className='shopIcon'></i></Link>
-                    <Link to='/'><i className='instagramIcon'></i></Link>
-                    <Link to='/'><i className='wspIcon'></i></Link>
+
+                            <Link className='shopIcon' to='/'>
+                                <img src={shopIcon}/>
+                            </Link>
+
+                            <Link className='instagramIcon' to='/'>
+                                <img src={instagramIcon}/>
+                            </Link>
+
+                            <Link className='youtubeIcon' to='/'>
+                                <img src={youtubeIcon}/>
+                            </Link>
+                            
+                            <Link to='/'>
+                                <img src={wspIcon}/>
+                            </Link>
                 </div>
             </div>
 
@@ -55,11 +76,53 @@ function Navbar ({bgColor}) {
 
                 <img onClick={() => setIsOpen('show')} src={menuIcon}/>  
 
-                <div style={{background: 'linear-gradient(231.97deg, #FE6706 -38.3%, #EF0C75 73.92%)', display: 'none'}} className={`${isOpen === 'show' ? "backdrop" : "" || isOpen === 'hidden' ? "hidden" : ""}`}>
+                <div style={{display: 'none', backgroundColor: bgColor}} className={`${isOpen === 'show' ? "backdrop" : "" || isOpen === 'hidden' ? "hidden" : ""}`}>
                         <Link className='logo_mobile' to={'/'}>
                             <img src={Logo}/>
                         </Link>
-                        <h1>Hola mundo</h1>
+
+                        <Link className='link-page' to={'/HowItWork'}>
+                            ¿CÓMO FUNCIONA?
+                        </Link>
+
+                        <Link className='link-page' to={'/'}>
+                            CREA TU PERFIL GRATIS
+                        </Link>
+
+                        <Link className='link-page' to={'/'}>
+                            ACTIVAR SUSCRIPCIÓN
+                        </Link>
+
+                        <div className='login'>
+                            {
+                                login === 'true'
+                                ?
+                                <Link to='/perfil'><img src={userIcon}/> {sessionStorage.getItem('userName')}</Link>
+                                :
+                                <Link to='/perfil'><img src={userIcon}/> INGRESAR</Link>
+                            }
+                        </div>
+
+                        <div className='list'>
+
+                            <Link to='/'>
+                                <img src={shopIcon}/>
+                            </Link>
+
+                            <Link to='/'>
+                                <img src={wspIcon}/>
+                            </Link>
+
+                            <Link className='youtubeIcon' to='/'>
+                                <img src={youtubeIcon}/>
+                            </Link>
+
+                            <Link to='/'>
+                                <img src={instagramIcon}/>
+                            </Link>
+                        </div>
+
+                        <img onClick={() => setIsOpen('hidden')} src={closeIcon}/>
                 </div>       
             </div>
         </div>

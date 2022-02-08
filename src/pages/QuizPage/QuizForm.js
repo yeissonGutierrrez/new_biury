@@ -4,6 +4,8 @@ import QuizFormStyle from "../../styles/pages/QuizPage/QuizFormStyle"
 import Footer from '../../components/layout/Footer/Footer'
 
 import LogoBlack from '../../assets/images/LogoBiuryBlack.svg'
+import quizLogo from '../../assets/images/Quiz/quizLogo.svg'
+
 import QuizStep1 from "./QuizStep1"
 import QuizStep2 from "./QuizStep2"
 import QuizStep3 from "./QuizStep3"
@@ -23,7 +25,7 @@ function QuizForm({setStep, step}) {
                             <Link to={'/'}>
                                 <img src={LogoBlack}/>
                             </Link>
-                            <h1>Quiz</h1>
+                            <img src={quizLogo}/>
                         </div> 
                 {
                     step === 'step1'

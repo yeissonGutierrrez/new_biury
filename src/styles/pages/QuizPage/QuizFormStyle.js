@@ -21,6 +21,19 @@ const QuizFormStyle = style({
                     fontFamily: 'GothamLight',
                     textTransform: 'uppercase',
                     fontSize: '44px',
+                },
+                
+                '@media screen and (max-width: 700px)': {
+                    $nest: {
+                        '& img': {
+                            width: '100px'
+                        },
+                        '& h1': {
+                            fontFamily: 'GothamLight',
+                            textTransform: 'uppercase',
+                            fontSize: '36px',
+                        },
+                    }
                 }
             }
         },
@@ -39,11 +52,13 @@ const QuizFormStyle = style({
                     textTransform: 'uppercase',
                 },
                 '& h2': {
+                    textAlign: 'center',
                     margin: 0,
                     fontFamily: 'GothamBold',
                     fontSize: '44px',
                 },
                 '& h3': {
+                    textAlign: 'center',
                     margin: '20px 0',
                     fontFamily: 'GothamLight',
                     fontSize: '35px',
@@ -63,10 +78,113 @@ const QuizFormStyle = style({
                     marginBottom: '40px'
                 },
                 '& .answers-wrapper': {
-                    display: 'flex',
                     margin: '30px 0',
-                    width: '60%',
-                    justifyContent: 'space-between'
+                    width: '80%',
+                    justifyContent: 'space-between',
+                    $nest: {
+                        '& .buttons': {
+                            display: 'flex',
+                            justifyContent: 'space-between',
+                            width: '800px',
+                            margin: 'auto',
+                            $nest: {
+                                '& .1': {
+                                    
+                                },
+                                
+                                '& .2': {
+                                },
+                                
+                                '& .3': {
+                                    
+                                },
+                                '& .two': {
+                                    display: 'flex',
+                                    justifyContent: 'space-between',
+                                    width: '525px',
+                                    paddingRight: '20px',
+                                    $nest: {
+                                        '& .1': {
+                
+                                        },
+                                        
+                                        '& .2': {
+                                           
+                                        },
+                                        
+
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                '@media screen and (max-width: 1200px)': {
+                    $nest: {
+                        '& .answers-wrapper': {
+                            width: '100%',
+                            $nest: {
+                                '& .buttons': {
+                                    display: 'flex',
+                                    flexDirection: 'column',
+                                    alignItems: 'center',
+                                    justifyContent: 'center',
+                                    width: '100%',
+                                    $nest: {
+
+                                        '& .two': {
+                                            width: '530px',
+                                            margin: '30px 0',
+                                        }
+                                    }
+                                }
+                            }
+                        },
+
+                    }
+                },
+                '@media screen and (max-width: 700px)': {
+                    $nest: {
+                        '& .user_name': {
+                            fontSize: '54px',
+                        },
+                        '& h2': {
+                            fontSize: '26px',
+                        },
+                        '& h3': {
+                            fontSize: '22px',
+                        },
+                        '& p': {
+                            fontSize: '16px',
+                        },
+                        '& .question-title': {
+                            fontSize: '24px',
+                        },
+                        '& .answers-wrapper': {
+                            width: '100%',
+                            $nest: {
+                                '& .buttons': {
+                                    display: 'flex',
+                                    flexDirection: 'column',
+                                    alignItems: 'center',
+                                    justifyContent: 'center',
+                                    width: '',
+                                    $nest: {
+
+                                        '& .two': {
+                                            flexDirection: 'column',
+                                            justifyContent: 'space-between',
+                                            height: '210px',
+                                            alignItems: 'center',
+                                            width: '300px !important',
+                                            padding: 0,
+                                        }
+                                    }
+                                }
+                            }
+                        },
+
+                    }
                 }
             },
         },
@@ -105,10 +223,113 @@ const QuizFormStyle = style({
                     color: '#AE50E2',
                 },
                 '& .answers-wrapper': {
-                    display: 'flex',
+                   display: 'flex',
                     margin: '30px 0',
                     width: '90%',
-                    justifyContent: 'space-between'
+                    $nest: {
+                        '& .two': {
+                            display: 'flex',
+                            justifyContent: 'space-between',
+                            width: '80%'
+                        },
+                        '& .one': {
+                            display: 'flex',
+                            justifyContent: 'space-between',
+                            width: '20%'
+                        },
+                        
+                    }
+                },
+                '@media screen and (max-width: 1500px)': {
+                    $nest: {
+                        '& .item': {
+                            width: '350px',
+                        },
+                        '& .answer': {
+                            width: '100%',
+                            $nest: {
+                                '& img': {
+                                    position: 'absolute',
+                                    top: 0,
+                                    width: '120px',
+                                },
+                                '& p': {
+                                    fontSize: '20px',
+                                    fontFamily: 'GothamLight'
+                                },
+                                '& .button': {
+                                    position: 'absolute',
+                                    top: 240,
+                                }
+                            }
+                        },
+                    }
+                },
+
+                '@media screen and (max-width: 1050px)': {
+                    $nest: {
+                        '& .answers-wrapper': {
+                            flexDirection: 'column',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            $nest: {
+                                '& .two': {
+                                    display: 'grid',
+                                    gridTemplateColumns: '1fr 1fr'
+                                },
+                                '& .one': {
+                                    width: '100%'
+                                }
+                            }
+                        },
+                    }
+                },
+
+                '@media screen and (max-width: 500px)': {
+                    $nest: {
+                        '& .question-title': {
+                            fontSize: '22px',
+                        },
+                        '& .answers-wrapper': {
+                            width: '100%',
+                            $nest: {
+                                '& .answer': {
+                                    $nest: {
+                                        '& img': {
+                                            width: '100px'
+                                        },
+                                        '& .button': {
+                                            top: 200
+                                        },
+                                        '& p': {
+                                            fontSize: '18px'
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        
+                    }
+                },
+
+                '@media screen and (max-width: 420px)': {
+                    $nest: {
+                        '& .answers-wrapper': {
+                            flexDirection: 'column',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            $nest: {
+                                '& .two': {
+                                    display: 'grid',
+                                    gridTemplateColumns: '1fr !important'
+                                },
+                                '& .one': {
+                                    width: '100%'
+                                }
+                            }
+                        },
+                        
+                    }
                 }
             },
         },
@@ -356,7 +577,12 @@ const QuizFormStyle = style({
             backgroundColor: '#242535',
             border: 'none',
             textTransform: 'uppercase',
-            margin: '80px 0'
+            margin: '80px 0',
+            $nest: {
+                '@media screen and (max-width: 700px)': {
+                    width: '220px',
+                }
+            }
         },
         '& .pagination-container': {
             display: 'flex',
