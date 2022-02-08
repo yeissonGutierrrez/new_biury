@@ -8,7 +8,11 @@ function Register({ setState }) {
   const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [wrongEmail, setWrongEmail] = useState(false);
+  const [faildField, setFaildFiels] = useState(false);
+  const [acceptTerms, setAcceptTerms] = useState(null);
 
+  //Evalua el cambio de los inputs
   const handleChange = (e, valueName) => {
     const { name, value } = e.target;
     if (name == 'setName') {
@@ -34,11 +38,33 @@ function Register({ setState }) {
       //let val = validationService.validationEmail(value);
       setPassword(value);
     }
+
+    if (name == 'setAcceptTerms') {
+      setAcceptTerms(value);
+    }
   };
 
+  //Function onClick to register
   const onClick = async () => {
-    const resp = await Auth.Login({ email, password });
+    setWrongEmail(false);
+    setFaildFiels(false);
 
+    if (name == '' || lastName == '' || password == '' || email == '') {
+      setFaildFiels(true);
+      return;
+    }
+
+    if (!validationService.validationEmail(email)) {
+      setWrongEmail(true);
+      return;
+    }
+
+    if (!acceptTerms || acceptTerms == null) {
+      setAcceptTerms(false);
+      return;
+    }
+
+    const resp = await Auth.Login({ email, password });
     if (resp.status == 200 || resp.status == 201) {
       setState('logined');
     }
@@ -83,6 +109,11 @@ function Register({ setState }) {
             ></input>
           </label>
         </div>
+        {wrongEmail == true ? (
+          <p className='danger-text'>
+            Por favor verifique su correo electrónico
+          </p>
+        ) : null}
         <div className='one-input'>
           <label>
             Contraseña
@@ -94,11 +125,24 @@ function Register({ setState }) {
             ></input>
           </label>
         </div>
+        {faildField == true ? (
+          <p className='danger-text'>Todo los campos son requeridos</p>
+        ) : null}
         <div className='checkout'>
           <label>
             He leído y acepto términos y condiciones
-            <input type='checkbox'></input>
+            <input
+              type='checkbox'
+              name='setAcceptTerms'
+              onChange={handleChange}
+              value={acceptTerms}
+            ></input>
           </label>
+          {acceptTerms == false ? (
+            <p className='danger-text'>
+              Debe aceptar los terminos y condiciones
+            </p>
+          ) : null}
           <label>
             Quiero recibir información
             <input type='checkbox'></input>
