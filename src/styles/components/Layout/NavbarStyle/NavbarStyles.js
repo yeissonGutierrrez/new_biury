@@ -71,17 +71,18 @@ const NavbarStyle = style({
                     backgroundRepeat: 'no-repeat',
                 },
                 '& .wspIcon': {
-                    display: 'inline-block',
-                    backgroundImage: `url(${wspIcon})`,
-                    width: '20px',
-                    height: '20px',
-                    backgroundRepeat: 'no-repeat',
+
                 },
             }
         },
 
         '& .list_menu_mobile': {
             display: 'none',
+            $nest: {
+                '& .show': {
+                    
+                }
+            }
         },
         
         '@media screen and (max-width: 1000px) and (min-width: 781px)': {
@@ -134,6 +135,58 @@ const NavbarStyle = style({
                             color: 'white',
                             fontFamily: 'GothamBold',
                             fontSize: '26px'
+                        },
+
+                        '& .backdrop': {
+                            display: 'flex !important',
+                            flexDirection: 'column',
+                            alignItems: 'center',
+                            justifyContent: 'space-evenly',
+                            $nest: {
+                                '& .logo_mobile': {
+                                    position: 'relative',
+                                    $nest: {
+                                        '& img': {
+                                            width: '150px'
+                                        },
+                                    }
+                                },
+
+                                '& .list': {
+                                    width: '50%',
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    justifyContent: 'space-between',
+                                    $nest: {
+                                        '& img': {
+                                            width: '25px'
+                                        }
+                                    }
+                                },
+
+                                '& .link-page': {
+                                    color: 'white',
+                                    textDecoration: 'none',
+                                    fontSize: '18px',
+                                    borderBottom: 'solid white 3px',
+                                    paddingBottom: '20px',
+                                    fontFamily: 'GothamMedium',
+                                },
+
+                                '& .login': {
+                                    $nest: {
+                                        '& a': {
+                                            color: 'white',
+                                            textDecoration: 'none',
+                                            fontSize: '22px'
+                                        },
+                                        '& img': {
+                                            width: '20px'
+                                        },
+                                        
+                                    }
+                                }
+                            }
                         }
                             
                         
@@ -143,7 +196,36 @@ const NavbarStyle = style({
                     display: 'none'
                 },
             }
-        }
+        },
+
+        '@media screen and (max-width: 515px) and (min-width: 320px)': {
+            $nest: {
+                '& .list_menu_mobile': {
+                    $nest: {
+                        '& .logo_mobile': {
+                            position: 'relative',
+                            $nest: {
+                                '& img': {
+                                    width: '80px'
+                                }
+                            }
+                        },
+
+                        '& img': {
+                            width: '45px'
+                        },
+
+                        '& .suscription': {
+                            textAlign: 'center',
+                            fontWeight: 900,
+                            fontSize: '18px',
+                        }
+                            
+                        
+                    }
+                },
+            }
+        },
     },
 })
 

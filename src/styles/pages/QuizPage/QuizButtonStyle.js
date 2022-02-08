@@ -22,7 +22,7 @@ const QuizButtonStyle = style({
             border: 'solid black 5px',
             width: '100%',
             height: '100%'
-        }
+        },
     }
 })
 

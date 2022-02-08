@@ -144,7 +144,7 @@ const HeroSeccionStyle = style({
         },
         '@media screen and (max-width: 420px) and (min-width:320px)': {
             backgroundPositionX: '-120px',
-            height: '100vh',
+            height: '90vh',
 
             $nest: {
                 '& .hero_container': {
