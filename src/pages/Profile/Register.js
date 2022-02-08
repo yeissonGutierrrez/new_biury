@@ -1,185 +1,219 @@
+import React, { useState } from 'react';
+import facebookIcon from '../../assets/images/Profile/buttonFacebookIcon.svg';
+import validationService from '../../helpers/validationFields';
+import Auth from '../../common/auth';
 
+function Register({ setState }) {
+  const [name, setName] = useState('');
+  const [lastName, setLastName] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
-import facebookIcon from '../../assets/images/Profile/buttonFacebookIcon.svg'
+  const handleChange = (e, valueName) => {
+    const { name, value } = e.target;
+    if (name == 'setName') {
+      let val = validationService.validName(value);
+      if (val || value == '') {
+        setName(value);
+      }
+    }
 
+    if (name == 'setLastName') {
+      let val = validationService.validName(value);
+      if (val || value == '') {
+        setLastName(value);
+      }
+    }
 
-function Register({setState}) {
-    return (
-        <>
-            <h1 className="title">PERFIL BIURY<span>CLUB</span></h1>
+    if (name == 'setEmail') {
+      //let val = validationService.validationEmail(value);
+      setEmail(value);
+    }
 
-            <h1 className='seccion-title2'>1. CREA UNA CUENTA O INICIA SESIÓN.</h1>
-            <div className="form">
-                <div className='two-inputs'>
-                    <label>
-                    Apellido
-                    <input type='text'></input>
-                    </label>
-                    <label>
-                    Apellido
-                    <input type='text'></input>
-                    </label>
-                </div>
-                <div className="one-input">
-                    <label>
-                    Correo electrónico
-                    <input type='text'></input>
-                    </label>
-                </div>
-                <div className="one-input">
-                    <label>
-                    Contraseña
-                    <input type='text'></input>
-                    </label>
-                </div>
-                <div className='checkout'>
-                      <label>
-                        He leído y acepto términos y condiciones
-                        <input type='checkbox'></input>
-                      </label>
-                      <label>
-                      Quiero recibir información
-                        <input type='checkbox'></input>
-                      </label>
-                </div>
-                <div className="buttons-wrapper">
-                    <button onClick={()=> setState('logined')}>
-                        CONTINUAR
-                    </button>
+    if (name == 'setPassword') {
+      //let val = validationService.validationEmail(value);
+      setPassword(value);
+    }
+  };
 
-                    <button className='facebook'>
-                        INICIAR SESIÓN USANDO FACEBOOK
-                        <img src={facebookIcon}/>
-                    </button>
+  const onClick = async () => {
+    const resp = await Auth.Login({ email, password });
 
-                    <button className='google'>
-                        INICIAR SESIÓN USANDO GOOGLE
-                    </button>
-                </div>
-            </div>
+    if (resp.status == 200 || resp.status == 201) {
+      setState('logined');
+    }
+  };
 
-            <h1 className='seccion-title2'>2. ¿A DÓNDE QUIERES QUE LLEGUE TU BIURYBOX?</h1>
-            <div className="form">
-                
-                <div className="one-input">
-                    <label>
-                    Correo electrónico
-                    <input type='text'></input>
-                    </label>
-                </div>
+  return (
+    <>
+      <h1 className='title'>
+        PERFIL BIURY<span>CLUB</span>
+      </h1>
 
-                <div className="one-input">
-                    <label>
-                    Correo electrónico
-                    <input type='text'></input>
-                    </label>
-                </div>
+      <h1 className='seccion-title2'>1. CREA UNA CUENTA O INICIA SESIÓN.</h1>
+      <div className='form'>
+        <div className='two-inputs'>
+          <label>
+            Nombre
+            <input
+              type='text'
+              name='setName'
+              onChange={handleChange}
+              value={name}
+            ></input>
+          </label>
+          <label>
+            Apellido
+            <input
+              type='text'
+              name='setLastName'
+              onChange={handleChange}
+              value={lastName}
+            ></input>
+          </label>
+        </div>
+        <div className='one-input'>
+          <label>
+            Correo electrónico
+            <input
+              type='text'
+              name='setEmail'
+              onChange={handleChange}
+              value={email}
+            ></input>
+          </label>
+        </div>
+        <div className='one-input'>
+          <label>
+            Contraseña
+            <input
+              type='text'
+              name='setPassword'
+              onChange={handleChange}
+              value={password}
+            ></input>
+          </label>
+        </div>
+        <div className='checkout'>
+          <label>
+            He leído y acepto términos y condiciones
+            <input type='checkbox'></input>
+          </label>
+          <label>
+            Quiero recibir información
+            <input type='checkbox'></input>
+          </label>
+        </div>
+        <div className='buttons-wrapper'>
+          <button onClick={onClick}>CONTINUAR</button>
 
-                <div className="one-input">
-                    <label>
-                    Correo electrónico
-                    <input type='text'></input>
-                    </label>
-                </div>
+          <button className='facebook'>
+            INICIAR SESIÓN USANDO FACEBOOK
+            <img src={facebookIcon} />
+          </button>
 
-                <div className="one-input">
-                    <label>
-                    Correo electrónico
-                    <input type='text'></input>
-                    </label>
-                </div>
+          <button className='google'>INICIAR SESIÓN USANDO GOOGLE</button>
+        </div>
+      </div>
 
-                <div className="two-inputs">
-                    <label>
-                    Correo electrónico
-                    <input type='text'></input>
-                    </label>
-                    <label>
-                    Correo electrónico
-                    <input type='text'></input>
-                    </label>
-                </div>
+      <h1 className='seccion-title2'>
+        2. ¿A DÓNDE QUIERES QUE LLEGUE TU BIURYBOX?
+      </h1>
+      <div className='form'>
+        <div className='one-input'>
+          <label>
+            Correo electrónico
+            <input type='text'></input>
+          </label>
+        </div>
 
-                <div className="two-inputs">
-                    <label>
-                    Correo electrónico
-                    <input type='text'></input>
-                    </label>
-                </div>
+        <div className='one-input'>
+          <label>
+            Correo electrónico
+            <input type='text'></input>
+          </label>
+        </div>
 
-                <div className="buttons-wrapper">
-                    <button>
-                        CONTINUAR
-                    </button>
-                </div>
-            </div>
+        <div className='one-input'>
+          <label>
+            Correo electrónico
+            <input type='text'></input>
+          </label>
+        </div>
 
-            <h1 className='seccion-title2'>3. INGRESA INFORMACIÓN DE FACTURACIÓN</h1>
+        <div className='one-input'>
+          <label>
+            Correo electrónico
+            <input type='text'></input>
+          </label>
+        </div>
 
-            <div className='form'> 
-                <div className="one-input">
-                    <label>
-                    ¿Tienes un código de descuento?
-                    <input type='text'></input>
-                    </label>
-                </div>
+        <div className='two-inputs'>
+          <label>
+            Correo electrónico
+            <input type='text'></input>
+          </label>
+          <label>
+            Correo electrónico
+            <input type='text'></input>
+          </label>
+        </div>
 
-                <div className='info'>
-                    <span>
-                        Sutotal (1 Elemento)
-                    </span>
-                    <span>
-                    $ 0.0
-                    </span>
-                </div>
+        <div className='two-inputs'>
+          <label>
+            Correo electrónico
+            <input type='text'></input>
+          </label>
+        </div>
 
-                <div className='info'>
-                    <span>
-                        Descuento atractivo (35% descuento)
-                    </span>
-                    <span>
-                    $ 0.0
-                    </span>
-                </div>
+        <div className='buttons-wrapper'>
+          <button>CONTINUAR</button>
+        </div>
+      </div>
 
-                <div className='info'>
-                    <span>
-                        Envío y manejo
-                    </span>
-                    <span>
-                    $ 0.0
-                    </span>
-                </div>
+      <h1 className='seccion-title2'>3. INGRESA INFORMACIÓN DE FACTURACIÓN</h1>
 
-                <div className='info'>
-                    <span>
-                        Impuesto (Calculado al final de la compra)
-                    </span>
-                    <span>
-                    $ 0.0
-                    </span>
-                </div>
+      <div className='form'>
+        <div className='one-input'>
+          <label>
+            ¿Tienes un código de descuento?
+            <input type='text'></input>
+          </label>
+        </div>
 
-                <hr/>
+        <div className='info'>
+          <span>Sutotal (1 Elemento)</span>
+          <span>$ 0.0</span>
+        </div>
 
-                <div className='info'>
-                    <span className='bold'>
-                        Total
-                    </span>
-                    <span>
-                    $ 0.0
-                    </span>
-                </div>
+        <div className='info'>
+          <span>Descuento atractivo (35% descuento)</span>
+          <span>$ 0.0</span>
+        </div>
 
-                <div className="buttons-wrapper">
-                    <button>
-                        CONTINUAR
-                    </button>
-                </div>
-            </div>
-            
-        </>
-    )
+        <div className='info'>
+          <span>Envío y manejo</span>
+          <span>$ 0.0</span>
+        </div>
+
+        <div className='info'>
+          <span>Impuesto (Calculado al final de la compra)</span>
+          <span>$ 0.0</span>
+        </div>
+
+        <hr />
+
+        <div className='info'>
+          <span className='bold'>Total</span>
+          <span>$ 0.0</span>
+        </div>
+
+        <div className='buttons-wrapper'>
+          <button>CONTINUAR</button>
+        </div>
+      </div>
+    </>
+  );
 }
 
-export default Register
+export default Register;
