@@ -15,18 +15,25 @@ import QuizStep6 from './QuizStep6'
 import Suscribe from "./Suscribe"
 import Navbar from "../../components/layout/Navbar/Navbar"
 import { Link } from "react-router-dom"
+import QuizStep7 from "./QuizStep7"
 
 function QuizForm({setStep, step}) {
     return (
         <div className={QuizFormStyle}>
 
             <div className="wrapper">
-                        <div className="navbar">
-                            <Link to={'/'}>
-                                <img src={LogoBlack}/>
-                            </Link>
-                            <img src={quizLogo}/>
-                        </div> 
+                {
+                    step !== 'suscribe'
+                    ?
+                    <div className="navbar">
+                        <Link to={'/'}>
+                            <img src={LogoBlack}/>
+                        </Link>
+                        <img src={quizLogo}/>
+                    </div> 
+                    : null
+
+                }
                 {
                     step === 'step1'
                     ?
@@ -57,6 +64,9 @@ function QuizForm({setStep, step}) {
                     : step === 'step6'
                     ? 
                         <QuizStep6 setStep={setStep}/>
+                    : step === 'step7'
+                    ?
+                        <QuizStep7 setStep={setStep}/>
                     : null
                 }
 

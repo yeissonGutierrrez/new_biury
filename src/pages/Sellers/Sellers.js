@@ -84,6 +84,7 @@ const products = [
     },
   ]
 
+
 function Sellers() {
     return (
         <>
@@ -96,7 +97,7 @@ function Sellers() {
                     <div className="main">
                         <h1 className="title">BEST SELLERS</h1>
                         <hr className="line"/>
-                        <p className="pharagrap">ESTOS SON ALGUNOS DE LOS PRODUCTOS <br/> INCLUIDOS EN NUESTRAS BIURYBOXES <br/> RECIENTES: </p>
+                        <p className="pharagrap">ESTOS SON ALGUNOS DE LOS PRODUCTOS  INCLUIDOS EN NUESTRAS BIURYBOXES  RECIENTES: </p>
 
                         <div className="best-sellers-month">
                             <img className="month-title" src={monthJanuaryImage}/>
@@ -104,13 +105,16 @@ function Sellers() {
                                 {
                                     products.map((data) => {
                                         return (
-                                            <ProductItem data={data}></ProductItem>
+                                            <div className="item">
+                                                <ProductItem data={data}></ProductItem>
+                                            </div>
                                         )
                                     })
                                 }
                             </div>
-
-                            <SuscribeButton width={'50%'}></SuscribeButton>
+                        </div>
+                        <div className="sus-button">
+                            <SuscribeButton width={'100%'}></SuscribeButton>
                         </div>
                         
                         <h1 className="brands-title">NUESTRAS <span>MARCAS</span></h1>
@@ -130,6 +134,9 @@ function Sellers() {
 
                     </div>
                 </div>
+
+                <img className="wave" src={wave2}/>
+
                 <div className="reviews-seccion">
                     <div className="reviews-info">
                         <h1>BIURY<span>REVIEWS</span></h1>
@@ -139,10 +146,11 @@ function Sellers() {
                             solo faltas tú.
                         </p>
                     </div>
-                    <img className="wave" src={wave2}/>
-                    <h1 className="title">LA OPINIÓN DE NUESTROS USUARIOS <br/> ES LA MÁS IMPORTANTE</h1>
+                    <h1 className="title">LA OPINIÓN DE NUESTROS USUARIOS ES LA MÁS IMPORTANTE</h1>
+                    <h1 className="titleMobile">TU OPINIÓN ES LO MÁS IMPORTANTE</h1>
                     <ReviewsSlider></ReviewsSlider>
                     <h1 className="title">¡QUIERO HACER UN COMENTARIO!</h1>
+                    <h1 className="titleMobile">¡QUIERO HACER UN COMENTARIO!</h1>
                     
                     <div className="comment">
                         <div className="comment-input">
@@ -152,7 +160,7 @@ function Sellers() {
                         <button className="send-button">ENVIAR</button>
                     </div>
                     <div className="button-wrapper">
-                        <SuscribeButton bgColor={'#FF6B63'} textColor={'white'}/>
+                        <SuscribeButton width={'100%'} bgColor={'#FF6B63'} textColor={'white'}/>
                     </div>
                 </div>
             </div>

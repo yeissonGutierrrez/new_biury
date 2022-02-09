@@ -7,10 +7,10 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Home from './pages/Home/Home';
 import HowItWork from './pages/HowItWork/HowItWork';
 
-import Register from './pages/Register/Register'
+import Register from './pages/Register/Register';
 import Perfil from './pages/Profile/Profile';
 
-import ScrollRestoration from 'react-scroll-restoration'
+import ScrollRestoration from 'react-scroll-restoration';
 import QuizPage from './pages/QuizPage/QuizPage';
 import Sellers from './pages/Sellers/Sellers';
 

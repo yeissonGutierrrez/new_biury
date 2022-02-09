@@ -63,16 +63,6 @@ const QuizFormStyle = style({
                     fontFamily: 'GothamLight',
                     fontSize: '35px',
                 },
-                '& p': {
-                    textAlign: 'center',
-                    fontFamily: 'GothamBold',
-                    fontSize: '21px',
-                },
-                '& .question-title': {
-                    fontSize: '32px',
-                    fontFamily: 'GothamBold',
-                    margin: '20px 0',
-                },
                 '& .paragraph1': {
                     color: '#AE50E2',
                     marginBottom: '40px'
@@ -348,7 +338,7 @@ const QuizFormStyle = style({
                     flexDirection: 'column',
                     justifyContent: 'center',
                     alignItems: 'center',
-                    width: '50%',
+                    width: '700px',
                     $nest: {
                         '& .answers-container': {
                             display: 'flex',
@@ -361,7 +351,44 @@ const QuizFormStyle = style({
                             width: '70%',
                             justifyContent: 'space-evenly',
                         },
+                        '& .answers-container-mobile': {
+                            display: 'none',
+                        }
                     }
+                },
+                '@media screen and (max-width: 700px)': {
+                    $nest: {
+                        '& .answers-wrapper': {
+                            width: '100%',
+                            $nest: {
+                                '& .answers-container': {
+                                    display: 'none',
+                                },
+                                '& .answers-container2': {
+                                    display: 'none',
+                                },
+                                '& .answers-container-mobile': {
+                                    display: 'flex',
+                                    flexDirection: 'column',
+                                    alignItems: 'center',
+                                    $nest: {
+                                        '& .grid-wrapper': {
+                                            display: 'grid',
+                                            gap: '20px',
+                                            gridTemplateColumns: '1fr 1fr',
+                                            marginBottom: '20px',
+                                        },
+                                        '& button': {
+                                            fontSize: '14px'
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                    }
+                },
+                '@media screen and (max-width: 420px)': {
+                    padding: '20px 0'
                 }
             },
         },
@@ -377,11 +404,78 @@ const QuizFormStyle = style({
                     color: '#00EF8E',
                 },
                 '& .answers-wrapper': {
-                    display: 'flex',
+                    margin: '30px 0',
+                    width: '100%',
                     justifyContent: 'space-between',
-                    alignItems: 'center',
-                    width: '50%',
-                    margin: '40px 0',
+                    $nest: {
+                        '& .buttons': {
+                            display: 'flex',
+                            justifyContent: 'space-between',
+                            width: '650px',
+                            margin: 'auto',
+                            $nest: {
+                                '& .two': {
+                                    display: 'flex',
+                                    justifyContent: 'space-between',
+                                    width: '525px',
+                                    paddingRight: '20px',
+                                }
+                            }
+                        }
+                    }
+                },
+                '@media screen and (max-width: 1200px)': {
+                    paddingTop: '50px',
+                    $nest: {
+                        '& .answers-wrapper': {
+                            width: '100%',
+                            $nest: {
+                                '& .buttons': {
+                                    display: 'flex',
+                                    flexDirection: 'column',
+                                    alignItems: 'center',
+                                    justifyContent: 'center',
+                                    width: '100%',
+                                    $nest: {
+
+                                        '& .two': {
+                                            width: '430px',
+                                            margin: '30px 0',
+                                        }
+                                    }
+                                }
+                            }
+                        },
+
+                    }
+                },
+                '@media screen and (max-width: 700px)': {
+                    $nest: {
+                        '& .answers-wrapper': {
+                            width: '100%',
+                            $nest: {
+                                '& .buttons': {
+                                    display: 'flex',
+                                    flexDirection: 'column',
+                                    alignItems: 'center',
+                                    justifyContent: 'center',
+                                    width: '',
+                                    $nest: {
+
+                                        '& .two': {
+                                            flexDirection: 'column',
+                                            justifyContent: 'space-between',
+                                            height: '210px',
+                                            alignItems: 'center',
+                                            width: '300px !important',
+                                            padding: 0,
+                                        }
+                                    }
+                                }
+                            }
+                        },
+
+                    }
                 }
             },
         },
@@ -401,26 +495,62 @@ const QuizFormStyle = style({
                     flexDirection: 'column',
                     justifyContent: 'center',
                     alignItems: 'center',
-                    width: '50%',
-                    margin: '50px',
+                    width: '700px',
                     $nest: {
                         '& .answers-container': {
                             display: 'flex',
-                            width: '90%',
+                            width: '100%',
                             marginBottom: '30px',
                             justifyContent: 'space-evenly',
                         },
                         '& .answers-container2': {
                             display: 'flex',
-                            width: '60%',
+                            width: '70%',
                             justifyContent: 'space-evenly',
                         },
+                        '& .answers-container-mobile': {
+                            display: 'none',
+                        }
                     }
+                },
+                '@media screen and (max-width: 700px)': {
+                    $nest: {
+                        '& .answers-wrapper': {
+                            width: '100%',
+                            $nest: {
+                                '& .answers-container': {
+                                    display: 'none',
+                                },
+                                '& .answers-container2': {
+                                    display: 'none',
+                                },
+                                '& .answers-container-mobile': {
+                                    display: 'flex',
+                                    flexDirection: 'column',
+                                    alignItems: 'center',
+                                    $nest: {
+                                        '& .grid-wrapper': {
+                                            display: 'grid',
+                                            gap: '20px',
+                                            gridTemplateColumns: '1fr 1fr',
+                                            marginBottom: '20px',
+                                        },
+                                        '& button': {
+                                            fontSize: '14px'
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                    }
+                },
+                '@media screen and (max-width: 420px)': {
+                    padding: '20px 0'
                 }
             },
         },
 
-        '& .step6': {
+        '& .step7': {
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
@@ -440,7 +570,7 @@ const QuizFormStyle = style({
                     flexDirection: 'column',
                     justifyContent: 'center',
                     alignItems: 'center',
-                    width: '50%',
+                    width: '700px',
                     $nest: {
                         '& .answers-container': {
                             display: 'flex',
@@ -453,7 +583,44 @@ const QuizFormStyle = style({
                             width: '70%',
                             justifyContent: 'space-evenly',
                         },
+                        '& .answers-container-mobile': {
+                            display: 'none',
+                        }
                     }
+                },
+                '@media screen and (max-width: 700px)': {
+                    $nest: {
+                        '& .answers-wrapper': {
+                            width: '100%',
+                            $nest: {
+                                '& .answers-container': {
+                                    display: 'none',
+                                },
+                                '& .answers-container2': {
+                                    display: 'none',
+                                },
+                                '& .answers-container-mobile': {
+                                    display: 'flex',
+                                    flexDirection: 'column',
+                                    alignItems: 'center',
+                                    $nest: {
+                                        '& .grid-wrapper': {
+                                            display: 'grid',
+                                            gap: '20px',
+                                            gridTemplateColumns: '1fr 1fr',
+                                            marginBottom: '20px',
+                                        },
+                                        '& button': {
+                                            fontSize: '14px'
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                    }
+                },
+                '@media screen and (max-width: 420px)': {
+                    padding: '20px 0'
                 }
             },
         },
@@ -474,7 +641,7 @@ const QuizFormStyle = style({
                     $nest: {
                         '& .photo': {
                             margin: '74px 60px 30px 90px',
-                            width: '500px'
+                            width: '80%'
                         },
                         '& .circle-container': {
                             position: 'absolute',
@@ -513,8 +680,6 @@ const QuizFormStyle = style({
                                         },
                                         '& img': {
                                             zIndex: 1,
-                                            fontFamily: 'GothamBold',
-                                            fontSize: '36px'
                                         }
                                     }
                                 },
@@ -549,7 +714,170 @@ const QuizFormStyle = style({
                             }
                         },
                     }
-                }
+                },
+                '@media screen and (max-width: 1200px)': {
+                    $nest: {
+                        '& .photo-container': {
+                            width: '50%',
+                            $nest: {
+                                '& .photo': {
+                                    margin: '200px 0 0 0',
+                                    width: '80%',
+                                },
+                                '& .circle-container': {
+                                    top: 50,
+                                    left: 0,
+                                    $nest: {
+                                        '& .circle': {
+                                            height: '200px',
+                                            width: '200px',
+                                            $nest: { 
+                                                '& .circle_color': {
+
+                                                },
+                                                '& .circle_border': {
+
+                                                },
+                                                '& img': {
+                                                    width: '80px'
+                                                }
+                                            }
+                                        },
+                                    }
+                                }
+                            }
+                        },
+                    }
+                },
+                '@media screen and (max-width: 1040px)': {
+                    flexDirection: 'column-reverse',
+                    alignItems: 'center',
+                    height: 'auto',
+                    $nest: {
+                        '& .photo-container': {
+                            width: '80%',
+                            $nest: {
+                                '& .photo': {
+                                    margin: '80px 0 0 0',
+                                    width: '100%',
+                                },
+                                '& .circle-container': {
+                                    top: 0,
+                                    left: -30,
+                                    $nest: {
+                                        '& .circle': {
+                                            height: '200px',
+                                            width: '200px',
+                                            $nest: { 
+                                                '& .circle_color': {
+
+                                                },
+                                                '& .circle_border': {
+
+                                                },
+                                                '& img': {
+                                                    width: '80px'
+                                                }
+                                            }
+                                        },
+                                    }
+                                }
+                            }
+                        },
+                        '& .info-container': {
+                            width: '80%',
+                        },
+                    }
+                },
+                '@media screen and (max-width: 700px)': {
+                    flexDirection: 'column-reverse',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    height: 'auto',
+                    $nest: {
+                        '& .info-container': {
+                            display: 'flex',
+                            paddingBottom: '90px',
+                            flexDirection: 'column',
+                            justifyContent: 'space-between',
+                            width: '50%',
+                            textAlign: 'center',
+                            $nest: {
+                                '& h1': {
+                                    marginTop: '50px',
+                                    fontSize: '80px',
+                                },
+                                '& h2': {
+                                    fontSize: '20px',
+                                    $nest: {
+                                        '& span': {
+                                            fontFamily: 'GothamLight',
+                                        }
+                                    }
+                                },
+                                '& button': {
+                                    fontSize: '20px'
+                                }
+                            }
+                        },
+                    }
+                },
+                '@media screen and (max-width: 450px)': {
+                    padding: '20px 20px 80px 20px',
+                    $nest: {
+                        '& .info-container': {
+                            width: '100%',
+                            $nest: {
+                                '& h1': {
+                                    fontSize: '55px'
+                                },
+                                '& h2': {
+                                    fontSize: '16px'
+                                },
+                                '& .button': {
+                                    height: '60px',
+                                    $nest: {
+                                        '& button': {
+                                            fontSize: '14px'
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        '& .photo-container': {
+                            width: '100%',
+                            display: 'flex',
+                            justifyContent: 'center',
+                            $nest: {
+                                '& .photo': {
+                                    margin: '50px 0 0 0',
+                                    width: '80%',
+                                },
+                                '& .circle-container': {
+                                    top: -10,
+                                    left: 0,
+                                    $nest: {
+                                        '& .circle': {
+                                            height: '120px',
+                                            width: '120px',
+                                            $nest: { 
+                                                '& .circle_color': {
+
+                                                },
+                                                '& .circle_border': {
+
+                                                },
+                                                '& img': {
+                                                    width: '40px'
+                                                }
+                                            }
+                                        },
+                                    }
+                                }
+                            }
+                        },
+                    }
+                },
             }
         },
 
@@ -558,13 +886,32 @@ const QuizFormStyle = style({
             fontFamily: 'GothamBold',
             margin: '20px 0',
             textAlign: 'center',
+            $nest: {
+                '@media screen and (max-width: 700px)': {
+                    fontSize: '32px',
+                },
+                '@media screen and (max-width: 500px)': {
+                    fontSize: '20px',
+                    padding: '0 30px',
+                },
+            }
         },
 
         '& p': {
             textAlign: 'center',
             fontFamily: 'GothamBold',
             fontSize: '21px',
-            margin: '40px 0'
+            margin: '40px 0',
+            $nest: {
+                '@media screen and (max-width: 700px)': {
+                    fontSize: '22px',
+                    padding: '0 30px'
+                },
+                '@media screen and (max-width: 500px)': {
+                    fontSize: '16px',
+                    padding: '0 30px'
+                },
+            }
         },
 
         '& .pagination-button': {
@@ -581,13 +928,26 @@ const QuizFormStyle = style({
             $nest: {
                 '@media screen and (max-width: 700px)': {
                     width: '220px',
-                }
+                    fontSize: '16px'
+                },
+                '@media screen and (max-width: 400px)': {
+                    width: '140px',
+                    fontSize: '14px'
+                },
             }
         },
         '& .pagination-container': {
             display: 'flex',
-            width: '50%',
-            justifyContent: 'space-between'
+            width: '600px',
+            justifyContent: 'space-between',
+            $nest: {
+                '@media screen and (max-width: 700px)': {
+                    width: '80%',
+                },
+                '@media screen and (max-width: 400px)': {
+                    width: '90%',
+                },
+            }
         }
     }
 })

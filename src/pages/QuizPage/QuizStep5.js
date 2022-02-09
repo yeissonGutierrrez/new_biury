@@ -5,18 +5,31 @@ import QuizButton from './QuizButton'
 function QuizStep5({setStep}) {
     return (
         <div className="step5">
-            <h4 className='question-title'>¿CUÁL ES TU COLOR <br/> DE PELO?</h4>
+            <h4 className='question-title'>¿QUÉ BUSCAS CUÁNDO CUIDAS TU PIEL?</h4>
 
             <div className='answers-wrapper'>
                 <div className='answers-container'>
-                    <QuizButton width={'170px'} bgColor='rgb(162,126,105)' borderColor='#642805' question='Café/Castaño'/>
-                    <QuizButton width={'170px'} bgColor='rgb(246,255,125)' borderColor='#F0FF26' question='Rubio Natural'/>
-                    <QuizButton width={'170px'} bgColor='rgb(202,102,249)' borderColor='#A600F5' question='Decolorado'/>
+                
+                    <QuizButton width={'200px'} bgColor='rgb(102,235,219)' borderColor='#00DDC3' question='Cuidado de los crespos'/>
+                    <QuizButton width={'200px'} bgColor='rgb(102,235,219)' borderColor='#00DDC3' question='Cuidado de los crespos'/>
+                    <QuizButton width={'200px'} bgColor='rgb(102,235,219)' borderColor='#00DDC3' question='Cuidado de los crespos'/>
+               
                 </div>
 
                 <div className='answers-container2'>
-                    <QuizButton width={'170px'} bgColor='rgb(254,151,102)' borderColor='#FB5200' question='Rojo/Naranja'/>
-                    <QuizButton width={'170px'} bgColor='rgb(102,245,187)' borderColor='#00EF8E' question='Negro'/>
+                    <QuizButton width={'200px'} bgColor='rgb(102,235,219)' borderColor='#00DDC3' question='Cuidado de los crespos'/>
+                    <QuizButton width={'200px'} bgColor='rgb(102,235,219)' borderColor='#00DDC3' question='Cuidado de los crespos'/>
+                </div>
+
+                <div className='answers-container-mobile'>
+                    <div className='grid-wrapper'>
+                        <QuizButton width={'130px'} bgColor='rgb(102,235,219)' borderColor='#00DDC3' question='Cuidado de los crespos'/>
+                        <QuizButton width={'130px'} bgColor='rgb(102,235,219)' borderColor='#00DDC3' question='Cuidado de los crespos'/>
+                        <QuizButton width={'130px'} bgColor='rgb(102,235,219)' borderColor='#00DDC3' question='Cuidado de los crespos'/>
+                        <QuizButton width={'130px'} bgColor='rgb(102,235,219)' borderColor='#00DDC3' question='Cuidado de los crespos'/>
+                   </div>
+                        <QuizButton width={'130px'} bgColor='rgb(102,235,219)' borderColor='#00DDC3' question='Cuidado de los crespos'/>
+
                 </div>
             </div>
 

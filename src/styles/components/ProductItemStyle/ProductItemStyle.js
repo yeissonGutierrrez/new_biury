@@ -16,12 +16,14 @@ const ProductItemStyle = style({
             height: '260px',
             boxShadow: '0px 0px 14px 1px rgba(0,0,0,0.42)',
         },
+
         '& .item_title': {
             display: 'block',
             textAlign: "center",
             fontFamily: 'cocoGoth',
             margin: '20px 0'
         },
+
         '& .stars': {
             display: 'flex',
             alignItems: 'center',
@@ -52,8 +54,19 @@ const ProductItemStyle = style({
                     fontSize: '17px'
                 },
             }
-        }
-    }
+        },
+
+        '@media screen and (max-width: 780px)': {
+            width: '200px',
+            $nest: {
+                '& .item_image': {
+                    height: '220px',
+                },
+            }
+        },
+
+
+    },
 })
 
 export default ProductItemStyle

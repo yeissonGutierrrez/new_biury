@@ -19,6 +19,16 @@ function QuizStep3({setStep}) {
                     <QuizButton width={'200px'} bgColor='rgb(102,245,187)' borderColor='#00EF8E' question='38 a 60 años'/>
                     <QuizButton width={'200px'} bgColor='rgb(102,245,187)' borderColor='#00EF8E' question='Más de 60 años'/>
                 </div>
+
+                <div className='answers-container-mobile'>
+                    <div className='grid-wrapper'>
+                        <QuizButton width={'130px'} bgColor='rgb(102,245,187)' borderColor='#00EF8E' question='Menos de 25'/>
+                        <QuizButton width={'130px'} bgColor='rgb(102,245,187)' borderColor='#00EF8E' question='25 a 30 años'/>
+                        <QuizButton width={'130px'} bgColor='rgb(102,245,187)' borderColor='#00EF8E' question='30 a 38 años'/>
+                        <QuizButton width={'130px'} bgColor='rgb(102,245,187)' borderColor='#00EF8E' question='38 a 60 años'/>
+                    </div>
+                    <QuizButton width={'130px'} bgColor='rgb(102,245,187)' borderColor='#00EF8E' question='Más de 60 años'/>
+                </div>
             </div>
 
             <div className='pagination-container'>
