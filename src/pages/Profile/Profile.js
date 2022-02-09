@@ -17,14 +17,12 @@ function Perfil() {
     <>
       <Navbar></Navbar>
       <div className={PerfilStyle}>
-        {
-          //userAuth != null ? <UserProfile /> : <Register setState={setState} />
-        }
-        {state === 'logined' ? (
+        {userAuth != null ? <UserProfile /> : <Register setState={setState} />}
+        {/* {state === 'logined' ? (
           <UserProfile />
         ) : (
           <Register setState={setState} />
-        )}
+        )} */}
       </div>
       <Footer></Footer>
     </>
