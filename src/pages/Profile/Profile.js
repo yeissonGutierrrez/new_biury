@@ -11,20 +11,18 @@ import Auth from '../../common/auth';
 
 function Perfil() {
   const [state, setState] = useState('');
-  const [userAuth, setUserAuth] = Auth.isAuthenticated();
+  const [userAuth, setUserAuth] = useState(Auth.isAuthenticated());
   const user = sessionStorage.getItem('userName');
   return (
     <>
       <Navbar></Navbar>
       <div className={PerfilStyle}>
-        {
-          //userAuth != null ? <UserProfile /> : <Register setState={setState} />
-        }
-        {state === 'logined' ? (
+        {userAuth != null ? <UserProfile /> : <Register setState={setState} />}
+        {/* {state === 'logined' ? (
           <UserProfile />
         ) : (
           <Register setState={setState} />
-        )}
+        )} */}
       </div>
       <Footer></Footer>
     </>

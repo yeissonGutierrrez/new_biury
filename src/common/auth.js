@@ -3,7 +3,7 @@ import config from '../const';
 /* 
 Esta es una funcionalidad para validar si el usuario esta Autenticado
 
-@Login Inserta el token del usuario al LoacalStrorage
+@setToken Inserta el token del usuario al LoacalStrorage
 @LogOut Remueve el token del usuario en el local storage
 @isAuntenticated retorna si el usuario esta autenticado BOOL 
 

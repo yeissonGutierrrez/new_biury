@@ -40,7 +40,7 @@ function Register({ setState }) {
     }
 
     if (name == 'setAcceptTerms') {
-      setAcceptTerms(value);
+      setAcceptTerms(e.target.checked);
     }
   };
 
