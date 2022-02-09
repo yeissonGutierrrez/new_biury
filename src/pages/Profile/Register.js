@@ -11,9 +11,13 @@ function Register({ setState }) {
   const [wrongEmail, setWrongEmail] = useState(false);
   const [faildField, setFaildFiels] = useState(false);
   const [acceptTerms, setAcceptTerms] = useState(null);
+  const [errorregister, setErrorRegister] = useState(false);
+  const [loadinFormRegister, setLoadingFormRegister] = useState(false);
+  const [confirmPassword, setConfirmPassword] = useState('');
+  const [passwordMatch, setPasswordMatch] = useState(false);
 
   //Evalua el cambio de los inputs
-  const handleChange = (e, valueName) => {
+  const handleChange = (e) => {
     const { name, value } = e.target;
     if (name == 'setName') {
       let val = validationService.validName(value);
@@ -42,12 +46,18 @@ function Register({ setState }) {
     if (name == 'setAcceptTerms') {
       setAcceptTerms(e.target.checked);
     }
+
+    if (name == 'setConfirmPassword') {
+      setConfirmPassword(value);
+    }
   };
 
   //Function onClick to register
   const onClick = async () => {
     setWrongEmail(false);
     setFaildFiels(false);
+    setErrorRegister(false);
+    setPasswordMatch(false);
 
     if (name == '' || lastName == '' || password == '' || email == '') {
       setFaildFiels(true);
@@ -64,9 +74,18 @@ function Register({ setState }) {
       return;
     }
 
+    if (confirmPassword != password) {
+      setPasswordMatch(true);
+    }
+    setLoadingFormRegister(true);
     const resp = await Auth.Login({ email, password });
-    if (resp.status == 200 || resp.status == 201) {
+
+    if (resp && (resp.status == 200 || resp.status == 201)) {
       setState('logined');
+      setLoadingFormRegister(false);
+    } else {
+      setErrorRegister(true);
+      setLoadingFormRegister(false);
     }
   };
 
@@ -125,6 +144,20 @@ function Register({ setState }) {
             ></input>
           </label>
         </div>
+        <div className='one-input'>
+          <label>
+            Confirmar Contraseña
+            <input
+              type='text'
+              name='setConfirmPassword'
+              onChange={handleChange}
+              value={confirmPassword}
+            ></input>
+          </label>
+        </div>
+        {passwordMatch == true ? (
+          <p className='danger-text'>Las contraseña no coinciden</p>
+        ) : null}
         {faildField == true ? (
           <p className='danger-text'>Todo los campos son requeridos</p>
         ) : null}
@@ -148,8 +181,15 @@ function Register({ setState }) {
             <input type='checkbox'></input>
           </label>
         </div>
+        {errorregister == true ? (
+          <p className='danger-text'>
+            A ocurrido un problema intentelo de nuevo
+          </p>
+        ) : null}
         <div className='buttons-wrapper'>
-          <button onClick={onClick}>CONTINUAR</button>
+          <button disabled={loadinFormRegister} onClick={onClick}>
+            {loadinFormRegister ? 'ENVIANDO' : 'CONTINUAR'}
+          </button>
 
           <button className='facebook'>
             INICIAR SESIÓN USANDO FACEBOOK

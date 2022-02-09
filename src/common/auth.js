@@ -29,19 +29,23 @@ Auth.isAuthenticated = () => {
 };
 
 Auth.Login = async (data) => {
-  let response = await axios.post(`${config.api_url}auth/login`, data, {
-    headers: {
-      'Content-Type': 'application/json',
-    },
-  });
+  try {
+    let response = await axios.post(`${config.api_url}auth/login`, data, {
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
 
-  if (response.status == 200 || response.status == 201) {
-    Auth.SetToken(response.headers.authorization);
-    Auth.isAuthenticated();
-    Auth.SetNameUser(response.data.usuario.name);
+    if (response.status == 200 || response.status == 201) {
+      Auth.SetToken(response.headers.authorization);
+      Auth.isAuthenticated();
+      Auth.SetNameUser(response.data.usuario.name);
+    }
+
+    return response;
+  } catch (error) {
+    console.log(error);
   }
-
-  return response;
 };
 
 export default Auth;
