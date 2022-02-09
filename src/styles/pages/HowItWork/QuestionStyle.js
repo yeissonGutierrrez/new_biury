@@ -4,6 +4,8 @@ const QuestionStyle = style({
     width: '50%',
     display: 'flex',
     flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
     $nest: {
         '& .photo': {
             margin: 'auto',
@@ -11,7 +13,6 @@ const QuestionStyle = style({
         },
         '& .myAccordion': {
             width: '80%',
-            margin: 'auto',
             $nest: {
                 '& .expandedIcon': {
                     color: 'white',
@@ -20,6 +21,7 @@ const QuestionStyle = style({
             }
         },
         '& .myAccordionHeader': {
+            margin: 'auto',
             backgroundColor: '#A125F4',
             border: 'solid 2px white',
             height: '100px',
