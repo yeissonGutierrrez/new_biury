@@ -69,123 +69,96 @@ function UserProfile() {
           <img src={whatsappIcon} /> WHATSAPP
         </button>
       </div>
-
-      <div className='account-info'>
         <h1 className='seccion-title'> INFORMACIÓN DE LA CUENTA</h1>
-        <div className='wrapper'>
-          <div className='info'>
-            <div className='mid'>
-              <label>Nombre</label>
-              <input type='text'></input>
-            </div>
-
-            <div className='mid'>
-              <label>Apellido</label>
-              <input type='text'></input>
-            </div>
-
-            <div className='big'>
-              <label>Correo electrónico</label>
-              <input type='text'></input>
-            </div>
-
-            <div className='mid'>
-              <label>País</label>
-              <input type='text'></input>
-            </div>
-
-            <div className='account-info'>
-                <h1 className='seccion-title'> INFORMACIÓN DE LA CUENTA</h1>
-                <div className='wrapper'>
-                  <div className='info'>
-                      <div className='mid'>
-                        <label>
-                        Nombre
-                        </label>
-                        <input type='text'></input>
-                      </div>
-
-                      <div className='mid'>
-                        <label>
-                        Apellido
-                        </label>
-                          <input type='text'></input>
-                      </div>
-
-
-                      <div className='big'>
-                        <label>
-                        Correo electrónico
-                        </label>
-                          <input type='text'></input>
-                      </div>
-
-                      <div className='mid'>
-                        <label>
-                          País
-                        </label>
-                        <input type='text'></input>
-                      </div>
-
-                      <div className='mid'>
-                        <label>
-                          Ciudad
-                        </label>
-                          <input type='text'></input>
-                      </div>
-
-
-                      <div className='big'>
-                        <label>
-                        Dirección ¿dónde quieres que llegue tu BIURYBOX?
-                        </label>
-                          <input type='text'></input>
-                      </div>
-
-                      <div className='mid'>
-                        <label>
-                        Ciudad
-                        </label>
-                        <input type='text'></input>
-                      </div>
-
-                      <div className='mid'>
-                        <label>
-                        Departamento
-                        </label>
-                        <input type='text'></input>
-                      </div>
-
-                      <div className='mid'>
-                        <label>
-                          Teléfono/Celular
-                        </label>
-                          <input type='text'></input>
-                      </div>
-
-                    <div className='checkout'>
-                      <label>
-                        He leído y acepto términos y condiciones
-                        <input type='checkbox'></input>
-                      </label>
-                      <label>
-                      Quiero recibir información
-                        <input type='checkbox'></input>
-                      </label>
-                    </div>
-
-
+        <div className='account-info'>
+            <div className='wrapper'>
+              <div className='info'>
+                  <div className='mid'>
+                    <label>
+                    Nombre
+                    </label>
+                    <input type='text'></input>
                   </div>
-                  <div className='photo-container'>
-                    <div className="photo-wrapper">
-                        <img src={infoPhoto} className="photo"/>
-                    </div>
+
+                  <div className='mid'>
+                    <label>
+                    Apellido
+                    </label>
+                      <input type='text'></input>
                   </div>
+
+
+                  <div className='big'>
+                    <label>
+                    Correo electrónico
+                    </label>
+                      <input type='text'></input>
+                  </div>
+
+                  <div className='mid'>
+                    <label>
+                      País
+                    </label>
+                    <input type='text'></input>
+                  </div>
+
+                  <div className='mid'>
+                    <label>
+                      Ciudad
+                    </label>
+                      <input type='text'></input>
+                  </div>
+
+
+                  <div className='big'>
+                    <label>
+                    Dirección ¿dónde quieres que llegue tu BIURYBOX?
+                    </label>
+                      <input type='text'></input>
+                  </div>
+
+                  <div className='mid'>
+                    <label>
+                    Ciudad
+                    </label>
+                    <input type='text'></input>
+                  </div>
+
+                  <div className='mid'>
+                    <label>
+                    Departamento
+                    </label>
+                    <input type='text'></input>
+                  </div>
+
+                  <div className='mid'>
+                    <label>
+                      Teléfono/Celular
+                    </label>
+                      <input type='text'></input>
+                  </div>
+
+                <div className='checkout'>
+                  <label>
+                    He leído y acepto términos y condiciones
+                    <input type='checkbox'></input>
+                  </label>
+                  <label>
+                  Quiero recibir información
+                    <input type='checkbox'></input>
+                  </label>
+                </div>
+
+
+              </div>
+              <div className='photo-container'>
+                <div className="photo-wrapper">
+                    <img src={infoPhoto} className="photo"/>
                 </div>
               </div>
             </div>
           </div>
-        </div>
+
 
 
       <h1 className='seccion-title'>HISTORIAL DE PEDIDOS </h1>

@@ -37,6 +37,7 @@ const PerfilStyle = style({
                     outline: 'none',
                 },
                 '& button': {
+                    position: 'relative',
                     float: 'right',
                     display: 'flex',
                     alignItems: 'center',
@@ -53,8 +54,9 @@ const PerfilStyle = style({
                     cursor: 'pointer',
                     $nest: {
                         '& img': {
+                          position: 'absolute',
                             width: '20px',
-                            marginRight: '20px'
+                            left: 25
                         }
                     }
                 },
@@ -389,12 +391,54 @@ const PerfilStyle = style({
                 '& .title': {
                     display: 'none',
                 },
+
+                '& .seccion-title': {
+                  textAlign: 'center',
+                  fontSize: '20px',
+                  borderTop: 'solid black 5px',
+                  width: '80%',
+                  marginBottom: 'none',
+                  borderBottom: 'none',
+                  margin: '40px auto',
+                  paddingTop: '20px',
+                },
+
                 '& .seccion-title2': {
                     margin: '60px 0',
                     textAlign: 'center',
                     fontSize: '20px',
                     width: '90%',
                 },
+
+                '& .message-input': {
+                  width: '80%',
+                  $nest: {
+                      '& label': {
+                          textAlign: 'center',
+                          display: 'block',
+                          fontFamily: 'GothamBold',
+                          fontSize: '26px',
+                          margin: '20px 0'
+                      },
+                      '& textarea': {
+                          display: 'inline-block',
+                          fontFamily: 'GothamLight',
+                          fontSize: '20px',
+                          width: '100%',
+                          border: 'solid #242535 5px',
+                          height: '280px',
+                          marginBottom: '30px',
+                          textAlign: 'left',
+                          padding: '0 10px',
+                          outline: 'none',
+                      },
+                      '& button': {
+                          float: 'none',
+                          margin: '20px auto'
+                      },
+                  }
+              },
+
                 '& .options-login': {
                     width: '80%',
                     marginBottom: '40px',
@@ -464,11 +508,19 @@ const PerfilStyle = style({
                     }
                 },
 
+
             }
         },
         '@media screen and (max-width: 540px)': {
             $nest: {
+
+              '& .seccion-title': {
+                margin: '20px auto',
+                paddingBottom: '0',
+              },
+
                 '& .account-info': {
+                  margin: 0,
                     $nest: {
                         '& .wrapper': {
                             $nest: {
@@ -481,7 +533,7 @@ const PerfilStyle = style({
                                             width: '100%',
                                             $nest: {
                                                 '& label': {
-                                                    fontSize: '21px',
+                                                    fontSize: '18px',
                                                 },
                                                 '& input': {
                                                     width: '100%',
@@ -492,40 +544,44 @@ const PerfilStyle = style({
                                             width: '100%',
                                             $nest: {
                                                 '& label': {
-                                                    fontSize: '21px',
+                                                    fontSize: '18px',
                                                 },
                                                 '& input': {
                                                     width: '100%',
-                                                    border: 'solid black 2px',
-                                                    height: '40px',
-                                                    outline: 'none',
-                                                    fontFamily: 'GothamLight',
-                                                    paddingLeft: '10px',
                                                 },
                                             }
-                                        },
-                                        '& .checkout': {
-                                            fontFamily: 'GothamBold',
-                                            display: 'flex',
-                                            flexDirection: 'column',
-                                            justifyContent: 'space-between',
-                                            $nest: {
-                                                '& label': {
-                                                    fontSize: '18px',
-                                                    margin: '5px 0'
-                                                },
-                                            }
-        
                                         },
                                     },
-                                },
-                                '& .photo-container': {
-                                    display: 'none'
                                 },
                             }
                         }
                     }
                 },
+
+                '& .message-input': {
+                  width: '80%',
+                  $nest: {
+                      '& label': {
+                          textAlign: 'center',
+                          display: 'block',
+                          fontFamily: 'GothamBold',
+                          fontSize: '22px',
+                          margin: '20px 0'
+                      },
+                      '& textarea': {
+                          display: 'block',
+                          width: '90%'
+                      },
+                      '& button': {
+                          float: 'none',
+                          margin: '20px auto'
+                      },
+                  }
+              },
+
+              '& .currentProducts-container': {
+                margin: '0',
+              },
             }
         },
     }

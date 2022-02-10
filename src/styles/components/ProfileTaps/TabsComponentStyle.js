@@ -22,7 +22,8 @@ const TabsComponentStyle = style({
                     cursor: 'pointer',
                 },
                 '& img': {
-                    display: 'none'
+                    display: 'none',
+                    width: '20px'
                 }
                 
             }
@@ -58,7 +59,26 @@ const TabsComponentStyle = style({
                 '& .tabs-menu': {
                     $nest: {
                         '& .tab': {
-                            fontSize: '18px',
+                            fontSize: '28px',
+                            padding: '15px',
+                            border: 'none !important'
+                        },
+                        '& .hidde': {
+                            display: 'none'
+                        },
+                        '& img': {
+                            display: 'block'
+                        }
+                    }
+                },
+            }
+        },
+        '@media screen and (max-width: 440px)': {
+            $nest: {
+                '& .tabs-menu': {
+                    $nest: {
+                        '& .tab': {
+                            fontSize: '22px',
                             padding: '15px',
                             border: 'none !important'
                         },

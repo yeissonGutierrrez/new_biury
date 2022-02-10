@@ -83,6 +83,28 @@ const InfoProfileStyle = style({
                 },
             }
         },
+        '@media screen and (max-width: 460px)': {
+            marginTop: '30px',
+            $nest: {
+                '& .image-container': {
+                    height: '240px',
+                    width: '200px',
+                    $nest: {
+                        '& .ProfilePhoto': {
+                            position: 'absolute',
+                            top: 20,
+                            right: '-30px',
+                            width: '200px'
+                        }
+                    }
+                },
+                '& .info': {
+                    padding: 0,
+                    width: '80%',
+                    textAlign: 'center',
+                },
+            }
+        },
     }
 })
 
