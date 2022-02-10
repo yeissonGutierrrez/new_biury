@@ -2,8 +2,12 @@ import React, { useState } from 'react';
 import facebookIcon from '../../assets/images/Profile/buttonFacebookIcon.svg';
 import validationService from '../../helpers/validationFields';
 import Auth from '../../common/auth';
+import { options } from 'toastr';
 
 function Register({ setState }) {
+
+    const [option, setoption] = useState('register')
+
   const [name, setName] = useState('');
   const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
@@ -96,109 +100,195 @@ function Register({ setState }) {
       </h1>
 
       <h1 className='seccion-title2'>1. CREA UNA CUENTA O INICIA SESIÓN.</h1>
-      <div className='form'>
-        <div className='two-inputs'>
-          <label>
-            Nombre
-            <input
-              type='text'
-              name='setName'
-              onChange={handleChange}
-              value={name}
-            ></input>
-          </label>
-          <label>
-            Apellido
-            <input
-              type='text'
-              name='setLastName'
-              onChange={handleChange}
-              value={lastName}
-            ></input>
-          </label>
-        </div>
-        <div className='one-input'>
-          <label>
-            Correo electrónico
-            <input
-              type='text'
-              name='setEmail'
-              onChange={handleChange}
-              value={email}
-            ></input>
-          </label>
-        </div>
-        {wrongEmail == true ? (
-          <p className='danger-text'>
-            Por favor verifique su correo electrónico
-          </p>
-        ) : null}
-        <div className='one-input'>
-          <label>
-            Contraseña
-            <input
-              type='text'
-              name='setPassword'
-              onChange={handleChange}
-              value={password}
-            ></input>
-          </label>
-        </div>
-        <div className='one-input'>
-          <label>
-            Confirmar Contraseña
-            <input
-              type='text'
-              name='setConfirmPassword'
-              onChange={handleChange}
-              value={confirmPassword}
-            ></input>
-          </label>
-        </div>
-        {passwordMatch == true ? (
-          <p className='danger-text'>Las contraseña no coinciden</p>
-        ) : null}
-        {faildField == true ? (
-          <p className='danger-text'>Todo los campos son requeridos</p>
-        ) : null}
-        <div className='checkout'>
-          <label>
-            He leído y acepto términos y condiciones
-            <input
-              type='checkbox'
-              name='setAcceptTerms'
-              onChange={handleChange}
-              value={acceptTerms}
-            ></input>
-          </label>
-          {acceptTerms == false ? (
-            <p className='danger-text'>
-              Debe aceptar los terminos y condiciones
-            </p>
-          ) : null}
-          <label>
-            Quiero recibir información
-            <input type='checkbox'></input>
-          </label>
-        </div>
-        {errorregister == true ? (
-          <p className='danger-text'>
-            A ocurrido un problema intentelo de nuevo
-          </p>
-        ) : null}
-        <div className='buttons-wrapper'>
-          <button disabled={loadinFormRegister} onClick={onClick}>
-            {loadinFormRegister ? 'ENVIANDO' : 'CONTINUAR'}
-          </button>
 
-          <button className='facebook'>
-            INICIAR SESIÓN USANDO FACEBOOK
-            <img src={facebookIcon} />
-          </button>
-
-          <button className='google'>INICIAR SESIÓN USANDO GOOGLE</button>
+        <div className='options-login'>
+            <h3 onClick={() => setoption('register')} style={{borderBottom: ((option === `register`) ? '#242535 solid 3px' : '')}} >INSCRIBIRSE</h3>
+            <hr/>
+            <h3 onClick={() => setoption('login')} style={{borderBottom: ((option === `login`) ? '#242535 solid 3px' : '')}} >INICIA SESIÓN</h3>
         </div>
-      </div>
+
+        {
+            option === 'register'
+            ?
+                <div className='form'>
+                    <div className='two-inputs'>
+                    <label>
+                        Nombre
+                        <input
+                        type='text'
+                        name='setName'
+                        onChange={handleChange}
+                        value={name}
+                        ></input>
+                    </label>
+                    <label>
+                        Apellido
+                        <input
+                        type='text'
+                        name='setLastName'
+                        onChange={handleChange}
+                        value={lastName}
+                        ></input>
+                    </label>
+                    </div>
+                    <div className='one-input'>
+                    <label>
+                        Correo electrónico
+                        <input
+                        type='text'
+                        name='setEmail'
+                        onChange={handleChange}
+                        value={email}
+                        ></input>
+                    </label>
+                    </div>
+                    {wrongEmail == true ? (
+                    <p className='danger-text'>
+                        Por favor verifique su correo electrónico
+                    </p>
+                    ) : null}
+                    <div className='one-input'>
+                    <label>
+                        Contraseña
+                        <input
+                        type='text'
+                        name='setPassword'
+                        onChange={handleChange}
+                        value={password}
+                        ></input>
+                    </label>
+                    </div>
+                    <div className='one-input'>
+                    <label>
+                        Confirmar Contraseña
+                        <input
+                        type='text'
+                        name='setConfirmPassword'
+                        onChange={handleChange}
+                        value={confirmPassword}
+                        ></input>
+                    </label>
+                    </div>
+                    {passwordMatch == true ? (
+                    <p className='danger-text'>Las contraseña no coinciden</p>
+                    ) : null}
+                    {faildField == true ? (
+                    <p className='danger-text'>Todo los campos son requeridos</p>
+                    ) : null}
+                    <div className='checkout'>
+                    <label>
+                        He leído y acepto términos y condiciones
+                        <input
+                        type='checkbox'
+                        name='setAcceptTerms'
+                        onChange={handleChange}
+                        value={acceptTerms}
+                        ></input>
+                    </label>
+                    {acceptTerms == false ? (
+                        <p className='danger-text'>
+                        Debe aceptar los terminos y condiciones
+                        </p>
+                    ) : null}
+                    <label>
+                        Quiero recibir información
+                        <input type='checkbox'></input>
+                    </label>
+                    </div>
+                    {errorregister == true ? (
+                    <p className='danger-text'>
+                        A ocurrido un problema intentelo de nuevo
+                    </p>
+                    ) : null}
+                    <div className='buttons-wrapper'>
+                    <button disabled={loadinFormRegister} onClick={onClick}>
+                        {loadinFormRegister ? 'ENVIANDO' : 'CONTINUAR'}
+                    </button>
+
+                    <button className='facebook'>
+                        INICIAR SESIÓN USANDO FACEBOOK
+                        <img src={facebookIcon} />
+                    </button>
+
+                    <button className='google'>INICIAR SESIÓN USANDO GOOGLE</button>
+                    </div>
+                </div>
+            : option === 'login'
+            ?
+                <div className='form'>
+                    <div className='one-input'>
+                    <label>
+                        Correo electrónico
+                        <input
+                        type='text'
+                        name='setEmail'
+                        onChange={handleChange}
+                        value={email}
+                        ></input>
+                    </label>
+                    </div>
+                    {wrongEmail == true ? (
+                    <p className='danger-text'>
+                        Por favor verifique su correo electrónico
+                    </p>
+                    ) : null}
+                    <div className='one-input'>
+                    <label>
+                        Contraseña
+                        <input
+                        type='text'
+                        name='setPassword'
+                        onChange={handleChange}
+                        value={password}
+                        ></input>
+                    </label>
+                    </div>
+                    {passwordMatch == true ? (
+                    <p className='danger-text'>Las contraseña no coinciden</p>
+                    ) : null}
+                    {faildField == true ? (
+                    <p className='danger-text'>Todo los campos son requeridos</p>
+                    ) : null}
+                    <div className='checkout'>
+                    <label>
+                        He leído y acepto términos y condiciones
+                        <input
+                        type='checkbox'
+                        name='setAcceptTerms'
+                        onChange={handleChange}
+                        value={acceptTerms}
+                        ></input>
+                    </label>
+                    {acceptTerms == false ? (
+                        <p className='danger-text'>
+                        Debe aceptar los terminos y condiciones
+                        </p>
+                    ) : null}
+                    <label>
+                        Quiero recibir información
+                        <input type='checkbox'></input>
+                    </label>
+                    </div>
+                    {errorregister == true ? (
+                    <p className='danger-text'>
+                        A ocurrido un problema intentelo de nuevo
+                    </p>
+                    ) : null}
+                    <div className='buttons-wrapper'>
+                    <button disabled={loadinFormRegister} onClick={onClick}>
+                        {loadinFormRegister ? 'ENVIANDO' : 'CONTINUAR'}
+                    </button>
+
+                    <button className='facebook'>
+                        INICIAR SESIÓN USANDO FACEBOOK
+                        <img src={facebookIcon} />
+                    </button>
+
+                    <button className='google'>INICIAR SESIÓN USANDO GOOGLE</button>
+                    </div>
+                </div>
+            : null
+        }
 
       <h1 className='seccion-title2'>
         2. ¿A DÓNDE QUIERES QUE LLEGUE TU BIURYBOX?
