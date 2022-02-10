@@ -1,71 +1,97 @@
-import TabsComponent from '../../components/ProfileTaps/TabsComponent'
+import TabsComponent from '../../components/ProfileTaps/TabsComponent';
 
-import InfoProfile from './InfoProfile'
+import InfoProfile from './InfoProfile';
 
-import whatsappIcon from '../../assets/images/Profile/whatsapp.svg'
-import infoPhoto from '../../assets/images/Profile/Biury_Fotos-05.png'
-import CurrentProductItem from '../../components/CurrentProductItem/CurrentProductItem'
+import whatsappIcon from '../../assets/images/Profile/whatsapp.svg';
+import infoPhoto from '../../assets/images/Profile/Biury_Fotos-05.png';
+import CurrentProductItem from '../../components/CurrentProductItem/CurrentProductItem';
 
-
-import item1 from '../../assets/images/Home/ProductSeccion/item1.png'
-import item2 from '../../assets/images/Home/ProductSeccion/item2.png'
-import item3 from '../../assets/images/Home/ProductSeccion/item3.png'
-import item4 from '../../assets/images/Home/ProductSeccion/item4.png'
+import item1 from '../../assets/images/Home/ProductSeccion/item1.png';
+import item2 from '../../assets/images/Home/ProductSeccion/item2.png';
+import item3 from '../../assets/images/Home/ProductSeccion/item3.png';
+import item4 from '../../assets/images/Home/ProductSeccion/item4.png';
 
 const tabsData = {
-    tabsName: 'tabs1',
-    data: [
-        { 
-          title: 'PERFIL BIURYCLUB', 
-          type: 'component', 
-          content:  <InfoProfile/>
-        },
-        { 
-          title: 'MEMBRESÍAS', 
-          type: 'component', 
-          content:  <InfoProfile/>
-        },
-        { 
-          title: 'BIURY TEST', 
-          type: 'text', 
-          content: 'It’s great to have someone that understands you. We develop the best solution for your budget, schedule, and needs.'
-        },
-      ]
-  }
+  tabsName: 'tabs1',
+  data: [
+    {
+      title: 'PERFIL BIURYCLUB',
+      type: 'component',
+      content: <InfoProfile />,
+    },
+    {
+      title: 'MEMBRESÍAS',
+      type: 'component',
+      content: <InfoProfile />,
+    },
+    {
+      title: 'BIURY TEST',
+      type: 'text',
+      content:
+        'It’s great to have someone that understands you. We develop the best solution for your budget, schedule, and needs.',
+    },
+  ],
+};
 
-
-  const products = [
-      {
-        image: item1,
-        name: 'Baltic Birch Face Daily Mask',
-      },
-      {
-        image: item2,
-        name: 'Baltic Birch Face Daily Mask',
-      },
-      {
-        image: item3,
-        name: 'Baltic Birch Face Daily Mask',
-      },
-      {
-        image: item4,
-        name: 'Baltic Birch Face Daily Mask',
-      },
-  ]
-
-
+const products = [
+  {
+    image: item1,
+    name: 'Baltic Birch Face Daily Mask',
+  },
+  {
+    image: item2,
+    name: 'Baltic Birch Face Daily Mask',
+  },
+  {
+    image: item3,
+    name: 'Baltic Birch Face Daily Mask',
+  },
+  {
+    image: item4,
+    name: 'Baltic Birch Face Daily Mask',
+  },
+];
 
 function UserProfile() {
-    return (
-        <>
-            <h1 className='title'>PERFIL BIURY <span>CLUB</span></h1>
-            <TabsComponent data={tabsData}/>
-            <div className='message-input'>
-                <label>ESCRÍBENOS UN MENSAJE</label>
-                <textarea></textarea>
+  return (
+    <>
+      <h1 className='title'>
+        PERFIL BIURY <span>CLUB</span>
+      </h1>
+      <TabsComponent data={tabsData} />
+      <div className='message-input'>
+        <label>ESCRÍBENOS UN MENSAJE</label>
+        <textarea></textarea>
 
-                <button>ENVIAR</button>
-                <button> <img src={whatsappIcon}/>  WHATSAPP</button>
+        <button>ENVIAR</button>
+        <button>
+          {' '}
+          <img src={whatsappIcon} /> WHATSAPP
+        </button>
+      </div>
+
+      <div className='account-info'>
+        <h1 className='seccion-title'> INFORMACIÓN DE LA CUENTA</h1>
+        <div className='wrapper'>
+          <div className='info'>
+            <div className='mid'>
+              <label>Nombre</label>
+              <input type='text'></input>
+            </div>
+
+            <div className='mid'>
+              <label>Apellido</label>
+              <input type='text'></input>
+            </div>
+
+            <div className='big'>
+              <label>Correo electrónico</label>
+              <input type='text'></input>
+            </div>
+
+            <div className='mid'>
+              <label>País</label>
+              <input type='text'></input>
             </div>
 
             <div className='account-info'>
@@ -156,20 +182,20 @@ function UserProfile() {
                     </div>
                   </div>
                 </div>
+              </div>
             </div>
+          </div>
+        </div>
 
-            <h1 className='seccion-title'>HISTORIAL DE PEDIDOS </h1>
-            <div className='currentProducts-container'>
-               {
-                 products.map((data) => {
-                   return (
-                     <CurrentProductItem data={data}/>
-                   )
-                 })
-               }
-            </div>
-        </>
-    )
+
+      <h1 className='seccion-title'>HISTORIAL DE PEDIDOS </h1>
+      <div className='currentProducts-container'>
+        {products.map((data) => {
+          return <CurrentProductItem data={data} />;
+        })}
+      </div>
+    </>
+  );
 }
 
-export default UserProfile
+export default UserProfile;

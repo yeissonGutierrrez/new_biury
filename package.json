@@ -10,6 +10,7 @@
     "@testing-library/jest-dom": "^5.15.1",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
+    "axios": "^0.25.0",
     "glslify-loader": "^2.0.0",
     "gsap": "^3.8.0",
     "locomotive-scroll": "^4.1.3",

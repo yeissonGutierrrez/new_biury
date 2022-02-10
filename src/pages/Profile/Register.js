@@ -1,248 +1,303 @@
+import React, { useState } from 'react';
+import facebookIcon from '../../assets/images/Profile/buttonFacebookIcon.svg';
+import validationService from '../../helpers/validationFields';
+import Auth from '../../common/auth';
 
+function Register({ setState }) {
+  const [name, setName] = useState('');
+  const [lastName, setLastName] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [wrongEmail, setWrongEmail] = useState(false);
+  const [faildField, setFaildFiels] = useState(false);
+  const [acceptTerms, setAcceptTerms] = useState(null);
+  const [errorregister, setErrorRegister] = useState(false);
+  const [loadinFormRegister, setLoadingFormRegister] = useState(false);
+  const [confirmPassword, setConfirmPassword] = useState('');
+  const [passwordMatch, setPasswordMatch] = useState(false);
 
-import { useState } from 'react'
+  //Evalua el cambio de los inputs
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    if (name == 'setName') {
+      let val = validationService.validName(value);
+      if (val || value == '') {
+        setName(value);
+      }
+    }
 
-import facebookIcon from '../../assets/images/Profile/buttonFacebookIcon.svg'
-import googleIcon from '../../assets/images/Profile/googleIcon.svg'
+    if (name == 'setLastName') {
+      let val = validationService.validName(value);
+      if (val || value == '') {
+        setLastName(value);
+      }
+    }
 
+    if (name == 'setEmail') {
+      //let val = validationService.validationEmail(value);
+      setEmail(value);
+    }
 
-function Register({setState}) {
-    const [option, setoption] = useState('register')
+    if (name == 'setPassword') {
+      //let val = validationService.validationEmail(value);
+      setPassword(value);
+    }
 
-    return (
-        <>
-            <h1 className="title">PERFIL BIURY<span>CLUB</span></h1>
+    if (name == 'setAcceptTerms') {
+      setAcceptTerms(e.target.checked);
+    }
 
-            <h1 className='seccion-title2'>1. CREA UNA CUENTA O INICIA SESIÓN.</h1>
+    if (name == 'setConfirmPassword') {
+      setConfirmPassword(value);
+    }
+  };
 
-            <div className='options-login'>
-                <h3 onClick={() => setoption('register')} style={{borderBottom: ((option === `register`) ? '#242535 solid 3px' : '')}} >INSCRIBIRSE</h3>
-                <hr/>
-                <h3 onClick={() => setoption('login')} style={{borderBottom: ((option === `login`) ? '#242535 solid 3px' : '')}} >INICIA SESIÓN</h3>
-            </div>
+  //Function onClick to register
+  const onClick = async () => {
+    setWrongEmail(false);
+    setFaildFiels(false);
+    setErrorRegister(false);
+    setPasswordMatch(false);
 
-            {
-                option === 'register'
-                ?
-                <div className="form">
-                    <div className='two-inputs'>
-                        <label>
-                        Nombre
-                        <input type='text'></input>
-                        </label>
-                        <label>
-                        Apellido
-                        <input type='text'></input>
-                        </label>
-                    </div>
-                    <div className="one-input">
-                        <label>
-                        Correo electrónico
-                        <input type='text'></input>
-                        </label>
-                    </div>
-                    <div className="one-input">
-                        <label>
-                        Contraseña
-                        <input type='text'></input>
-                        </label>
-                        
-                        <label>
-                        Confirmar Contraseña
-                        <input type='text'></input>
-                        </label>
-                    </div>
-                    <div className='checkout'>
-                        <label>
-                            He leído y acepto términos y condiciones
-                            <input type='checkbox'></input>
-                        </label>
-                        <label>
-                        Quiero recibir información
-                            <input type='checkbox'></input>
-                        </label>
-                    </div>
-                    <div className="buttons-wrapper">
-                        <button onClick={()=> setState('logined')}>
-                            CONTINUAR
-                        </button>
+    if (name == '' || lastName == '' || password == '' || email == '') {
+      setFaildFiels(true);
+      return;
+    }
 
-                        <button className='facebook'>
-                            INICIAR SESIÓN USANDO FACEBOOK
-                            <img src={facebookIcon}/>
-                        </button>
+    if (!validationService.validationEmail(email)) {
+      setWrongEmail(true);
+      return;
+    }
 
-                        <button className='google'>
-                            INICIAR SESIÓN USANDO GOOGLE
-                            <img src={googleIcon}/>
-                        </button>
-                    </div>
-                </div>
-                : option === 'login'
-                ?
-                <div className="form">
-                    <div className="one-input">
-                        <label>
-                        Correo electrónico
-                        <input type='text'></input>
-                        </label>
-                    </div>
-                    <div className="one-input">
-                        <label>
-                        Contraseña
-                        <input type='text'></input>
-                        </label>
-                    </div>
-                    <div className='checkout'>
-                        <label>
-                            He leído y acepto términos y condiciones
-                            <input type='checkbox'></input>
-                        </label>
-                        <label>
-                        Quiero recibir información
-                            <input type='checkbox'></input>
-                        </label>
-                    </div>
-                    <div className="buttons-wrapper">
-                        <button onClick={()=> setState('logined')}>
-                            CONTINUAR
-                        </button>
+    if (!acceptTerms || acceptTerms == null) {
+      setAcceptTerms(false);
+      return;
+    }
 
-                        <button className='facebook'>
-                            INICIAR SESIÓN USANDO FACEBOOK
-                            <img src={facebookIcon}/>
-                        </button>
+    if (confirmPassword != password) {
+      setPasswordMatch(true);
+    }
+    setLoadingFormRegister(true);
+    const resp = await Auth.Login({ email, password });
 
-                        <button className='google'>
-                            INICIAR SESIÓN USANDO GOOGLE
-                        </button>
-                    </div>
-                </div>
-                : null
-            }
+    if (resp && (resp.status == 200 || resp.status == 201)) {
+      setState('logined');
+      setLoadingFormRegister(false);
+    } else {
+      setErrorRegister(true);
+      setLoadingFormRegister(false);
+    }
+  };
 
-            <h1 className='seccion-title2'>2. ¿A DÓNDE QUIERES QUE LLEGUE TU BIURYBOX?</h1>
-            <div className="form">
-                
-                <div className="one-input">
-                    <label>
-                    Nombre Completo
-                    <input type='text'></input>
-                    </label>
-                </div>
+  return (
+    <>
+      <h1 className='title'>
+        PERFIL BIURY<span>CLUB</span>
+      </h1>
 
-                <div className="one-input">
-                    <label>
-                    Correo electrónico
-                    <input type='text'></input>
-                    </label>
-                </div>
+      <h1 className='seccion-title2'>1. CREA UNA CUENTA O INICIA SESIÓN.</h1>
+      <div className='form'>
+        <div className='two-inputs'>
+          <label>
+            Nombre
+            <input
+              type='text'
+              name='setName'
+              onChange={handleChange}
+              value={name}
+            ></input>
+          </label>
+          <label>
+            Apellido
+            <input
+              type='text'
+              name='setLastName'
+              onChange={handleChange}
+              value={lastName}
+            ></input>
+          </label>
+        </div>
+        <div className='one-input'>
+          <label>
+            Correo electrónico
+            <input
+              type='text'
+              name='setEmail'
+              onChange={handleChange}
+              value={email}
+            ></input>
+          </label>
+        </div>
+        {wrongEmail == true ? (
+          <p className='danger-text'>
+            Por favor verifique su correo electrónico
+          </p>
+        ) : null}
+        <div className='one-input'>
+          <label>
+            Contraseña
+            <input
+              type='text'
+              name='setPassword'
+              onChange={handleChange}
+              value={password}
+            ></input>
+          </label>
+        </div>
+        <div className='one-input'>
+          <label>
+            Confirmar Contraseña
+            <input
+              type='text'
+              name='setConfirmPassword'
+              onChange={handleChange}
+              value={confirmPassword}
+            ></input>
+          </label>
+        </div>
+        {passwordMatch == true ? (
+          <p className='danger-text'>Las contraseña no coinciden</p>
+        ) : null}
+        {faildField == true ? (
+          <p className='danger-text'>Todo los campos son requeridos</p>
+        ) : null}
+        <div className='checkout'>
+          <label>
+            He leído y acepto términos y condiciones
+            <input
+              type='checkbox'
+              name='setAcceptTerms'
+              onChange={handleChange}
+              value={acceptTerms}
+            ></input>
+          </label>
+          {acceptTerms == false ? (
+            <p className='danger-text'>
+              Debe aceptar los terminos y condiciones
+            </p>
+          ) : null}
+          <label>
+            Quiero recibir información
+            <input type='checkbox'></input>
+          </label>
+        </div>
+        {errorregister == true ? (
+          <p className='danger-text'>
+            A ocurrido un problema intentelo de nuevo
+          </p>
+        ) : null}
+        <div className='buttons-wrapper'>
+          <button disabled={loadinFormRegister} onClick={onClick}>
+            {loadinFormRegister ? 'ENVIANDO' : 'CONTINUAR'}
+          </button>
 
-                <div className="one-input">
-                    <label>
-                    Dirección 1
-                    <input type='text'></input>
-                    </label>
-                </div>
+          <button className='facebook'>
+            INICIAR SESIÓN USANDO FACEBOOK
+            <img src={facebookIcon} />
+          </button>
 
-                <div className="one-input">
-                    <label>
-                    Dirección 2
-                    <input type='text'></input>
-                    </label>
-                </div>
+          <button className='google'>INICIAR SESIÓN USANDO GOOGLE</button>
+        </div>
+      </div>
 
-                <div className="two-inputs">
-                    <label>
-                    Ciudad
-                    <input type='text'></input>
-                    </label>
-                    <label>
-                    Departamento
-                    <input type='text'></input>
-                    </label>
-                </div>
+      <h1 className='seccion-title2'>
+        2. ¿A DÓNDE QUIERES QUE LLEGUE TU BIURYBOX?
+      </h1>
+      <div className='form'>
+        <div className='one-input'>
+          <label>
+            Correo electrónico
+            <input type='text'></input>
+          </label>
+        </div>
 
-                <div className="two-inputs">
-                    <label>
-                    Teléfono/Célular
-                    <input type='text'></input>
-                    </label>
-                </div>
+        <div className='one-input'>
+          <label>
+            Correo electrónico
+            <input type='text'></input>
+          </label>
+        </div>
 
-                <div className="buttons-wrapper">
-                    <button>
-                        CONTINUAR
-                    </button>
-                </div>
-            </div>
+        <div className='one-input'>
+          <label>
+            Correo electrónico
+            <input type='text'></input>
+          </label>
+        </div>
 
-            <h1 className='seccion-title2'>3. INGRESA INFORMACIÓN DE FACTURACIÓN</h1>
+        <div className='one-input'>
+          <label>
+            Correo electrónico
+            <input type='text'></input>
+          </label>
+        </div>
 
-            <div className='form'> 
-                <div className="one-input">
-                    <label>
-                    ¿Tienes un código de descuento?
-                    <input type='text'></input>
-                    </label>
-                </div>
+        <div className='two-inputs'>
+          <label>
+            Correo electrónico
+            <input type='text'></input>
+          </label>
+          <label>
+            Correo electrónico
+            <input type='text'></input>
+          </label>
+        </div>
 
-                <div className='info'>
-                    <span>
-                        Sutotal (1 Elemento)
-                    </span>
-                    <span>
-                    $ 0.0
-                    </span>
-                </div>
+        <div className='two-inputs'>
+          <label>
+            Correo electrónico
+            <input type='text'></input>
+          </label>
+        </div>
 
-                <div className='info'>
-                    <span>
-                        Descuento atractivo (35% descuento)
-                    </span>
-                    <span>
-                    $ 0.0
-                    </span>
-                </div>
+        <div className='buttons-wrapper'>
+          <button>CONTINUAR</button>
+        </div>
+      </div>
 
-                <div className='info'>
-                    <span>
-                        Envío y manejo
-                    </span>
-                    <span>
-                    $ 0.0
-                    </span>
-                </div>
+      <h1 className='seccion-title2'>3. INGRESA INFORMACIÓN DE FACTURACIÓN</h1>
 
-                <div className='info'>
-                    <span>
-                        Impuesto (Calculado al final de la compra)
-                    </span>
-                    <span>
-                    $ 0.0
-                    </span>
-                </div>
+      <div className='form'>
+        <div className='one-input'>
+          <label>
+            ¿Tienes un código de descuento?
+            <input type='text'></input>
+          </label>
+        </div>
 
-                <hr/>
+        <div className='info'>
+          <span>Sutotal (1 Elemento)</span>
+          <span>$ 0.0</span>
+        </div>
 
-                <div className='info'>
-                    <span className='bold'>
-                        Total
-                    </span>
-                    <span>
-                    $ 0.0
-                    </span>
-                </div>
+        <div className='info'>
+          <span>Descuento atractivo (35% descuento)</span>
+          <span>$ 0.0</span>
+        </div>
 
-                <div className="buttons-wrapper">
-                    <button>
-                        CONTINUAR
-                    </button>
-                </div>
-            </div>
-            
-        </>
-    )
+        <div className='info'>
+          <span>Envío y manejo</span>
+          <span>$ 0.0</span>
+        </div>
+
+        <div className='info'>
+          <span>Impuesto (Calculado al final de la compra)</span>
+          <span>$ 0.0</span>
+        </div>
+
+        <hr />
+
+        <div className='info'>
+          <span className='bold'>Total</span>
+          <span>$ 0.0</span>
+        </div>
+
+        <div className='buttons-wrapper'>
+          <button>CONTINUAR</button>
+        </div>
+      </div>
+    </>
+  );
 }
 
-export default Register
+export default Register;

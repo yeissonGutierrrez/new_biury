@@ -36,40 +36,26 @@ const TabsComponent = ({data}) => {
       </ul>
 
       <div>
-        {
-          data.data.map((item, index) => {
-            return (
-              <div key={index}>
-                {
-                  state === `${data.tabsName}${index}`
-                  ?
-                  <>
-                    {
-                      item.type === 'component'
-                      ?
-                      <div className='tab-content'>
-                        {item.content}
-                      </div>
-                      :
-                      item.type === 'text'
-                      ?
-                      <div className='tab-content-text'>
-                        <p>
-                          {item.content}
-                        </p>
-                      </div>
-                      : null
-                    }
-                  </>
-                  : null
-                }
-              </div>
-            )
-          })
-        }
+        {data.data.map((item, index) => {
+          return (
+            <div key={index}>
+              {state === `${data.tabsName}${index}` ? (
+                <>
+                  {item.type === 'component' ? (
+                    <div className='tab-content'>{item.content}</div>
+                  ) : item.type === 'text' ? (
+                    <div className='tab-content-text'>
+                      <p>{item.content}</p>
+                    </div>
+                  ) : null}
+                </>
+              ) : null}
+            </div>
+          );
+        })}
       </div>
     </div>
-  )
-}
+  );
+};
 
 export default TabsComponent;
