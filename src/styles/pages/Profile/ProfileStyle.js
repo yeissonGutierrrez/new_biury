@@ -188,12 +188,14 @@ const PerfilStyle = style({
         },
 
         '& .seccion-title': {
+            fontFamily: 'GothamBold',
             borderBottom: 'solid black 5px',
             width: '80%',
             margin: '40px auto',
             paddingBottom: '20px',
         },
         '& .seccion-title2': {
+            fontFamily: 'GothamBold',
             textAlign: 'center',
             borderBottom: 'solid black 5px',
             width: '80%',
@@ -280,7 +282,7 @@ const PerfilStyle = style({
                             $nest: {
                                 '& img': {
                                     position: 'absolute',
-                                    right: 30,
+                                    right: 20,
                                     top: 5,
                                     maxWidth: '30px',
                                 }
@@ -293,6 +295,11 @@ const PerfilStyle = style({
 
                         '& .google': {
                             backgroundColor: '#DF4B38',
+                            $nest: {
+                                '& img': {
+                                    top: 10
+                                }
+                            }
                         },
                     }
                 },
@@ -309,6 +316,213 @@ const PerfilStyle = style({
                         }
                     }
                 }
+            }
+        },
+
+        '& .options-login': {
+            display: 'flex',
+            width: '80%',
+            marginBottom: '40px',
+            justifyContent: 'space-between',
+            $nest: {
+                '& h3': {
+                    fontFamily: 'GothamBold',
+                    fontSize: '24px',
+                    paddingBottom: '20px',
+                    cursor: 'pointer'
+                },
+                '& hr': {
+                    display: 'none',
+                }
+            }
+        },
+
+        '@media screen and (max-width: 1200px)': {
+            $nest: {
+                '& .account-info': {
+                    $nest: {
+                        '& .wrapper': {
+                            $nest: {
+                                '& .photo-container': {
+                                    $nest: {
+                                        '& .photo-wrapper': {
+                                            height: '450px',
+                                            width: '350px',
+                                        }
+                                    }
+                                },
+                            }
+                        }
+                    }
+                },
+            }
+        },
+
+        '@media screen and (max-width: 900px)': {
+            $nest: {
+                '& .form': {
+                    width: '80%',
+                },
+                '& .account-info': {
+                    $nest: {
+                        '& .wrapper': {
+                            $nest: {
+                                '& .info': {
+                                    margin: 'auto',
+                                    width: '80%',
+                                },
+                                '& .photo-container': {
+                                    display: 'none'
+                                },
+                            }
+                        }
+                    }
+                },
+            }
+        },
+        '@media screen and (max-width: 640px)': {
+            marginTop: '40px',
+            $nest: {
+                '& .title': {
+                    display: 'none',
+                },
+                '& .seccion-title2': {
+                    margin: '60px 0',
+                    textAlign: 'center',
+                    fontSize: '20px',
+                    width: '90%',
+                },
+                '& .options-login': {
+                    width: '80%',
+                    marginBottom: '40px',
+                    $nest: {
+                        '& h3': {
+                            fontSize: '16px',
+                        },
+                        '& hr': {
+                            display: 'block',
+                            border: 'solid 1px',
+                        }
+                    }
+                },
+
+                '& .form': {
+                    width: '90%',
+                    $nest: {
+                        '& label': {
+                            fontSize: '16px',
+
+                        },
+                        '& .two-inputs': {
+                            display: 'block',
+                            $nest: {
+                                '& label': {
+                                    width: '100%'
+                                }
+                            }
+                        },
+        
+                        '& .checkout': {
+                            $nest: {
+                                '& label': {
+                                    fontSize: '16px',
+                                },
+                            }
+        
+                        },
+        
+                        '& .buttons-wrapper': {
+                            $nest: {
+                                '& button': {
+                                    fontSize: '14px',
+                                    padding: '0 40px',
+                                    $nest: {
+                                        '& img': {
+                                            right: 10,
+                                            top: 5,
+                                        }
+                                    }
+                                },
+        
+                                '& .facebook': {
+                                    backgroundColor: '#1677F0',
+                                },
+        
+                            }
+                        },
+                        '& .info': {
+                            fontSize: '14px',
+                            $nest: {
+                                '& .bold': {
+                                    fontFamily: 'GothamBold',
+                                }
+                            }
+                        }
+                    }
+                },
+
+            }
+        },
+        '@media screen and (max-width: 540px)': {
+            $nest: {
+                '& .account-info': {
+                    $nest: {
+                        '& .wrapper': {
+                            $nest: {
+                                '& .info': {
+                                    margin: 'auto',
+                                    width: '80%',
+                                    $nest: {
+                                        '& .mid': {
+                                            margin: '10px 0',
+                                            width: '100%',
+                                            $nest: {
+                                                '& label': {
+                                                    fontSize: '21px',
+                                                },
+                                                '& input': {
+                                                    width: '100%',
+                                                },
+                                            }
+                                        },
+                                        '& .big': {
+                                            width: '100%',
+                                            $nest: {
+                                                '& label': {
+                                                    fontSize: '21px',
+                                                },
+                                                '& input': {
+                                                    width: '100%',
+                                                    border: 'solid black 2px',
+                                                    height: '40px',
+                                                    outline: 'none',
+                                                    fontFamily: 'GothamLight',
+                                                    paddingLeft: '10px',
+                                                },
+                                            }
+                                        },
+                                        '& .checkout': {
+                                            fontFamily: 'GothamBold',
+                                            display: 'flex',
+                                            flexDirection: 'column',
+                                            justifyContent: 'space-between',
+                                            $nest: {
+                                                '& label': {
+                                                    fontSize: '18px',
+                                                    margin: '5px 0'
+                                                },
+                                            }
+        
+                                        },
+                                    },
+                                },
+                                '& .photo-container': {
+                                    display: 'none'
+                                },
+                            }
+                        }
+                    }
+                },
             }
         },
     }

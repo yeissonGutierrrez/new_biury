@@ -1,69 +1,132 @@
 
 
+import { useState } from 'react'
+
 import facebookIcon from '../../assets/images/Profile/buttonFacebookIcon.svg'
+import googleIcon from '../../assets/images/Profile/googleIcon.svg'
 
 
 function Register({setState}) {
+    const [option, setoption] = useState('register')
+
     return (
         <>
             <h1 className="title">PERFIL BIURY<span>CLUB</span></h1>
 
             <h1 className='seccion-title2'>1. CREA UNA CUENTA O INICIA SESIÓN.</h1>
-            <div className="form">
-                <div className='two-inputs'>
-                    <label>
-                    Apellido
-                    <input type='text'></input>
-                    </label>
-                    <label>
-                    Apellido
-                    <input type='text'></input>
-                    </label>
-                </div>
-                <div className="one-input">
-                    <label>
-                    Correo electrónico
-                    <input type='text'></input>
-                    </label>
-                </div>
-                <div className="one-input">
-                    <label>
-                    Contraseña
-                    <input type='text'></input>
-                    </label>
-                </div>
-                <div className='checkout'>
-                      <label>
-                        He leído y acepto términos y condiciones
-                        <input type='checkbox'></input>
-                      </label>
-                      <label>
-                      Quiero recibir información
-                        <input type='checkbox'></input>
-                      </label>
-                </div>
-                <div className="buttons-wrapper">
-                    <button onClick={()=> setState('logined')}>
-                        CONTINUAR
-                    </button>
 
-                    <button className='facebook'>
-                        INICIAR SESIÓN USANDO FACEBOOK
-                        <img src={facebookIcon}/>
-                    </button>
-
-                    <button className='google'>
-                        INICIAR SESIÓN USANDO GOOGLE
-                    </button>
-                </div>
+            <div className='options-login'>
+                <h3 onClick={() => setoption('register')} style={{borderBottom: ((option === `register`) ? '#242535 solid 3px' : '')}} >INSCRIBIRSE</h3>
+                <hr/>
+                <h3 onClick={() => setoption('login')} style={{borderBottom: ((option === `login`) ? '#242535 solid 3px' : '')}} >INICIA SESIÓN</h3>
             </div>
+
+            {
+                option === 'register'
+                ?
+                <div className="form">
+                    <div className='two-inputs'>
+                        <label>
+                        Nombre
+                        <input type='text'></input>
+                        </label>
+                        <label>
+                        Apellido
+                        <input type='text'></input>
+                        </label>
+                    </div>
+                    <div className="one-input">
+                        <label>
+                        Correo electrónico
+                        <input type='text'></input>
+                        </label>
+                    </div>
+                    <div className="one-input">
+                        <label>
+                        Contraseña
+                        <input type='text'></input>
+                        </label>
+                        
+                        <label>
+                        Confirmar Contraseña
+                        <input type='text'></input>
+                        </label>
+                    </div>
+                    <div className='checkout'>
+                        <label>
+                            He leído y acepto términos y condiciones
+                            <input type='checkbox'></input>
+                        </label>
+                        <label>
+                        Quiero recibir información
+                            <input type='checkbox'></input>
+                        </label>
+                    </div>
+                    <div className="buttons-wrapper">
+                        <button onClick={()=> setState('logined')}>
+                            CONTINUAR
+                        </button>
+
+                        <button className='facebook'>
+                            INICIAR SESIÓN USANDO FACEBOOK
+                            <img src={facebookIcon}/>
+                        </button>
+
+                        <button className='google'>
+                            INICIAR SESIÓN USANDO GOOGLE
+                            <img src={googleIcon}/>
+                        </button>
+                    </div>
+                </div>
+                : option === 'login'
+                ?
+                <div className="form">
+                    <div className="one-input">
+                        <label>
+                        Correo electrónico
+                        <input type='text'></input>
+                        </label>
+                    </div>
+                    <div className="one-input">
+                        <label>
+                        Contraseña
+                        <input type='text'></input>
+                        </label>
+                    </div>
+                    <div className='checkout'>
+                        <label>
+                            He leído y acepto términos y condiciones
+                            <input type='checkbox'></input>
+                        </label>
+                        <label>
+                        Quiero recibir información
+                            <input type='checkbox'></input>
+                        </label>
+                    </div>
+                    <div className="buttons-wrapper">
+                        <button onClick={()=> setState('logined')}>
+                            CONTINUAR
+                        </button>
+
+                        <button className='facebook'>
+                            INICIAR SESIÓN USANDO FACEBOOK
+                            <img src={facebookIcon}/>
+                        </button>
+
+                        <button className='google'>
+                            INICIAR SESIÓN USANDO GOOGLE
+                        </button>
+                    </div>
+                </div>
+                : null
+            }
 
             <h1 className='seccion-title2'>2. ¿A DÓNDE QUIERES QUE LLEGUE TU BIURYBOX?</h1>
             <div className="form">
                 
                 <div className="one-input">
                     <label>
-                    Correo electrónico
+                    Nombre Completo
                     <input type='text'></input>
                     </label>
                 </div>
@@ -77,32 +140,32 @@ function Register({setState}) {
 
                 <div className="one-input">
                     <label>
-                    Correo electrónico
+                    Dirección 1
                     <input type='text'></input>
                     </label>
                 </div>
 
                 <div className="one-input">
                     <label>
-                    Correo electrónico
+                    Dirección 2
                     <input type='text'></input>
                     </label>
                 </div>
 
                 <div className="two-inputs">
                     <label>
-                    Correo electrónico
+                    Ciudad
                     <input type='text'></input>
                     </label>
                     <label>
-                    Correo electrónico
+                    Departamento
                     <input type='text'></input>
                     </label>
                 </div>
 
                 <div className="two-inputs">
                     <label>
-                    Correo electrónico
+                    Teléfono/Célular
                     <input type='text'></input>
                     </label>
                 </div>

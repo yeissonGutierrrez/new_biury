@@ -116,17 +116,18 @@ function UserProfile() {
                           <input type='text'></input>
                       </div>
 
-                      <div className='small'>
-                          <label>
-                            Ciudad
-                          </label>
-                          <div>
-                          <div className='inputs'>
-                            <input type='text'></input>
-                            <input type='text'></input>
-                            <input type='text'></input>
-                          </div>
-                        </div>
+                      <div className='mid'>
+                        <label>
+                        Ciudad
+                        </label>
+                        <input type='text'></input>
+                      </div>
+
+                      <div className='mid'>
+                        <label>
+                        Departamento
+                        </label>
+                        <input type='text'></input>
                       </div>
 
                       <div className='mid'>
