@@ -14,7 +14,7 @@ function Perfil() {
   const [userAuth, setUserAuth] = useState(Auth.isAuthenticated());
   const user = localStorage.getItem('userName');
 
-  useEffect(() => {}, []);
+  useEffect(() => {});
 
   return (
     <>

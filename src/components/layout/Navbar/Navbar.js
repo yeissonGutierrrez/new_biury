@@ -13,6 +13,7 @@ import instagramIcon from '../../../assets/images/components/layout/Navbar/Insta
 import wspIcon from '../../../assets/images/components/layout/Navbar/wspIcon.svg';
 import youtubeIcon from '../../../assets/images/components/layout/Navbar/youtubeIcon.svg';
 import closeIcon from '../../../assets/images/components/layout/Navbar/closeIcon.svg';
+import LogoutIcon from '@mui/icons-material/Logout';
 
 import Auth from '../../../common/auth';
 
@@ -24,6 +25,10 @@ function Navbar({ bgColor }) {
   const [userName, setUserName] = useState(
     localStorage.getItem('biury-user-name')
   );
+
+  const logout = () => {
+    Auth.LogOut();
+  };
 
   useEffect(() => {
     setUserAuth(Auth.isAuthenticated());
@@ -46,7 +51,8 @@ function Navbar({ bgColor }) {
         <div className='list'>
           {userAuth !== null ? (
             <Link to='/perfil'>
-              <i className='userIcon'></i> {userName.toUpperCase()}
+              <i className='userIcon'></i>
+              {userName.toUpperCase()}
             </Link>
           ) : (
             <Link to='/perfil'>
@@ -69,6 +75,12 @@ function Navbar({ bgColor }) {
           <Link to='/'>
             <img src={wspIcon} />
           </Link>
+
+          {userAuth !== null ? (
+            <Link to='/HowItWork'>
+              <LogoutIcon onClick={logout}></LogoutIcon>
+            </Link>
+          ) : null}
         </div>
       </div>
 

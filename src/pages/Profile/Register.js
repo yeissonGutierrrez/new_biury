@@ -15,7 +15,7 @@ function Register({ setState }) {
   const [password, setPassword] = useState('');
   const [wrongEmail, setWrongEmail] = useState(false);
   const [faildField, setFaildFiels] = useState(false);
-  const [acceptTerms, setAcceptTerms] = useState(null);
+  const [acceptTerms, setAcceptTerms] = useState(false);
   const [errorregister, setErrorRegister] = useState(false);
   const [errorLogin, setErrorLogin] = useState(false);
   const [loadinFormRegister, setLoadingFormRegister] = useState(false);
