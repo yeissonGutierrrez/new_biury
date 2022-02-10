@@ -15,7 +15,7 @@ const Api = {};
 */
 Api.get = async (url) => {
   try {
-    response = axios.get(`${config.api_url}${url}`, {
+    const response = axios.get(`${config.api_url}${url}`, {
       headers: {
         Authorization: token,
       },
@@ -34,7 +34,7 @@ Api.get = async (url) => {
 */
 Api.post = (url, data) => {
   try {
-    response = axios.get(`${config.api_url}${url}`, data, {
+    const response = axios.get(`${config.api_url}${url}`, data, {
       headers: {
         Authorization: token,
         'Content-Type': 'application/json',
@@ -54,7 +54,7 @@ Api.post = (url, data) => {
 */
 Api.patch = (url, data) => {
   try {
-    response = axios.get(`${config.api_url}${url}`, data, {
+    const response = axios.get(`${config.api_url}${url}`, data, {
       headers: {
         Authorization: token,
         'Content-Type': 'application/json',
@@ -73,7 +73,7 @@ Api.patch = (url, data) => {
 */
 Api.delete = (url) => {
   try {
-    response = axios.get(`${config.api_url}${url}`, {
+    const response = axios.get(`${config.api_url}${url}`, {
       headers: {
         Authorization: token,
       },
