@@ -14,13 +14,17 @@ const Api = {};
  @url recibe la ruta faltante ej: profile/user
 */
 Api.get = async (url) => {
-  response = axios.get(`${config.api_url}${url}`, {
-    headers: {
-      Authorization: token,
-    },
-  });
+  try {
+    response = axios.get(`${config.api_url}${url}`, {
+      headers: {
+        Authorization: token,
+      },
+    });
 
-  return response;
+    return response;
+  } catch (error) {
+    console.log(error);
+  }
 };
 
 /* 
@@ -29,14 +33,18 @@ Api.get = async (url) => {
  @data recibe el objeto para enviar en el Body ej: {user: "user ejemplo", password: "password"}
 */
 Api.post = (url, data) => {
-  response = axios.get(`${config.api_url}${url}`, data, {
-    headers: {
-      Authorization: token,
-      'Content-Type': 'application/json',
-    },
-  });
+  try {
+    response = axios.get(`${config.api_url}${url}`, data, {
+      headers: {
+        Authorization: token,
+        'Content-Type': 'application/json',
+      },
+    });
 
-  return response;
+    return response;
+  } catch (error) {
+    console.log(error);
+  }
 };
 
 /* 
@@ -45,14 +53,18 @@ Api.post = (url, data) => {
  @data recibe el objeto para enviar en el Body ej: {user: "user ejemplo", password: "password"}
 */
 Api.patch = (url, data) => {
-  response = axios.get(`${config.api_url}${url}`, data, {
-    headers: {
-      Authorization: token,
-      'Content-Type': 'application/json',
-    },
-  });
+  try {
+    response = axios.get(`${config.api_url}${url}`, data, {
+      headers: {
+        Authorization: token,
+        'Content-Type': 'application/json',
+      },
+    });
 
-  return response;
+    return response;
+  } catch (error) {
+    console.log(error);
+  }
 };
 
 /* 
@@ -60,13 +72,17 @@ Api.patch = (url, data) => {
  @url recibe la ruta faltante ej: profile/user
 */
 Api.delete = (url) => {
-  response = axios.get(`${config.api_url}${url}`, {
-    headers: {
-      Authorization: token,
-    },
-  });
+  try {
+    response = axios.get(`${config.api_url}${url}`, {
+      headers: {
+        Authorization: token,
+      },
+    });
 
-  return response;
+    return response;
+  } catch (error) {
+    console.log(error);
+  }
 };
 
 export default Api;

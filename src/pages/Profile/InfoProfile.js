@@ -13,7 +13,7 @@ function InfoProfile() {
         <img className='ProfilePhoto' src={ProfilePhoto} />
       </div>
       <div className='info'>
-        <h1>HOLA {userName}.</h1>
+        <h1>HOLA {userName.toUpperCase()}.</h1>
         <p>
           Para nosotros es un placer que hagas parte de <span>BIURY</span>CLUB.{' '}
           <br /> Desde ya puedes hacer uso de todos tus beneficios, revisa{' '}
