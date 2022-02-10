@@ -203,57 +203,60 @@ function Register({ setState }) {
       <h1 className='seccion-title2'>
         2. ¿A DÓNDE QUIERES QUE LLEGUE TU BIURYBOX?
       </h1>
-      <div className='form'>
-        <div className='one-input'>
-          <label>
-            Correo electrónico
-            <input type='text'></input>
-          </label>
-        </div>
+      <div className="form">
+                
+                <div className="one-input">
+                    <label>
+                    Nombre Completo
+                    <input type='text'></input>
+                    </label>
+                </div>
 
-        <div className='one-input'>
-          <label>
-            Correo electrónico
-            <input type='text'></input>
-          </label>
-        </div>
+                <div className="one-input">
+                    <label>
+                    Correo electrónico
+                    <input type='text'></input>
+                    </label>
+                </div>
 
-        <div className='one-input'>
-          <label>
-            Correo electrónico
-            <input type='text'></input>
-          </label>
-        </div>
+                <div className="one-input">
+                    <label>
+                    Dirección 1
+                    <input type='text'></input>
+                    </label>
+                </div>
 
-        <div className='one-input'>
-          <label>
-            Correo electrónico
-            <input type='text'></input>
-          </label>
-        </div>
+                <div className="one-input">
+                    <label>
+                    Dirección 2
+                    <input type='text'></input>
+                    </label>
+                </div>
 
-        <div className='two-inputs'>
-          <label>
-            Correo electrónico
-            <input type='text'></input>
-          </label>
-          <label>
-            Correo electrónico
-            <input type='text'></input>
-          </label>
-        </div>
+                <div className="two-inputs">
+                    <label>
+                    Ciudad
+                    <input type='text'></input>
+                    </label>
+                    <label>
+                    Departamento
+                    <input type='text'></input>
+                    </label>
+                </div>
 
-        <div className='two-inputs'>
-          <label>
-            Correo electrónico
-            <input type='text'></input>
-          </label>
-        </div>
+                <div className="two-inputs">
+                    <label>
+                    Teléfono/Célular
+                    <input type='text'></input>
+                    </label>
+                </div>
 
-        <div className='buttons-wrapper'>
-          <button>CONTINUAR</button>
-        </div>
-      </div>
+                <div className="buttons-wrapper">
+                    <button>
+                        CONTINUAR
+                    </button>
+                </div>
+            </div>
 
       <h1 className='seccion-title2'>3. INGRESA INFORMACIÓN DE FACTURACIÓN</h1>
 
