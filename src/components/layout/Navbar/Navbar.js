@@ -19,10 +19,16 @@ import Auth from '../../../common/auth';
 function Navbar({ bgColor }) {
   const [isOpen, setIsOpen] = useState('');
 
-  const [user, setuser] = useState(null);
   const [userAuth, setUserAuth] = useState(Auth.isAuthenticated());
   const login = sessionStorage.getItem('login');
-  const userName = localStorage.getItem('biury-user-name');
+  const [userName, setUserName] = useState(
+    localStorage.getItem('biury-user-name')
+  );
+
+  useEffect(() => {
+    setUserAuth(Auth.isAuthenticated());
+    setUserName(localStorage.getItem('biury-user-name'));
+  });
 
   return (
     <div style={{ backgroundColor: bgColor }} className={NavbarStyle}>

@@ -14,4 +14,10 @@ validationService.validName = (val) => {
   return validation;
 };
 
+validationService.phoneNumber = (val) => {
+  let regName = /^[0-9,+]+$/;
+  let validation = regName.test(val);
+  return validation;
+};
+
 export default validationService;
