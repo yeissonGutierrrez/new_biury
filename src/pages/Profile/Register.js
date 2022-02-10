@@ -201,7 +201,7 @@ function Register({ setState }) {
             <label>
               Contraseña
               <input
-                type='text'
+                type='password'
                 name='setPassword'
                 onChange={handleChange}
                 value={password}
@@ -212,7 +212,7 @@ function Register({ setState }) {
             <label>
               Confirmar Contraseña
               <input
-                type='text'
+                type='password'
                 name='setConfirmPassword'
                 onChange={handleChange}
                 value={confirmPassword}
@@ -285,7 +285,7 @@ function Register({ setState }) {
             <label>
               Contraseña
               <input
-                type='text'
+                type='password'
                 name='setPassword'
                 onChange={handleChange}
                 value={password}
