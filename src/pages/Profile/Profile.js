@@ -17,7 +17,7 @@ function Perfil() {
     <>
       <Navbar></Navbar>
       <div className={PerfilStyle}>
-        {userAuth != null ? <UserProfile /> : <Register setState={setState} />}
+        {userAuth != null || state === 'logined' ? <UserProfile /> : <Register setState={setState} />}
         {/* {state === 'logined' ? (
           <UserProfile />
         ) : (

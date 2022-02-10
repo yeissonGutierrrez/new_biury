@@ -216,6 +216,9 @@ const PerfilStyle = style({
         '& .form': {
             width: '50%',
             $nest: {
+                '& .danger-text': {
+                  color: 'red'
+                },
                 '& label': {
                     fontFamily: 'GothamBold',
                     fontSize: '21px',
