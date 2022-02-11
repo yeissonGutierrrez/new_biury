@@ -2,7 +2,7 @@ const validationService = {};
 
 //Valida si un email es correcto
 validationService.validationEmail = (val) => {
-  let regName = /^[\w.]+@{1}[\w]+\.+[a-z]{2,3}$/;
+  let regName = /^[\w._]+@{1}[\w]+\.+[a-z]{2,3}$/;
   let validation = regName.test(val);
   return validation;
 };
@@ -14,8 +14,8 @@ validationService.validName = (val) => {
   return validation;
 };
 
-validationService.phoneNumber = (val) => {
-  let regName = /^[0-9,+]+$/;
+validationService.validPhoneNumber = (val) => {
+  let regName = /^[0-9 +]+$/;
   let validation = regName.test(val);
   return validation;
 };

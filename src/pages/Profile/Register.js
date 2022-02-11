@@ -15,7 +15,7 @@ function Register({ setState }) {
   const [password, setPassword] = useState('');
   const [wrongEmail, setWrongEmail] = useState(false);
   const [faildField, setFaildFiels] = useState(false);
-  const [acceptTerms, setAcceptTerms] = useState(false);
+  const [acceptTerms, setAcceptTerms] = useState(null);
   const [errorregister, setErrorRegister] = useState(false);
   const [errorLogin, setErrorLogin] = useState(false);
   const [loadinFormRegister, setLoadingFormRegister] = useState(false);
@@ -79,6 +79,11 @@ function Register({ setState }) {
         return;
       }
 
+      if (!validationService.validationEmail(email)) {
+        setWrongEmail(true);
+        return;
+      }
+
       if (confirmPassword != password) {
         setPasswordMatch(true);
       }
@@ -123,7 +128,72 @@ function Register({ setState }) {
     }
   };
 
-  //Conts Form BiuryBox
+  //Consts Form BiuryBox
+  const [dataFormBox, setDataFormBox] = useState({
+    fullName: '',
+    emailBox: '',
+    addresOne: '',
+    addresTwo: '',
+    appartment: '',
+    phone: '',
+  });
+  const [emptyFieldsFormBox, setEmptyFieldsFormBox] = useState(false);
+  const [wrongEmailBox, setWrongEmailBox] = useState(false);
+
+  //Function OnChange to FORM BiuryBox
+  const onChangeFormBox = (e) => {
+    const { name, value } = e.target;
+
+    if (name == 'fullName') {
+      let val = validationService.validName(value);
+      if (val || value == '') {
+        setDataFormBox({
+          ...dataFormBox,
+          [name]: value,
+        });
+      }
+      return;
+    }
+
+    if (name == 'phone') {
+      let val = validationService.validPhoneNumber(value);
+      if (val == true || value == '') {
+        setDataFormBox({
+          ...dataFormBox,
+          [name]: value,
+        });
+      }
+      return;
+    }
+
+    setDataFormBox({
+      ...dataFormBox,
+      [name]: value,
+    });
+  };
+
+  const onClickFormBox = () => {
+    const { fullName, emailBox, addresOne, addresTwo, appartment, phone } =
+      dataFormBox;
+    setEmptyFieldsFormBox(false);
+    setWrongEmailBox(false);
+    if (
+      fullName == '' ||
+      emailBox == '' ||
+      addresOne == '' ||
+      addresTwo == '' ||
+      appartment == '' ||
+      phone == ''
+    ) {
+      setEmptyFieldsFormBox(true);
+      return;
+    }
+
+    if (!validationService.validationEmail(emailBox)) {
+      setWrongEmailBox(true);
+      return;
+    }
+  };
 
   useEffect(() => {
     if (cities.length == 0) {
@@ -325,26 +395,52 @@ function Register({ setState }) {
         <div className='one-input'>
           <label>
             Nombre Completo
-            <input type='text'></input>
+            <input
+              type='text'
+              onChange={onChangeFormBox}
+              value={dataFormBox.fullName}
+              name='fullName'
+            ></input>
           </label>
         </div>
 
         <div className='one-input'>
           <label>
             Correo electrónico
-            <input type='text'></input>
+            <input
+              type='text'
+              onChange={onChangeFormBox}
+              value={dataFormBox.emailBox}
+              name='emailBox'
+            ></input>
+          </label>
+        </div>
+
+        {wrongEmailBox == true ? (
+          <p className='danger-text'>El correo electronico es incorrecto</p>
+        ) : null}
+
+        <div className='one-input'>
+          <label>
+            Dirección 1
+            <input
+              type='text'
+              onChange={onChangeFormBox}
+              value={dataFormBox.addresOne}
+              name='addresOne'
+            ></input>
           </label>
         </div>
 
         <div className='one-input'>
           <label>
-            Dirección 1<input type='text'></input>
-          </label>
-        </div>
-
-        <div className='one-input'>
-          <label>
-            Dirección 2<input type='text'></input>
+            Dirección 2
+            <input
+              type='text'
+              onChange={onChangeFormBox}
+              value={dataFormBox.addresTwo}
+              name='addresTwo'
+            ></input>
           </label>
         </div>
 
@@ -359,19 +455,33 @@ function Register({ setState }) {
           </label>
           <label>
             Departamento
-            <input type='text'></input>
+            <input
+              type='text'
+              onChange={onChangeFormBox}
+              value={dataFormBox.appartment}
+              name='appartment'
+            ></input>
           </label>
         </div>
 
         <div className='two-inputs'>
           <label>
             Teléfono/Célular
-            <input type='text'></input>
+            <input
+              type='text'
+              onChange={onChangeFormBox}
+              value={dataFormBox.phone}
+              name='phone'
+            ></input>
           </label>
         </div>
 
+        {emptyFieldsFormBox == true ? (
+          <p className='danger-text'>Todos los campos son requeridos</p>
+        ) : null}
+
         <div className='buttons-wrapper'>
-          <button>CONTINUAR</button>
+          <button onClick={onClickFormBox}>CONTINUAR</button>
         </div>
       </div>
 
