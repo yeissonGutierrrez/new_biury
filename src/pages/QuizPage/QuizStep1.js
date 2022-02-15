@@ -45,36 +45,14 @@ function QuizStep1({ setStep, question }) {
             }
           })}
         </div>
-
-        {/* <div className='buttons'>
-          <div className='two'>
-            <div className='1'>
-              <QuizButton
-                bgColor='rgb(202,102,249)'
-                borderColor='#A600F5'
-                question='Hombre'
-              />
-            </div>
-
-            <div className='2'>
-              <QuizButton
-                bgColor='rgb(102,245,187)'
-                borderColor='#00EF8E'
-                question='Mujer'
-              />
-            </div>
-          </div>
-
-          <div className='3'>
-            <QuizButton
-              bgColor='rgb(102,235,219)'
-              borderColor='#00DDC3'
-              question='Prefiero no decirlo'
-            />
-          </div>
-        </div> */}
       </div>
-      <button onClick={() => setStep('step2')} className='pagination-button'>
+      <button
+        onClick={() => {
+          setStep('step2');
+          localStorage.setItem('step-quiz', 'step2');
+        }}
+        className='pagination-button'
+      >
         CONTINUAR
       </button>
     </div>

@@ -21,6 +21,14 @@ function QuizPage() {
     if (resp.status == 200 || resp.status == 201) {
       setQuestions(resp.data.data.rows);
     }
+    updateStep();
+  };
+
+  const updateStep = () => {
+    let stepQuiz = localStorage.getItem('step-quiz');
+    if (stepQuiz !== null) {
+      setStep(stepQuiz);
+    }
   };
 
   return (

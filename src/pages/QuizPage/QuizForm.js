@@ -34,11 +34,11 @@ function QuizForm({ setStep, step, questions }) {
           </>
         ) : step === 'step2' ? (
           <>
-            <QuizStep2 setStep={setStep} />
+            <QuizStep2 setStep={setStep} question={questions[3]} />
           </>
         ) : step === 'step3' ? (
           <>
-            <QuizStep3 setStep={setStep} />
+            <QuizStep3 setStep={setStep} question={questions[4]} />
           </>
         ) : step === 'step4' ? (
           <>
