@@ -17,7 +17,7 @@ function QuizPage() {
   });
 
   const getQuestions = async () => {
-    let resp = await Api.get('questions?page=1&limit=7');
+    let resp = await Api.get('questions?page=1&limit=10');
     if (resp.status == 200 || resp.status == 201) {
       setQuestions(resp.data.data.rows);
     }

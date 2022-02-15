@@ -66,10 +66,22 @@ function QuizStep3({ setStep, question }) {
       </div>
 
       <div className='pagination-container'>
-        <button onClick={() => setStep('step2')} className='pagination-button'>
+        <button
+          onClick={() => {
+            localStorage.setItem('step-quiz', 'step2');
+            setStep('step2');
+          }}
+          className='pagination-button'
+        >
           ANTERIOR
         </button>
-        <button onClick={() => setStep('step4')} className='pagination-button'>
+        <button
+          onClick={() => {
+            setStep('step4');
+            localStorage.setItem('step-quiz', 'step4');
+          }}
+          className='pagination-button'
+        >
           CONTINUAR
         </button>
       </div>

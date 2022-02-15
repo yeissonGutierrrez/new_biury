@@ -1,44 +1,82 @@
+import QuizButton from './QuizButton';
 
-import QuizButton from './QuizButton'
-
-
-function QuizStep7({setStep}) {
-    return (
-        <div className="step7">
-            <p className='paragraph1'>Última pregunta. <br/> Puedes elegir varias opciones.</p>
-            <h4 className='question-title'>¿CUÁLES SON TUS PRIORIDADES AL <br/> MOMENTO DE CUIDAR TU PELO.</h4>
-            <div className='answers-wrapper'>
-                <div className='answers-container'>
-                
-                    <QuizButton width={'200px'} bgColor='rgb(102,235,219)' borderColor='#00DDC3' question='Cuidado de los crespos'/>
-                    <QuizButton width={'200px'} bgColor='rgb(102,235,219)' borderColor='#00DDC3' question='Cuidado de los crespos'/>
-                    <QuizButton width={'200px'} bgColor='rgb(102,235,219)' borderColor='#00DDC3' question='Cuidado de los crespos'/>
-               
-                </div>
-
-                <div className='answers-container2'>
-                    <QuizButton width={'200px'} bgColor='rgb(102,235,219)' borderColor='#00DDC3' question='Cuidado de los crespos'/>
-                    <QuizButton width={'200px'} bgColor='rgb(102,235,219)' borderColor='#00DDC3' question='Cuidado de los crespos'/>
-                </div>
-
-                <div className='answers-container-mobile'>
-                    <div className='grid-wrapper'>
-                        <QuizButton width={'130px'} bgColor='rgb(102,235,219)' borderColor='#00DDC3' question='Cuidado de los crespos'/>
-                        <QuizButton width={'130px'} bgColor='rgb(102,235,219)' borderColor='#00DDC3' question='Cuidado de los crespos'/>
-                        <QuizButton width={'130px'} bgColor='rgb(102,235,219)' borderColor='#00DDC3' question='Cuidado de los crespos'/>
-                        <QuizButton width={'130px'} bgColor='rgb(102,235,219)' borderColor='#00DDC3' question='Cuidado de los crespos'/>
-                   </div>
-                        <QuizButton width={'130px'} bgColor='rgb(102,235,219)' borderColor='#00DDC3' question='Cuidado de los crespos'/>
-
-                </div>
-            </div>
-
-            <div className='pagination-container'>
-                <button onClick={() => setStep('step5')} className='pagination-button'>ANTERIOR</button>
-                <button onClick={() => setStep('suscribe')} className='pagination-button'>CONTINUAR</button>
-            </div>
+function QuizStep7({ setStep, question }) {
+  return (
+    <div className='step7'>
+      <p className='paragraph1'>
+        Última pregunta. <br /> Puedes elegir varias opciones.
+      </p>
+      <h4 className='question-title'>{question.question}</h4>
+      <div className='answers-wrapper'>
+        <div className='answers-container'>
+          {question.Answers.map((item, index) => {
+            return index <= 2 ? (
+              <QuizButton
+                width={'200px'}
+                bgColor='rgb(102,235,219)'
+                borderColor='#00DDC3'
+                question={item.value}
+                key={index}
+              />
+            ) : null;
+          })}
         </div>
-    )
+
+        <div className='answers-container2'>
+          {question.Answers.map((item, index) => {
+            return index > 2 ? (
+              <QuizButton
+                width={'200px'}
+                bgColor='rgb(102,235,219)'
+                borderColor='#00DDC3'
+                question={item.value}
+                key={index}
+              />
+            ) : null;
+          })}
+        </div>
+
+        <div className='answers-container-mobile'>
+          <div className='grid-wrapper'>
+            {question.Answers.map((item, index) => {
+              return index <= 3 ? (
+                <QuizButton
+                  width={'130px'}
+                  bgColor='rgb(102,235,219)'
+                  borderColor='#00DDC3'
+                  question={item.value}
+                  key={index}
+                />
+              ) : null;
+            })}
+          </div>
+          {question.Answers.map((item, index) => {
+            return index == 4 ? (
+              <QuizButton
+                width={'130px'}
+                bgColor='rgb(102,235,219)'
+                borderColor='#00DDC3'
+                question={item.value}
+                key={index}
+              />
+            ) : null;
+          })}
+        </div>
+      </div>
+
+      <div className='pagination-container'>
+        <button onClick={() => setStep('step5')} className='pagination-button'>
+          ANTERIOR
+        </button>
+        <button
+          onClick={() => setStep('suscribe')}
+          className='pagination-button'
+        >
+          CONTINUAR
+        </button>
+      </div>
+    </div>
+  );
 }
 
-export default QuizStep7
+export default QuizStep7;

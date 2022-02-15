@@ -42,16 +42,16 @@ function QuizForm({ setStep, step, questions }) {
           </>
         ) : step === 'step4' ? (
           <>
-            <QuizStep4 setStep={setStep} />
+            <QuizStep4 setStep={setStep} question={questions[5]} />
           </>
         ) : step === 'step5' ? (
           <>
-            <QuizStep5 setStep={setStep} />
+            <QuizStep5 setStep={setStep} question={questions[6]} />
           </>
         ) : step === 'step6' ? (
-          <QuizStep6 setStep={setStep} />
+          <QuizStep6 setStep={setStep} question={questions[8]} />
         ) : step === 'step7' ? (
-          <QuizStep7 setStep={setStep} />
+          <QuizStep7 setStep={setStep} question={questions[9]} />
         ) : null}
 
         {step === 'suscribe' ? (

@@ -1,20 +1,28 @@
-import { useState } from "react"
-import QuizButtonStyle from "../../styles/pages/QuizPage/QuizButtonStyle"
+import { useState } from 'react';
+import QuizButtonStyle from '../../styles/pages/QuizPage/QuizButtonStyle';
 
-function QuizButton({question, borderColor, bgColor, width}) {
-    const [hover, sethover] = useState(false);
-    return (
-        <div className={`${QuizButtonStyle}`}>
-            <button onClick={() => sethover(!hover)} style={{borderColor: borderColor, backgroundColor: bgColor, width: width}}>
-                {question}
-            </button>
-            {
-                hover
-                ?
-            <div onClick={() => sethover(!hover)} className="border"></div>
-                : null
-            }
-        </div>
-    )
+function QuizButton({
+  question,
+  borderColor,
+  bgColor,
+  width,
+  hover = false,
+  onClick,
+}) {
+  return (
+    <div className={`${QuizButtonStyle}`}>
+      <button
+        onClick={onClick}
+        style={{
+          borderColor: borderColor,
+          backgroundColor: bgColor,
+          width: width,
+        }}
+      >
+        {question}
+      </button>
+      {hover ? <div className='border'></div> : null}
+    </div>
+  );
 }
-export default QuizButton
+export default QuizButton;
