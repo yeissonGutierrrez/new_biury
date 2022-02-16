@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react';
 import QuizFormStyle from '../../styles/pages/QuizPage/QuizFormStyle';
 
 import Footer from '../../components/layout/Footer/Footer';
