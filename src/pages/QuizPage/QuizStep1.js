@@ -3,37 +3,41 @@ import QuizButton from './QuizButton';
 import { useState, useEffect } from 'react';
 
 function QuizStep1({ setStep, question }) {
-  const [email, setEmail] = useState(localStorage.getItem('nickName'));
+  const [nickName, setNickName] = useState(localStorage.getItem('nickName'));
   const [indexSelected, setIndexSelected] = useState(null);
-  const [answerSelected, setAnswerSelected] = useState({});
+  const [answerSelected, setAnswerSelected] = useState(
+    localStorage.getItem('answerStep1')
+      ? JSON.parse(localStorage.getItem('answerStep1'))
+      : { responseOptionId: '' }
+  );
   const [answerRequired, setAnswerRequired] = useState(false);
 
   useEffect(() => {
-    let answer = localStorage.getItem('answerStep1');
-    if (answer != null) {
-      setAnswerSelected(JSON.parse(answer));
-      question.Answers.map((item, index) => {
-        if (item.id === answerSelected.responseOptionId) {
-          setIndexSelected(index);
-        }
-      });
-    }
+    updateState();
   }, []);
+
+  const updateState = () => {
+    for (let i = 0; i < question.Answers.length; i++) {
+      if (question.Answers[i].id === answerSelected.responseOptionId) {
+        selectedIndex(i);
+        break;
+      }
+    }
+  };
 
   const selectedIndex = (index) => {
     setIndexSelected(index);
+    setAnswerSelected({
+      responseOptionId: question.Answers[index].id,
+    });
   };
 
   const setAnswer = () => {
-    setAnswerRequired(true);
-
+    setAnswerRequired(false);
     if (indexSelected == null) {
       setAnswerRequired(true);
       return;
     }
-    setAnswerSelected({
-      responseOptionId: question.Answers[indexSelected].id,
-    });
 
     localStorage.setItem('answerStep1', JSON.stringify(answerSelected));
     setStep('step2');
@@ -56,7 +60,7 @@ function QuizStep1({ setStep, question }) {
       </p>
       <img src={arrow} />
       <h4 className='question-title'>
-        {question.question.replace('(apodo)', email)}
+        {question.question.replace('(apodo)', nickName)}
       </h4>
       <p className='paragraph2'>
         No importa cuál sea tu identidad de genero, para <br /> nosotros lo

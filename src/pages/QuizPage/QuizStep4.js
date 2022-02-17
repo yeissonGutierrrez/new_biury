@@ -1,6 +1,54 @@
 import QuizButton from './QuizButton';
 
+import { useState, useEffect } from 'react';
+
 function QuizStep4({ setStep, question }) {
+  const [nickName, setNickName] = useState(localStorage.getItem('nickName'));
+  const [indexSelected, setIndexSelected] = useState(null);
+  const [answerSelected, setAnswerSelected] = useState(
+    localStorage.getItem('answerStep4')
+      ? JSON.parse(localStorage.getItem('answerStep4'))
+      : { responseOptionId: '' }
+  );
+
+  const [answerRequired, setAnswerRequired] = useState(false);
+
+  useEffect(() => {
+    updateState();
+  }, []);
+
+  const updateState = () => {
+    for (let i = 0; i < question.Answers.length; i++) {
+      if (question.Answers[i].id === answerSelected.responseOptionId) {
+        selectedIndex(i);
+        break;
+      }
+    }
+  };
+
+  const selectedIndex = (index) => {
+    setIndexSelected(index);
+    setAnswerSelected({
+      responseOptionId: question.Answers[index].id,
+    });
+  };
+
+  const setAnswer = () => {
+    setAnswerRequired(false);
+    if (indexSelected == null) {
+      setAnswerRequired(true);
+      return;
+    }
+
+    localStorage.setItem('answerStep4', JSON.stringify(answerSelected));
+    setStep('step5');
+    localStorage.setItem('step-quiz', 'step5');
+  };
+
+  const textDanger = {
+    color: 'red',
+    marginTop: '15px',
+  };
   return (
     <div className='step4'>
       <h4 className='question-title'>
@@ -29,6 +77,13 @@ function QuizStep4({ setStep, question }) {
                       borderColor={
                         item.value == 'Claro' ? '#F6CDB7' : '#CA8D61'
                       }
+                      hover={
+                        indexSelected == index ||
+                        answerSelected.responseOptionId == item.id
+                          ? true
+                          : false
+                      }
+                      onClick={() => selectedIndex(index)}
                       question={item.value}
                     />
                   </div>
@@ -44,6 +99,13 @@ function QuizStep4({ setStep, question }) {
                     }
                     borderColor={item.value == 'Claro' ? '#F6CDB7' : '#CA8D61'}
                     question={item.value}
+                    hover={
+                      indexSelected == index ||
+                      answerSelected.responseOptionId == item.id
+                        ? true
+                        : false
+                    }
+                    onClick={() => selectedIndex(index)}
                   />
                 </div>
               );
@@ -63,6 +125,13 @@ function QuizStep4({ setStep, question }) {
                     }
                     borderColor={item.value == 'Claro' ? '#F6CDB7' : '#CA8D61'}
                     question={item.value}
+                    hover={
+                      indexSelected == index ||
+                      answerSelected.responseOptionId == item.id
+                        ? true
+                        : false
+                    }
+                    onClick={() => selectedIndex(index)}
                     key={index}
                   />
                 ) : (
@@ -72,6 +141,13 @@ function QuizStep4({ setStep, question }) {
                       bgColor='rgb(162,126,105)'
                       borderColor='#642805'
                       question={question.Answers[2].value}
+                      hover={
+                        indexSelected == index ||
+                        answerSelected.responseOptionId == item.id
+                          ? true
+                          : false
+                      }
+                      onClick={() => selectedIndex(index)}
                     />
                   </div>
                 );
@@ -80,6 +156,9 @@ function QuizStep4({ setStep, question }) {
           </div>
         )}
       </div>
+      {answerRequired == true ? (
+        <p style={textDanger}>Debe Seleccionar una opción</p>
+      ) : null}
 
       <div className='pagination-container'>
         <button
@@ -91,13 +170,7 @@ function QuizStep4({ setStep, question }) {
         >
           ANTERIOR
         </button>
-        <button
-          onClick={() => {
-            setStep('step5');
-            localStorage.setItem('step-quiz', 'step5');
-          }}
-          className='pagination-button'
-        >
+        <button onClick={() => setAnswer()} className='pagination-button'>
           CONTINUAR
         </button>
       </div>

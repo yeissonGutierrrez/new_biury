@@ -21,7 +21,7 @@ function QuizButton({
       >
         {question}
       </button>
-      {hover ? <div className='border'></div> : null}
+      {hover ? <div className='border' onClick={onClick}></div> : null}
     </div>
   );
 }
